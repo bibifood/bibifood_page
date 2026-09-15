@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiBiFood - Mang vị Việt, gửi yêu thương</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    
+    <!-- Google Font (Google Sans) -->
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tabler Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/tabler-icons.min.css">
+    
+    <style>
+        * {
+            font-family: 'Google Sans', sans-serif;
+        }
+
+        :root {
+            --primary-bg: #F5E6D3;
+            --primary-dark: #1A1A1A;
+            --primary-brown: #8B4513;
+            --white: #FFFFFF;
+            --light-gray: #E8E8E8;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--primary-dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--primary-bg);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .header-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--primary-dark);
+        }
+
+        .header-logo-text {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .header-logo-subtext {
+            font-size: 12px;
+            color: var(--primary-brown);
+            font-weight: 700;
+        }
+
+        .header-menu-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary-dark);
+        }
+
+        .header-language {
+            border: 1px solid var(--primary-dark);
+            border-radius: 8px;
+            padding: 6px 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            background-color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .hero-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--primary-dark);
+            line-height: 1.3;
+        }
+
+        .hero-description {
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .btn-menu {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-menu:hover {
+            background-color: var(--primary-brown);
+            color: var(--white);
+        }
+
+        /* Carousel Section */
+        .carousel-section {
+            padding: 30px 20px;
+        }
+
+        .carousel-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--primary-dark);
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .product-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .owl-carousel .owl-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .owl-carousel .owl-nav button {
+            pointer-events: all;
+            background-color: rgba(0,0,0,0.3) !important;
+            color: var(--white) !important;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            border: none;
+            transition: background-color 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .owl-carousel .owl-nav button:hover {
+            background-color: rgba(0,0,0,0.6) !important;
+        }
+
+        .owl-carousel .owl-dots {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .owl-carousel .owl-dots .owl-dot {
+            display: inline-block;
+            height: 8px;
+            width: 8px;
+            margin: 0 5px;
+            background-color: var(--light-gray);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .owl-carousel .owl-dots .owl-dot.active {
+            background-color: var(--primary-dark);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 30px 20px;
+            background-color: var(--white);
+            border-radius: 12px 12px 0 0;
+            margin: 30px 0 0 0;
+        }
+
+        .contact-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+            text-align: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: var(--primary-dark);
+        }
+
+        .contact-item-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-bg);
+            border-radius: 8px;
+            font-size: 20px;
+        }
+
+        .contact-text {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 2px;
+        }
+
+        .contact-value {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .social-tiktok {
+            background-color: #000;
+            color: var(--white);
+            border: 2px solid #25F4EE;
+        }
+
+        .social-facebook {
+            background-color: #1877F2;
+            color: var(--white);
+        }
+
+        .social-instagram {
+            background: linear-gradient(45deg, #F09433 0%, #E6683C 25%, #DC2743 50%, #CC2366 75%, #BC1888 100%);
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 20px;
+            }
+
+            .hero-description {
+                font-size: 13px;
+            }
+
+            .carousel-title {
+                font-size: 18px;
+            }
+
+            .contact-title {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header {
+                padding: 12px 15px;
+            }
+
+            .hero-image {
+                max-height: 250px;
+            }
+
+            .hero-title {
+                font-size: 18px;
+            }
+
+            .product-card {
+                padding: 10px;
+            }
+
+            .product-image {
+                height: 140px;
+            }
+
+            .product-name {
+                font-size: 13px;
+            }
+
+            .owl-carousel .owl-nav button {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+                margin: 0 5px;
+            }
+
+            .contact-section {
+                padding: 20px 15px;
+            }
+
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <button class="header-menu-btn">
+            <i class="ti ti-menu-2"></i>
+        </button>
+        <a href="#" class="header-logo">
+            <div class="header-logo-text">BЯ bibifood</div>
+            <div class="header-logo-subtext">bibi</div>
+        </a>
+        <div class="header-language">
+            <i class="ti ti-world"></i>
+            <span>VN/KR</span>
+            <i class="ti ti-chevron-down"></i>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc46e?w=500&h=300&fit=crop" alt="BiBiFood Hero" class="hero-image">
+        <h1 class="hero-title">Mang vị Việt, gửi yêu thương 🇻🇳 🇰🇷</h1>
+        <p class="hero-description">Khám phá bộ sưu tập Giò, Chả, Lạp xưởng và Nem lụi gia truyền từ bibifood.</p>
+        <button class="btn-menu" onclick="document.querySelector('.carousel-section').scrollIntoView({behavior: 'smooth'})">Menu sản phẩm</button>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="carousel-section">
+        <h2 class="carousel-title">Sản phẩm nổi bật</h2>
+        <div class="owl-carousel owl-theme" id="productCarousel">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561261?w=300&h=200&fit=crop" alt="Giò bò" class="product-image">
+                <p class="product-name">Giò bò</p>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1561060526-4682cf9c13a0?w=300&h=200&fit=crop" alt="Xúc xích gà" class="product-image">
+                <p class="product-name">Xúc xích gà</p>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1631671748365-92bda9a1b1e0?w=300&h=200&fit=crop" alt="Giò heo" class="product-image">
+                <p class="product-name">Giò heo</p>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1504674900669-f1a72f4c7f79?w=300&h=200&fit=crop" alt="Xúc xích thường" class="product-image">
+                <p class="product-name">Xúc xích thường</p>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1632811154409-ef92b36419f9?w=300&h=200&fit=crop" alt="Nem lụi" class="product-image">
+                <p class="product-name">Nem lụi</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h2 class="contact-title">Thông tin liên hệ chi tiết</h2>
+        
+        <div class="contact-item">
+            <div class="contact-item-icon">
+                <i class="ti ti-phone"></i>
+            </div>
+            <div class="contact-text">
+                <div class="contact-label">Hotline</div>
+                <div class="contact-value">010-2616-2689 - Gọi ngay</div>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://tiktok.com" class="social-icon social-tiktok" title="TikTok">
+                <i class="ti ti-brand-tiktok"></i>
+            </a>
+            <a href="https://facebook.com" class="social-icon social-facebook" title="Facebook">
+                <i class="ti ti-brand-facebook"></i>
+            </a>
+            <a href="https://instagram.com" class="social-icon social-instagram" title="Instagram">
+                <i class="ti ti-brand-instagram"></i>
+            </a>
+        </div>
+
+        <div class="contact-item">
+            <div class="contact-item-icon">
+                <i class="ti ti-world"></i>
+            </div>
+            <div class="contact-text">
+                <div class="contact-value">bibifood.com</div>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <div class="contact-item-icon">
+                <i class="ti ti-mail"></i>
+            </div>
+            <div class="contact-text">
+                <div class="contact-value">bibifood2026@gmail.com</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- jQuery (required for Owl Carousel) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            $('#productCarousel').owlCarousel({
+                loop: true,
+                margin: 15,
+                nav: true,
+                dots: true,
+                autoplay: false,
+                navText: ['<i class="ti ti-chevron-left"></i>', '<i class="ti ti-chevron-right"></i>'],
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    576: {
+                        items: 2
+                    },
+                    768: {
+                        items: 3
+                    },
+                    992: {
+                        items: 4
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
