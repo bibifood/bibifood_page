@@ -11,8 +11,8 @@
     <!-- Pretendard font (giống yatomode.com) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.css">
 
-    <!-- Fredoka font (dùng cho chữ "bibifood" trong logo, giống form chữ logo hình) -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&display=swap">
+    <!-- Sora font (dùng cho chữ "bibifood" trong logo, giống form chữ logo hình) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400&display=swap">
 
     <style>
         * {
@@ -71,7 +71,7 @@
             font-weight: 700;
             line-height: 1.2;
             display: inline-flex;
-            align-items: baseline;
+            align-items: flex-end;
             gap: 2px;
             white-space: nowrap;
         }
@@ -81,9 +81,10 @@
             align-items: flex-start;
             flex-shrink: 0;
             position: relative;
-            height: 1.15em;
+            height: 1.05em;
             aspect-ratio: 779 / 520;
             overflow: hidden;
+            margin-bottom: 0.1em;
         }
 
         .header-logo-bb-img {
@@ -92,14 +93,17 @@
             left: 0;
             width: 100%;
             height: auto;
-            mix-blend-mode: multiply;
+        }
+
+        .header .header-logo-bb {
+            margin-bottom: calc(0.1em + 2px);
         }
 
         .header-logo-brand {
             margin-left: 5px;
             color: var(--primary-dark);
-            font-family: 'Fredoka', 'Pretendard', sans-serif;
-            font-weight: 600;
+            font-family: 'Sora', 'Pretendard', sans-serif;
+            font-weight: 400;
             letter-spacing: 1px;
         }
 
@@ -860,23 +864,25 @@
         .order-workflow-btn {
             display: block;
             width: 100%;
-            border: none;
+            border: 1px solid transparent;
             border-radius: 8px;
-            padding: 12px;
-            font-size: 15px;
+            padding: 12px 8px;
+            font-size: 14px;
             font-weight: 700;
             cursor: pointer;
+            white-space: nowrap;
         }
 
         .order-workflow-btn.retail-btn {
             background-color: var(--call-green);
             color: var(--white);
+            border-color: var(--call-green);
         }
 
         .order-workflow-btn.wholesale-btn {
             background-color: var(--white);
             color: var(--primary-brown);
-            border: 1px solid var(--primary-brown);
+            border-color: var(--primary-brown);
         }
 
         .order-workflow-steps {
@@ -892,6 +898,79 @@
         .order-workflow-steps .step.active {
             color: var(--primary-brown);
             font-weight: 700;
+        }
+
+        /* Coming Soon Confirm Modal */
+        .coming-soon-backdrop {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0,0,0,0.55);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 220;
+        }
+
+        .coming-soon-backdrop.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .coming-soon-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -40%);
+            width: 320px;
+            max-width: 90%;
+            background-color: var(--white);
+            border-radius: 16px;
+            padding: 24px 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 221;
+            text-align: center;
+        }
+
+        .coming-soon-modal.open {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%);
+        }
+
+        .coming-soon-text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--primary-dark);
+            margin: 0 0 20px;
+        }
+
+        .coming-soon-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .coming-soon-btn {
+            flex: 1;
+            border-radius: 8px;
+            padding: 12px 8px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .coming-soon-btn.no-btn {
+            background-color: var(--white);
+            color: var(--primary-brown);
+            border-color: var(--primary-brown);
+        }
+
+        .coming-soon-btn.yes-btn {
+            background-color: var(--primary-brown);
+            color: var(--white);
+            border-color: var(--primary-brown);
         }
 
         /* Contact Section */
@@ -1499,6 +1578,28 @@
                 gap: 12px;
                 font-size: 24px;
             }
+
+            /* Coming Soon Confirm Modal - phóng to trên màn hình lớn */
+            .coming-soon-modal {
+                width: 560px;
+                border-radius: 32px;
+                padding: 44px 40px;
+            }
+
+            .coming-soon-text {
+                font-size: 26px;
+                margin: 0 0 32px;
+            }
+
+            .coming-soon-actions {
+                gap: 20px;
+            }
+
+            .coming-soon-btn {
+                border-radius: 16px;
+                padding: 20px;
+                font-size: 26px;
+            }
         }
     </style>
 </head>
@@ -1975,6 +2076,16 @@
             </div>
         </div>
 
+        <!-- Coming Soon Confirm Modal -->
+        <div class="coming-soon-backdrop" id="comingSoonBackdrop"></div>
+        <div class="coming-soon-modal" id="comingSoonModal">
+            <p class="coming-soon-text" data-i18n="coming_soon_text">Phần này chúng tôi vẫn đang trong quá trình chuẩn bị. Bạn có muốn kết nối với nhân viên bán hàng bằng Facebook không?</p>
+            <div class="coming-soon-actions">
+                <button class="coming-soon-btn no-btn" id="comingSoonNoBtn" data-i18n="coming_soon_no">Không</button>
+                <button class="coming-soon-btn yes-btn" id="comingSoonYesBtn" data-i18n="coming_soon_yes">Có</button>
+            </div>
+        </div>
+
         <!-- Product Detail Modal -->
         <div class="product-modal-backdrop" id="productModalBackdrop"></div>
         <div class="product-modal" id="productModal">
@@ -2134,7 +2245,10 @@
                     order_wf_step1: 'Chọn hình thức',
                     order_wf_step2: 'Thêm sản phẩm',
                     order_wf_step3: 'Kiểm tra điều kiện',
-                    order_wf_step4: 'Thanh toán'
+                    order_wf_step4: 'Thanh toán',
+                    coming_soon_text: 'Phần này chúng tôi vẫn đang trong quá trình chuẩn bị. Bạn có muốn kết nối với nhân viên bán hàng bằng Facebook không?',
+                    coming_soon_no: 'Không',
+                    coming_soon_yes: 'Có'
                 },
                 ko: {
                     nav_home: '홈',
@@ -2221,7 +2335,10 @@
                     order_wf_step1: '방식 선택',
                     order_wf_step2: '상품 추가',
                     order_wf_step3: '조건 확인',
-                    order_wf_step4: '결제'
+                    order_wf_step4: '결제',
+                    coming_soon_text: '이 부분은 아직 준비 중입니다. 페이스북으로 담당 직원과 연결해 드릴까요?',
+                    coming_soon_no: '아니요',
+                    coming_soon_yes: '네'
                 }
             };
 
@@ -2495,16 +2612,41 @@
                 modal.classList.remove('open');
             }
 
-            function goToContact() {
-                closeOrderWorkflow();
-                document.querySelector('.contact-section').scrollIntoView({ behavior: 'smooth' });
-            }
-
             if (openBtn) openBtn.addEventListener('click', openOrderWorkflow);
             closeBtn.addEventListener('click', closeOrderWorkflow);
             backdrop.addEventListener('click', closeOrderWorkflow);
-            retailBtn.addEventListener('click', goToContact);
-            wholesaleBtn.addEventListener('click', goToContact);
+            retailBtn.addEventListener('click', function () {
+                closeOrderWorkflow();
+                openComingSoon();
+            });
+            wholesaleBtn.addEventListener('click', function () {
+                closeOrderWorkflow();
+                openComingSoon();
+            });
+        })();
+
+        (function () {
+            var backdrop = document.getElementById('comingSoonBackdrop');
+            var modal = document.getElementById('comingSoonModal');
+            var noBtn = document.getElementById('comingSoonNoBtn');
+            var yesBtn = document.getElementById('comingSoonYesBtn');
+
+            window.openComingSoon = function () {
+                backdrop.classList.add('open');
+                modal.classList.add('open');
+            };
+
+            function closeComingSoon() {
+                backdrop.classList.remove('open');
+                modal.classList.remove('open');
+            }
+
+            noBtn.addEventListener('click', closeComingSoon);
+            backdrop.addEventListener('click', closeComingSoon);
+            yesBtn.addEventListener('click', function () {
+                window.open('https://m.me/bibifood', '_blank', 'noopener');
+                closeComingSoon();
+            });
         })();
 
         (function () {
