@@ -1175,6 +1175,13 @@
             aspect-ratio: 4 / 3;
         }
 
+        #storyVideo {
+            cursor: pointer;
+            aspect-ratio: 16 / 9;
+            object-fit: contain;
+            background: #000;
+        }
+
         .story-text {
             flex: 1 1 260px;
             color: #555;
@@ -1692,6 +1699,7 @@
                 <button class="category-filter-btn" data-filter="xucxich" data-i18n="filter_xucxich">Xúc xích</button>
                 <button class="category-filter-btn" data-filter="nemlui" data-i18n="filter_nemlui">Nem lụi</button>
                 <button class="category-filter-btn" data-filter="kho" data-i18n="filter_kho">Khô</button>
+                <button class="category-filter-btn" data-filter="lapxuong" data-i18n="filter_lapxuong">Lạp xưởng</button>
             </div>
             <div class="carousel-viewport">
                 <button class="carousel-nav-btn carousel-nav-prev" aria-label="Trước"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 6 9 12 15 18"/></svg></button>
@@ -1802,6 +1810,15 @@
                         <p class="product-price">10,000 ₩</p>
                                 </div>
                             </div>
+                            <div class="product-card" data-category="lapxuong">
+                                <div class="product-image-wrap">
+                                    <img src="lap_xuong.jfif" alt="Lạp xưởng" class="product-image">
+                                </div>
+                                <div class="product-info">
+                                    <p class="product-name" data-i18n="product_lap_xuong">Lạp xưởng</p>
+                        <p class="product-price">10,000 ₩</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1816,7 +1833,7 @@
             <span class="section-label" data-i18n="story_label">Câu chuyện thương hiệu</span>
             <h2 class="section-title" data-i18n="story_title">Giới thiệu bibifood</h2>
             <div class="story-content">
-                <img src="https://picsum.photos/seed/bibifood-story/600/450" alt="bibifood story" class="story-image">
+                <video id="storyVideo" class="story-image" src="bibifood_story.mp4" autoplay loop playsinline></video>
                 <p class="story-text" data-i18n="story_text">bibifood ra đời từ nỗi nhớ hương vị quê nhà của những người con xa xứ. Chúng tôi tự tay chế biến Giò, Chả, Xúc xích, Nem lụi và Khô theo công thức gia truyền, dùng nguyên liệu chọn lọc và quy trình đóng gói an toàn, để mỗi bữa cơm của cộng đồng người Việt tại Hàn Quốc luôn đậm đà, ấm áp như ở nhà.</p>
             </div>
         </section>
@@ -1944,6 +1961,7 @@
                 <button class="category-filter-btn" data-filter="xucxich" data-i18n="filter_xucxich">Xúc xích</button>
                 <button class="category-filter-btn" data-filter="nemlui" data-i18n="filter_nemlui">Nem lụi</button>
                 <button class="category-filter-btn" data-filter="kho" data-i18n="filter_kho">Khô</button>
+                <button class="category-filter-btn" data-filter="lapxuong" data-i18n="filter_lapxuong">Lạp xưởng</button>
             </div>
             <div class="all-products-grid">
                 <div class="product-card" data-category="gio">
@@ -2033,6 +2051,15 @@
                     </div>
                     <div class="product-info">
                         <p class="product-name" data-i18n="product_kho_bo">Khô bò</p>
+                        <p class="product-price">10,000 ₩</p>
+                    </div>
+                </div>
+                <div class="product-card" data-category="lapxuong">
+                    <div class="product-image-wrap">
+                        <img src="lap_xuong.jfif" alt="Lạp xưởng" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name" data-i18n="product_lap_xuong">Lạp xưởng</p>
                         <p class="product-price">10,000 ₩</p>
                     </div>
                 </div>
@@ -2178,6 +2205,7 @@
                     product_xx_phomai: 'Xúc xích phô mai',
                     product_kho_ga: 'Khô gà',
                     product_kho_bo: 'Khô bò',
+                    product_lap_xuong: 'Lạp xưởng',
                     contact_title: 'Thông tin liên hệ chi tiết',
                     contact_phone: '010-2616-2689 - Gọi ngay',
                     footer_text: '© 2026 bibifood. All rights reserved.',
@@ -2192,6 +2220,7 @@
                     filter_xucxich: 'Xúc xích',
                     filter_nemlui: 'Nem lụi',
                     filter_kho: 'Khô',
+                    filter_lapxuong: 'Lạp xưởng',
                     carousel_title: 'Sản phẩm',
                     view_all_btn: 'Xem tất cả',
                     feature_taste_title: 'Hương vị truyền thống',
@@ -2268,6 +2297,7 @@
                     product_xx_phomai: '치즈 소시지 (Xúc xích phô mai)',
                     product_kho_ga: '닭고기 육포 (Khô gà)',
                     product_kho_bo: '소고기 육포 (Khô bò)',
+                    product_lap_xuong: '랍쓰엉 (Lạp xưởng)',
                     contact_title: '상세 연락처 정보',
                     contact_phone: '010-2616-2689 - 지금 전화하기',
                     footer_text: '© 2026 bibifood. 모든 권리 보유.',
@@ -2282,6 +2312,7 @@
                     filter_xucxich: '소시지 (Xúc xích)',
                     filter_nemlui: '넴루이 (Nem lụi)',
                     filter_kho: '육포 (Khô)',
+                    filter_lapxuong: '랍쓰엉 (Lạp xưởng)',
                     carousel_title: '상품',
                     view_all_btn: '전체 보기',
                     feature_taste_title: '전통의 맛',
@@ -2514,6 +2545,18 @@
                         serving: ['그대로 안주나 간식으로', '파파야, 망고 무침에 찢어 넣어서', '맥주, 음료와 함께'],
                         storage: ['개봉 후 서늘하고 건조한 곳: 1-2주', '냉장 보관 시 더 오래 보관 가능', '개봉 후 밀봉하여 보관']
                     }
+                },
+                product_lap_xuong: {
+                    vi: {
+                        ingredients: ['Làm từ thịt lợn và mỡ lợn (khoảng 80-90%), gia vị lên men, rượu, tỏi', 'Mùi vị đậm đà, hơi ngọt, thơm rượu và gia vị đặc trưng', 'Kết cấu dai, béo nhẹ, thơm khi nướng hoặc chiên'],
+                        serving: ['Nướng trên than hoặc chảo cho thơm', 'Ăn kèm cơm trắng, dưa chua, rau sống', 'Chiên sơ rồi cắt lát chấm tương ớt', 'Ăn kèm bia, làm món nhắm'],
+                        storage: ['Ở 2-4°C: 1-2 tuần', '-18°C trở xuống: 2-3 tháng', 'Treo nơi khô ráo, thoáng gió nếu chưa mở gói']
+                    },
+                    ko: {
+                        ingredients: ['돼지고기와 돼지기름(약 80-90%), 발효 양념, 술, 마늘로 제조', '진하고 약간 단맛이 나며 술과 향신료의 독특한 향', '쫄깃하고 살짝 기름지며 구우면 더 향긋함'],
+                        serving: ['숯불이나 팬에 구워서 향긋하게', '흰쌀밥, 절임 채소, 생채소와 함께', '살짝 튀긴 후 썰어 칠리소스에 찍어서', '맥주와 함께 안주로'],
+                        storage: ['2-4°C: 1-2주', '-18°C 이하: 2-3개월', '개봉 전에는 건조하고 통풍이 잘 되는 곳에 걸어서 보관']
+                    }
                 }
             };
 
@@ -2725,6 +2768,37 @@
         }
         setupCategoryFilter('categoryFilterHome', '.carousel-section', '.carousel-section');
         setupCategoryFilter('categoryFilterModal', '.all-products-modal');
+
+        (function () {
+            var video = document.getElementById('storyVideo');
+            if (!video) return;
+
+            function tryPlayWithSound() {
+                video.muted = false;
+                var playPromise = video.play();
+                if (playPromise && playPromise.catch) {
+                    playPromise.catch(function () {
+                        video.muted = true;
+                        video.play();
+                    });
+                }
+            }
+            tryPlayWithSound();
+
+            // click 1: mute, click 2: pause, click 3: play again (unmuted), then cycle repeats
+            var clickState = 0;
+            video.addEventListener('click', function () {
+                clickState = (clickState + 1) % 3;
+                if (clickState === 1) {
+                    video.muted = true;
+                } else if (clickState === 2) {
+                    video.pause();
+                } else {
+                    video.muted = false;
+                    video.play();
+                }
+            });
+        })();
     </script>
 </body>
 </html>
