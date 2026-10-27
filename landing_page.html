@@ -373,6 +373,7 @@
         .product-grid-split {
             flex-direction: row;
             align-items: stretch;
+            justify-content: center;
         }
 
         .product-col {
@@ -1695,11 +1696,11 @@
             <div class="category-filter" id="categoryFilterHome">
                 <button class="category-filter-btn active" data-filter="all" data-i18n="filter_all">Tất cả</button>
                 <button class="category-filter-btn" data-filter="gio" data-i18n="filter_gio">Giò</button>
-                <button class="category-filter-btn" data-filter="cha" data-i18n="filter_cha">Chả</button>
                 <button class="category-filter-btn" data-filter="xucxich" data-i18n="filter_xucxich">Xúc xích</button>
-                <button class="category-filter-btn" data-filter="nemlui" data-i18n="filter_nemlui">Nem lụi</button>
+                <button class="category-filter-btn" data-filter="nem" data-i18n="filter_nem">Nem</button>
                 <button class="category-filter-btn" data-filter="kho" data-i18n="filter_kho">Khô</button>
-                <button class="category-filter-btn" data-filter="lapxuong" data-i18n="filter_lapxuong">Lạp xưởng</button>
+                <button class="category-filter-btn" data-filter="banhtrung" data-i18n="filter_banhtrung">Bánh chưng</button>
+                <button class="category-filter-btn" data-filter="khac" data-i18n="filter_khac">Khác</button>
             </div>
             <div class="carousel-viewport">
                 <button class="carousel-nav-btn carousel-nav-prev" aria-label="Trước"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 6 9 12 15 18"/></svg></button>
@@ -1724,8 +1725,6 @@
                         <p class="product-price">10,000 ₩</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="product-col">
                             <div class="product-card" data-category="xucxich">
                                 <div class="product-image-wrap">
                                     <img src="xucxich_ga.jpg" alt="Xúc xích gà" class="product-image">
@@ -1735,6 +1734,8 @@
                         <p class="product-price">10,000 ₩</p>
                                 </div>
                             </div>
+                        </div>
+                        <div class="product-col">
                             <div class="product-card" data-category="xucxich">
                                 <div class="product-image-wrap">
                                     <img src="xuc_xich_thuong.jfif" alt="Xúc xích thường" class="product-image">
@@ -1744,11 +1745,7 @@
                         <p class="product-price">10,000 ₩</p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="product-grid product-grid-split">
-                        <div class="product-col">
-                            <div class="product-card" data-category="nemlui">
+                            <div class="product-card" data-category="nem">
                                 <div class="product-image-wrap">
                                     <img src="nem_lui.JPG" alt="Nem lụi" class="product-image">
                                 </div>
@@ -1767,8 +1764,10 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="product-grid product-grid-split">
                         <div class="product-col">
-                            <div class="product-card" data-category="cha">
+                            <div class="product-card" data-category="gio">
                                 <div class="product-image-wrap">
                                     <img src="cha_lua.jpg" alt="Chả lụa" class="product-image">
                                 </div>
@@ -1786,10 +1785,6 @@
                         <p class="product-price">10,000 ₩</p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="product-grid product-grid-split">
-                        <div class="product-col">
                             <div class="product-card" data-category="kho">
                                 <div class="product-image-wrap">
                                     <img src="kho_ga.jpg" alt="Khô gà" class="product-image">
@@ -1810,12 +1805,81 @@
                         <p class="product-price">10,000 ₩</p>
                                 </div>
                             </div>
-                            <div class="product-card" data-category="lapxuong">
+                            <div class="product-card" data-category="xucxich">
                                 <div class="product-image-wrap">
                                     <img src="lap_xuong.jfif" alt="Lạp xưởng" class="product-image">
                                 </div>
                                 <div class="product-info">
                                     <p class="product-name" data-i18n="product_lap_xuong">Lạp xưởng</p>
+                        <p class="product-price">10,000 ₩</p>
+                                </div>
+                            </div>
+                            <div class="product-card" data-category="banhtrung">
+                                <div class="product-image-wrap">
+                                    <img src="ban_trung.jpg" alt="Bánh chưng" class="product-image">
+                                </div>
+                                <div class="product-info">
+                                    <p class="product-name" data-i18n="product_banh_trung">Bánh chưng</p>
+                        <p class="product-price">10,000 ₩</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-grid product-grid-split">
+                        <div class="product-col">
+                            <div class="product-card" data-category="gio">
+                                <div class="product-image-wrap">
+                                    <img src="jam_bong.jfif" alt="Jambon" class="product-image">
+                                </div>
+                                <div class="product-info">
+                                    <p class="product-name" data-i18n="product_jam_bong">Jambon</p>
+                        <p class="product-price">10,000 ₩</p>
+                                </div>
+                            </div>
+                            <div class="product-card" data-category="nem">
+                                <div class="product-image-wrap">
+                                    <img src="nem_chua_thanh_hoa.jfif" alt="Nem chua Thanh Hóa" class="product-image">
+                                </div>
+                                <div class="product-info">
+                                    <p class="product-name" data-i18n="product_nem_chua">Nem chua Thanh Hóa</p>
+                        <p class="product-price">10,000 ₩</p>
+                                </div>
+                            </div>
+                            <div class="product-card" data-category="gio">
+                                <div class="product-image-wrap">
+                                    <img src="gio_song.jfif" alt="Giò sống" class="product-image">
+                                </div>
+                                <div class="product-info">
+                                    <p class="product-name" data-i18n="product_gio_song">Giò sống</p>
+                        <p class="product-price">10,000 ₩</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-col">
+                            <div class="product-card" data-category="kho">
+                                <div class="product-image-wrap">
+                                    <img src="ruoc.jfif" alt="Ruốc" class="product-image">
+                                </div>
+                                <div class="product-info">
+                                    <p class="product-name" data-i18n="product_ruoc">Ruốc</p>
+                        <p class="product-price">10,000 ₩</p>
+                                </div>
+                            </div>
+                            <div class="product-card" data-category="khac">
+                                <div class="product-image-wrap">
+                                    <img src="pate.jfif" alt="Pate" class="product-image">
+                                </div>
+                                <div class="product-info">
+                                    <p class="product-name" data-i18n="product_pate">Pate</p>
+                        <p class="product-price">10,000 ₩</p>
+                                </div>
+                            </div>
+                            <div class="product-card" data-category="kho">
+                                <div class="product-image-wrap">
+                                    <img src="kho_lon.jfif" alt="Khô lợn" class="product-image">
+                                </div>
+                                <div class="product-info">
+                                    <p class="product-name" data-i18n="product_kho_lon">Khô lợn</p>
                         <p class="product-price">10,000 ₩</p>
                                 </div>
                             </div>
@@ -1957,11 +2021,11 @@
             <div class="category-filter" id="categoryFilterModal">
                 <button class="category-filter-btn active" data-filter="all" data-i18n="filter_all">Tất cả</button>
                 <button class="category-filter-btn" data-filter="gio" data-i18n="filter_gio">Giò</button>
-                <button class="category-filter-btn" data-filter="cha" data-i18n="filter_cha">Chả</button>
                 <button class="category-filter-btn" data-filter="xucxich" data-i18n="filter_xucxich">Xúc xích</button>
-                <button class="category-filter-btn" data-filter="nemlui" data-i18n="filter_nemlui">Nem lụi</button>
+                <button class="category-filter-btn" data-filter="nem" data-i18n="filter_nem">Nem</button>
                 <button class="category-filter-btn" data-filter="kho" data-i18n="filter_kho">Khô</button>
-                <button class="category-filter-btn" data-filter="lapxuong" data-i18n="filter_lapxuong">Lạp xưởng</button>
+                <button class="category-filter-btn" data-filter="banhtrung" data-i18n="filter_banhtrung">Bánh chưng</button>
+                <button class="category-filter-btn" data-filter="khac" data-i18n="filter_khac">Khác</button>
             </div>
             <div class="all-products-grid">
                 <div class="product-card" data-category="gio">
@@ -2000,7 +2064,7 @@
                         <p class="product-price">10,000 ₩</p>
                     </div>
                 </div>
-                <div class="product-card" data-category="nemlui">
+                <div class="product-card" data-category="nem">
                     <div class="product-image-wrap">
                         <img src="nem_lui.JPG" alt="Nem lụi" class="product-image">
                     </div>
@@ -2018,7 +2082,7 @@
                         <p class="product-price">10,000 ₩</p>
                     </div>
                 </div>
-                <div class="product-card" data-category="cha">
+                <div class="product-card" data-category="gio">
                     <div class="product-image-wrap">
                         <img src="cha_lua.jpg" alt="Chả lụa" class="product-image">
                     </div>
@@ -2054,12 +2118,75 @@
                         <p class="product-price">10,000 ₩</p>
                     </div>
                 </div>
-                <div class="product-card" data-category="lapxuong">
+                <div class="product-card" data-category="xucxich">
                     <div class="product-image-wrap">
                         <img src="lap_xuong.jfif" alt="Lạp xưởng" class="product-image">
                     </div>
                     <div class="product-info">
                         <p class="product-name" data-i18n="product_lap_xuong">Lạp xưởng</p>
+                        <p class="product-price">10,000 ₩</p>
+                    </div>
+                </div>
+                <div class="product-card" data-category="banhtrung">
+                    <div class="product-image-wrap">
+                        <img src="ban_trung.jpg" alt="Bánh chưng" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name" data-i18n="product_banh_trung">Bánh chưng</p>
+                        <p class="product-price">10,000 ₩</p>
+                    </div>
+                </div>
+                <div class="product-card" data-category="gio">
+                    <div class="product-image-wrap">
+                        <img src="jam_bong.jfif" alt="Jambon" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name" data-i18n="product_jam_bong">Jambon</p>
+                        <p class="product-price">10,000 ₩</p>
+                    </div>
+                </div>
+                <div class="product-card" data-category="nem">
+                    <div class="product-image-wrap">
+                        <img src="nem_chua_thanh_hoa.jfif" alt="Nem chua Thanh Hóa" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name" data-i18n="product_nem_chua">Nem chua Thanh Hóa</p>
+                        <p class="product-price">10,000 ₩</p>
+                    </div>
+                </div>
+                <div class="product-card" data-category="gio">
+                    <div class="product-image-wrap">
+                        <img src="gio_song.jfif" alt="Giò sống" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name" data-i18n="product_gio_song">Giò sống</p>
+                        <p class="product-price">10,000 ₩</p>
+                    </div>
+                </div>
+                <div class="product-card" data-category="kho">
+                    <div class="product-image-wrap">
+                        <img src="ruoc.jfif" alt="Ruốc" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name" data-i18n="product_ruoc">Ruốc</p>
+                        <p class="product-price">10,000 ₩</p>
+                    </div>
+                </div>
+                <div class="product-card" data-category="khac">
+                    <div class="product-image-wrap">
+                        <img src="pate.jfif" alt="Pate" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name" data-i18n="product_pate">Pate</p>
+                        <p class="product-price">10,000 ₩</p>
+                    </div>
+                </div>
+                <div class="product-card" data-category="kho">
+                    <div class="product-image-wrap">
+                        <img src="kho_lon.jfif" alt="Khô lợn" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name" data-i18n="product_kho_lon">Khô lợn</p>
                         <p class="product-price">10,000 ₩</p>
                     </div>
                 </div>
@@ -2129,7 +2256,7 @@
                     <ul class="product-modal-list" id="productModalIngredients"></ul>
                 </div>
                 <div class="product-modal-section">
-                    <p class="product-modal-section-title" data-i18n="detail_serving_title">Ăn với gì?</p>
+                    <p class="product-modal-section-title" data-i18n="detail_serving_title">Cách sử dụng</p>
                     <ul class="product-modal-list" id="productModalServing"></ul>
                 </div>
                 <div class="product-modal-section">
@@ -2206,21 +2333,28 @@
                     product_kho_ga: 'Khô gà',
                     product_kho_bo: 'Khô bò',
                     product_lap_xuong: 'Lạp xưởng',
+                    product_banh_trung: 'Bánh chưng',
+                    product_jam_bong: 'Jambon',
+                    product_nem_chua: 'Nem chua Thanh Hóa',
+                    product_ruoc: 'Ruốc',
+                    product_pate: 'Pate',
+                    product_gio_song: 'Giò sống',
+                    product_kho_lon: 'Khô lợn',
                     contact_title: 'Thông tin liên hệ chi tiết',
                     contact_phone: '010-2616-2689 - Gọi ngay',
                     footer_text: '© 2026 bibifood. All rights reserved.',
                     modal_price_label: 'Giá',
                     detail_ingredients_title: 'Thành phần & Mùi vị',
-                    detail_serving_title: 'Ăn với gì?',
+                    detail_serving_title: 'Cách sử dụng',
                     detail_storage_title: 'Bảo quản',
                     all_products_title: 'Tất cả sản phẩm',
                     filter_all: 'Tất cả',
                     filter_gio: 'Giò',
-                    filter_cha: 'Chả',
                     filter_xucxich: 'Xúc xích',
-                    filter_nemlui: 'Nem lụi',
+                    filter_nem: 'Nem',
                     filter_kho: 'Khô',
-                    filter_lapxuong: 'Lạp xưởng',
+                    filter_banhtrung: 'Bánh chưng',
+                    filter_khac: 'Khác',
                     carousel_title: 'Sản phẩm',
                     view_all_btn: 'Xem tất cả',
                     feature_taste_title: 'Hương vị truyền thống',
@@ -2298,21 +2432,28 @@
                     product_kho_ga: '닭고기 육포 (Khô gà)',
                     product_kho_bo: '소고기 육포 (Khô bò)',
                     product_lap_xuong: '랍쓰엉 (Lạp xưởng)',
+                    product_banh_trung: '바인 쯩 (Bánh chưng)',
+                    product_jam_bong: '잠봉 (Jambon)',
+                    product_nem_chua: '탄호아 넴쭈아 (Nem chua Thanh Hóa)',
+                    product_ruoc: '루옥 (Ruốc)',
+                    product_pate: '파테 (Pate)',
+                    product_gio_song: '지오 송 (Giò sống)',
+                    product_kho_lon: '돼지고기 육포 (Khô lợn)',
                     contact_title: '상세 연락처 정보',
                     contact_phone: '010-2616-2689 - 지금 전화하기',
                     footer_text: '© 2026 bibifood. 모든 권리 보유.',
                     modal_price_label: '가격',
                     detail_ingredients_title: '성분 & 맛',
-                    detail_serving_title: '무엇과 함께 먹나요?',
+                    detail_serving_title: '사용 방법',
                     detail_storage_title: '보관 방법',
                     all_products_title: '전체 상품',
                     filter_all: '전체',
                     filter_gio: '지오 (Giò)',
-                    filter_cha: '짜 (Chả)',
                     filter_xucxich: '소시지 (Xúc xích)',
-                    filter_nemlui: '넴루이 (Nem lụi)',
+                    filter_nem: '넴 (Nem)',
                     filter_kho: '육포 (Khô)',
-                    filter_lapxuong: '랍쓰엉 (Lạp xưởng)',
+                    filter_banhtrung: '바인 쯩 (Bánh chưng)',
+                    filter_khac: '기타',
                     carousel_title: '상품',
                     view_all_btn: '전체 보기',
                     feature_taste_title: '전통의 맛',
@@ -2428,134 +2569,218 @@
             var productDetails = {
                 product_gio_bo: {
                     vi: {
-                        ingredients: ['Làm từ thịt lợn (khoảng 70-80%), mỡ, gia vị, cà chua', 'Mùi vị đậm đà, thơm, hơi chua nhẹ từ cà chua và gia vị', 'Có độ mềm, thơm ngon nhất khi còn nóng'],
-                        serving: ['Bánh mì nóng với rau sống (dưa, cà chua, rau muống)', 'Cơm trắng với canh hay nước chấm', 'Bún, bánh cuốn, bánh tráng'],
-                        storage: ['Ở 2-4°C: 3-4 ngày', '-18°C trở xuống: 1-2 tháng', 'Bảo quản theo đúng hạn sử dụng của nhà sản xuất']
+                        ingredients: ['Thịt bò nạc 75%, mỡ lợn 25%', 'Hạt tiêu, tỏi, nước mắm cốt, đường, hạt nêm, bột ngọt', 'Gói trong lá chuối tươi'],
+                        serving: ['Chế biến: ăn trực tiếp', 'Ăn kèm: bánh mì, xôi, bánh cuốn, bún bò, bún riêu'],
+                        storage: ['Ngăn mát (2–5°C): 5–7 ngày', 'Ngăn đông (-18°C): 1–2 tháng']
                     },
                     ko: {
-                        ingredients: ['돼지고기(약 70-80%), 지방, 향신료, 토마토로 제조', '진하고 향긋하며 토마토와 향신료의 은은한 신맛', '따뜻할 때 가장 부드럽고 맛있음'],
-                        serving: ['따뜻한 바게트빵과 생채소(오이, 토마토, 공심채)', '흰쌀밥과 국 또는 소스', '분(쌀국수), 반꾸온, 반짱'],
-                        storage: ['2-4°C: 3-4일', '-18°C 이하: 1-2개월', '제조사의 유통기한을 반드시 준수']
+                        ingredients: ['소고기 살코기 75%, 돼지기름 25%', '후추, 마늘, 생선액젓(느억맘), 설탕, 조미료, 맛소금', '신선한 바나나잎으로 포장'],
+                        serving: ['조리법: 그대로 먹기', '곁들임: 바게트빵, 찹쌀밥, 반꾸온, 분보(쇠고기 쌀국수), 분리에우'],
+                        storage: ['냉장(2–5°C): 5–7일', '냉동(-18°C): 1–2개월']
                     }
                 },
                 product_gio_heo: {
                     vi: {
-                        ingredients: ['Làm từ thịt heo xay (khoảng 60-70%), mỡ lợn, gia vị, thuốc tây', 'Mùi vị thơm, mặn vừa, không chua như giò bò', 'Có độ mặn và mùi gia vị rõ ràng hơn'],
-                        serving: ['Bánh mì nóng, bánh mì sandwich', 'Cơm trắng với các món canh', 'Cắt lát ăn lạnh với rau sống', 'Nướng hoặc chiên thêm'],
-                        storage: ['Ở 2-4°C: 3-5 ngày', '-18°C trở xuống: 1-2 tháng', 'Nên để trong túi kín để không bị mất nước']
+                        ingredients: ['Thịt nạc 75%, mỡ 20%', 'Hạt tiêu, tỏi, nước mắm cốt, đường, hạt nêm, bột ngọt', 'Gói trong lá chuối tươi'],
+                        serving: ['Chế biến: ăn trực tiếp', 'Ăn kèm: bánh mì, xôi, bánh cuốn, bún bò, bún riêu'],
+                        storage: ['Ngăn mát (2–5°C): 5–7 ngày', 'Ngăn đông (-18°C): 1–2 tháng']
                     },
                     ko: {
-                        ingredients: ['간 돼지고기(약 60-70%), 돼지기름, 향신료, 첨가물로 제조', '향긋하고 짭짤하며 지오보처럼 시지 않음', '짠맛과 향신료 향이 더 뚜렷함'],
-                        serving: ['따뜻한 바게트빵, 반미 샌드위치', '흰쌀밥과 국 요리', '얇게 썰어 생채소와 차갑게', '구워서 또는 튀겨서 추가 조리'],
-                        storage: ['2-4°C: 3-5일', '-18°C 이하: 1-2개월', '수분 손실 방지를 위해 밀폐 보관 권장']
+                        ingredients: ['살코기 75%, 돼지기름 20%', '후추, 마늘, 생선액젓, 설탕, 조미료, 맛소금', '신선한 바나나잎으로 포장'],
+                        serving: ['조리법: 그대로 먹기', '곁들임: 바게트빵, 찹쌀밥, 반꾸온, 분보, 분리에우'],
+                        storage: ['냉장(2–5°C): 5–7일', '냉동(-18°C): 1–2개월']
                     }
                 },
                 product_xx_ga: {
                     vi: {
-                        ingredients: ['Làm từ thịt gà xay (khoảng 80-85%), mỡ ít, gia vị', 'Mùi vị nhẹ, thơm gà, ít béo hơn xúc xích thường', 'Lành mạnh hơn do ít chất béo'],
-                        serving: ['Bánh mì nóng với mayonnaise, sốt cà chua', 'Chiên rồi ăn với cơm', 'Nướng trên than hoặc bếp', 'Ăn lạnh với salad'],
-                        storage: ['Ở 2-4°C: 3-4 ngày', '-18°C trở xuống: 1-2 tháng', 'Tránh để ở nhiệt độ phòng']
+                        ingredients: ['Thịt ức gà 65%, mỡ heo hoặc dầu olive 15%', 'Muối, tiêu, đường, hạt nêm, tỏi, hành khô, bột bắp hoặc tinh bột khoai tây, vỏ collagen'],
+                        serving: ['Chế biến: áp chảo 5–7 phút, nồi chiên không dầu 160–180°C trong 8–10 phút', 'Ăn kèm: mì tôm, cơm chiên, bánh mì kẹp hot dog, salad'],
+                        storage: ['Ngăn mát (2–5°C): 3–5 ngày', 'Ngăn đông (-18°C): 1–3 tháng']
                     },
                     ko: {
-                        ingredients: ['간 닭고기(약 80-85%), 적은 지방, 향신료로 제조', '담백하고 닭고기 향이 나며 일반 소시지보다 덜 기름짐', '지방이 적어 더 건강함'],
-                        serving: ['마요네즈, 토마토소스를 곁들인 따뜻한 바게트빵', '튀긴 후 밥과 함께', '숯불이나 팬에 구워서', '샐러드와 차갑게'],
-                        storage: ['2-4°C: 3-4일', '-18°C 이하: 1-2개월', '실온 보관 피하기']
+                        ingredients: ['닭가슴살 65%, 돼지기름 또는 올리브오일 15%', '소금, 후추, 설탕, 조미료, 마늘, 건조양파, 옥수수전분 또는 감자전분, 콜라겐 케이싱'],
+                        serving: ['조리법: 팬에 5–7분 굽기, 에어프라이어 160–180°C에서 8–10분', '곁들임: 라면, 볶음밥, 핫도그빵, 샐러드'],
+                        storage: ['냉장(2–5°C): 3–5일', '냉동(-18°C): 1–3개월']
                     }
                 },
                 product_xx_thuong: {
                     vi: {
-                        ingredients: ['Làm từ thịt lợn + thịt bò (khoảng 60-70%), mỡ động vật, gia vị, chất bảo quản', 'Mùi vị đậm, mặn, thơm, độ béo cao', 'Vị kinh điển, quen thuộc'],
-                        serving: ['Bánh mì nóng, hot dog', 'Chiên, nướng hoặc luộc', 'Cắt lát ăn với cơm', 'Ăn lạnh hoặc nóng đều ngon'],
-                        storage: ['Ở 2-4°C: 3-4 ngày', '-18°C trở xuống: 1-2 tháng', 'Để trong vỏ nilon kín']
+                        ingredients: ['Thịt heo 65%, mỡ heo 20%', 'Muối, đường, tiêu, tỏi, bột ngọt, vỏ collagen'],
+                        serving: ['Chế biến: áp chảo 5–7 phút, nồi chiên không dầu 160–180°C trong 8–10 phút', 'Ăn kèm: mì tôm, cơm chiên, bánh mì kẹp hot dog, salad'],
+                        storage: ['Ngăn mát (2–5°C): 3–5 ngày', 'Ngăn đông (-18°C): 1–3 tháng']
                     },
                     ko: {
-                        ingredients: ['돼지고기+소고기(약 60-70%), 동물성 지방, 향신료, 보존료로 제조', '진하고 짭짤하며 향긋하고 기름짐이 높음', '익숙하고 클래식한 맛'],
-                        serving: ['따뜻한 바게트빵, 핫도그', '튀기거나 굽거나 삶아서', '얇게 썰어 밥과 함께', '차갑게 또는 뜨겁게 모두 맛있음'],
-                        storage: ['2-4°C: 3-4일', '-18°C 이하: 1-2개월', '밀폐된 비닐 포장에 보관']
+                        ingredients: ['돼지고기 65%, 돼지기름 20%', '소금, 설탕, 후추, 마늘, 조미료, 콜라겐 케이싱'],
+                        serving: ['조리법: 팬에 5–7분 굽기, 에어프라이어 160–180°C에서 8–10분', '곁들임: 라면, 볶음밥, 핫도그빵, 샐러드'],
+                        storage: ['냉장(2–5°C): 3–5일', '냉동(-18°C): 1–3개월']
                     }
                 },
                 product_nem_lui: {
                     vi: {
-                        ingredients: ['Làm từ thịt lợn (khoảng 50-60%), tiêu, ớt, tỏi, sả', 'Mùi vị cay, thơm sả, hành, độ mặn vừa', 'Thơm ngon, có vị nguyên bản của thịt nướng'],
-                        serving: ['Bánh tráng nướng, bánh cuốn', 'Rau sống (xà lách, cải, dưa cải)', 'Nước chấm tỏi ớt, nước mắm chua ngọt', 'Cơm trắng'],
-                        storage: ['Ở 2-4°C: 2-3 ngày (vì có gia vị tươi)', '-18°C trở xuống: 2-3 tuần', 'Tốt nhất nên ăn sớm vì có thành phần tươi']
+                        ingredients: ['Thịt heo xay nạc 70%, mỡ gáy 12,5%', 'Sả cây, hành khô, tỏi, tiêu, đường, nước mắm, dầu hào, bột năng, dầu điều'],
+                        serving: ['Chế biến: áp chảo 5–7 phút, nồi chiên không dầu 160–180°C trong 8–10 phút', 'Ăn kèm: ăn trực tiếp hoặc ăn kèm với bánh tráng quấn'],
+                        storage: ['Ngăn mát (2–5°C): 2–3 ngày', 'Ngăn đông (-18°C): 3–4 tuần']
                     },
                     ko: {
-                        ingredients: ['돼지고기(약 50-60%), 후추, 고추, 마늘, 레몬그라스로 제조', '맵고 레몬그라스와 양파 향이 나며 적당히 짠맛', '구운 고기 본연의 풍미가 살아있음'],
-                        serving: ['구운 라이스페이퍼, 반꾸온', '생채소(상추, 채소, 절임 채소)', '마늘고추 소스, 새콤달콤한 느억맘 소스', '흰쌀밥'],
-                        storage: ['2-4°C: 2-3일 (신선한 향신료 사용으로)', '-18°C 이하: 2-3주', '신선한 재료가 들어있어 빨리 먹는 것이 가장 좋음']
+                        ingredients: ['간 돼지고기 살코기 70%, 목살 지방 12.5%', '레몬그라스, 건조양파, 마늘, 후추, 설탕, 생선액젓, 오이스터소스, 감자전분, 아나토색소오일'],
+                        serving: ['조리법: 팬에 5–7분 굽기, 에어프라이어 160–180°C에서 8–10분', '곁들임: 그대로 먹거나 라이스페이퍼에 싸서'],
+                        storage: ['냉장(2–5°C): 2–3일', '냉동(-18°C): 3–4주']
                     }
                 },
                 product_gio_tai: {
                     vi: {
-                        ingredients: ['Làm từ thịt lợn nạc và tai heo (khoảng 60-70%), gia vị', 'Mùi vị giòn sần sật từ tai heo, thơm nhẹ, ít béo', 'Kết cấu đặc trưng, giòn hơn giò thường'],
-                        serving: ['Bánh mì nóng với rau sống', 'Cơm trắng với nước chấm', 'Cắt lát mỏng ăn kèm dưa chua'],
-                        storage: ['Ở 2-4°C: 3-4 ngày', '-18°C trở xuống: 1-2 tháng', 'Bảo quản theo đúng hạn sử dụng của nhà sản xuất']
+                        ingredients: ['Mỡ heo 15%, tai heo và thịt nạc heo 65%, tai heo 20%', 'Nước mắm cốt, hạt tiêu, muối, đường, hạt nêm', 'Gói trong lá chuối tươi'],
+                        serving: ['Chế biến: ăn trực tiếp', 'Ăn kèm: bánh mì, xôi, bánh cuốn, bún bò, bún riêu'],
+                        storage: ['Ngăn mát (2–5°C): 5–7 ngày', 'Ngăn đông (-18°C): 1–2 tháng']
                     },
                     ko: {
-                        ingredients: ['돼지고기 살코기와 돼지 귀(약 60-70%), 향신료로 제조', '돼지 귀 특유의 아삭한 식감, 은은한 향, 낮은 지방', '일반 지오보다 더 아삭한 식감이 특징'],
-                        serving: ['생채소를 곁들인 따뜻한 바게트빵', '흰쌀밥과 소스', '얇게 썰어 절임 채소와 함께'],
-                        storage: ['2-4°C: 3-4일', '-18°C 이하: 1-2개월', '제조사의 유통기한을 반드시 준수']
+                        ingredients: ['돼지기름 15%, 돼지귀와 돼지고기 살코기 65%, 돼지귀 20%', '생선액젓, 후추, 소금, 설탕, 조미료', '신선한 바나나잎으로 포장'],
+                        serving: ['조리법: 그대로 먹기', '곁들임: 바게트빵, 찹쌀밥, 반꾸온, 분보, 분리에우'],
+                        storage: ['냉장(2–5°C): 5–7일', '냉동(-18°C): 1–2개월']
                     }
                 },
                 product_cha_lua: {
                     vi: {
-                        ingredients: ['Làm từ thịt lợn xay nhuyễn (khoảng 75-85%), gia vị, lá chuối gói', 'Mùi vị thơm lá chuối, dai mềm, mặn vừa', 'Kết cấu mịn, dai đặc trưng của chả lụa'],
-                        serving: ['Bánh mì, bánh cuốn, bánh giò', 'Cơm trắng, xôi', 'Cắt lát ăn kèm dưa leo, rau sống'],
-                        storage: ['Ở 2-4°C: 3-4 ngày', '-18°C trở xuống: 1-2 tháng', 'Giữ nguyên lớp gói để chả không bị khô']
+                        ingredients: ['Thịt nạc heo 85%, mỡ heo 15%', 'Nước mắm cốt, tiêu, đường, muối, bột ngọt', 'Gói trong lá chuối tươi'],
+                        serving: ['Chế biến: ăn trực tiếp', 'Ăn kèm: bánh mì, xôi, bánh cuốn, bún bò, bún riêu'],
+                        storage: ['Ngăn mát (2–5°C): 5–7 ngày', 'Ngăn đông (-18°C): 1–2 tháng']
                     },
                     ko: {
-                        ingredients: ['곱게 간 돼지고기(약 75-85%), 향신료, 바나나잎 포장으로 제조', '바나나잎 향과 쫄깃하고 부드러운 식감, 적당한 짠맛', '짜루어 특유의 매끈하고 쫄깃한 식감'],
-                        serving: ['바게트빵, 반꾸온, 반죠', '흰쌀밥, 찹쌀밥', '얇게 썰어 오이, 생채소와 함께'],
-                        storage: ['2-4°C: 3-4일', '-18°C 이하: 1-2개월', '건조해지지 않도록 포장을 유지한 채 보관']
+                        ingredients: ['돼지고기 살코기 85%, 돼지기름 15%', '생선액젓, 후추, 설탕, 소금, 조미료', '신선한 바나나잎으로 포장'],
+                        serving: ['조리법: 그대로 먹기', '곁들임: 바게트빵, 찹쌀밥, 반꾸온, 분보, 분리에우'],
+                        storage: ['냉장(2–5°C): 5–7일', '냉동(-18°C): 1–2개월']
                     }
                 },
                 product_xx_phomai: {
                     vi: {
-                        ingredients: ['Làm từ thịt lợn/gà (khoảng 60-70%), nhân phô mai, gia vị', 'Mùi vị béo ngậy từ phô mai tan chảy, thơm', 'Vị mới lạ, hợp khẩu vị trẻ em'],
-                        serving: ['Chiên hoặc nướng cho phô mai chảy', 'Bánh mì kẹp, hot dog', 'Ăn kèm sốt cà chua, tương ớt'],
-                        storage: ['Ở 2-4°C: 3-4 ngày', '-18°C trở xuống: 1-2 tháng', 'Tránh để ở nhiệt độ phòng']
+                        ingredients: ['Thịt heo 65%, mỡ heo và phô mai 35%', 'Phô mai Mozzarella', 'Muối, đường, tiêu, tỏi, bột ớt, vỏ collagen'],
+                        serving: ['Chế biến: áp chảo 5–7 phút, nồi chiên không dầu 160–180°C trong 8–10 phút', 'Ăn kèm: mì tôm, cơm chiên, bánh mì kẹp hot dog, salad'],
+                        storage: ['Ngăn mát (2–5°C): 3–5 ngày', 'Ngăn đông (-18°C): 1–3 tháng']
                     },
                     ko: {
-                        ingredients: ['돼지고기/닭고기(약 60-70%), 치즈 필링, 향신료로 제조', '녹인 치즈의 고소하고 진한 맛', '아이들 입맛에도 잘 맞는 색다른 맛'],
-                        serving: ['치즈가 녹도록 튀기거나 구워서', '샌드위치, 핫도그', '토마토소스, 칠리소스를 곁들여'],
-                        storage: ['2-4°C: 3-4일', '-18°C 이하: 1-2개월', '실온 보관 피하기']
+                        ingredients: ['돼지고기 65%, 돼지기름과 치즈 35%', '모짜렐라 치즈', '소금, 설탕, 후추, 마늘, 고추분말, 콜라겐 케이싱'],
+                        serving: ['조리법: 팬에 5–7분 굽기, 에어프라이어 160–180°C에서 8–10분', '곁들임: 라면, 볶음밥, 핫도그빵, 샐러드'],
+                        storage: ['냉장(2–5°C): 3–5일', '냉동(-18°C): 1–3개월']
                     }
                 },
                 product_kho_ga: {
                     vi: {
-                        ingredients: ['Làm từ ức gà (khoảng 90%), gia vị ướp, sấy khô', 'Mùi vị đậm đà, dai, hơi cay ngọt', 'Ít béo, giàu đạm'],
-                        serving: ['Ăn trực tiếp như đồ nhắm, snack', 'Xé nhỏ trộn gỏi, salad', 'Ăn kèm bia, nước ngọt'],
-                        storage: ['Nơi khô ráo, thoáng mát: 1-2 tuần sau khi mở gói', 'Ngăn mát tủ lạnh: kéo dài thời gian sử dụng', 'Đóng kín túi sau khi mở']
+                        ingredients: ['Ức gà 87%, phần còn lại là gia vị', 'Lá chanh, ớt tươi, ớt khô, sả, tỏi, hành tím, gừng', 'Nước mắm, đường, dầu hào, hạt nêm, bột ngũ vị hương', 'Dầu màu điều'],
+                        serving: ['Chế biến: ăn trực tiếp, vắt thêm nước chanh hoặc quất', 'Ăn kèm: xôi, cơm, cháo, bánh tráng trộn, mì tôm'],
+                        storage: ['Ngăn mát (2–5°C): 2–3 tháng', 'Ngăn đông (-18°C): 3–6 tháng']
                     },
                     ko: {
-                        ingredients: ['닭가슴살(약 90%), 양념, 건조 가공으로 제조', '진한 맛, 쫄깃함, 약간 매콤달콤함', '지방이 적고 단백질이 풍부함'],
-                        serving: ['그대로 안주나 간식으로', '찢어서 무침이나 샐러드에', '맥주, 음료와 함께'],
-                        storage: ['개봉 후 서늘하고 건조한 곳: 1-2주', '냉장 보관 시 더 오래 보관 가능', '개봉 후 밀봉하여 보관']
+                        ingredients: ['닭가슴살 87%, 나머지는 향신료', '라임잎, 생고추, 건고추, 레몬그라스, 마늘, 자색양파, 생강', '생선액젓, 설탕, 오이스터소스, 조미료, 오향분', '아나토색소오일'],
+                        serving: ['조리법: 그대로 먹기, 레몬이나 금귤즙을 뿌려서', '곁들임: 찹쌀밥, 밥, 죽, 반짱쫀(파파야 무침), 라면'],
+                        storage: ['냉장(2–5°C): 2–3개월', '냉동(-18°C): 3–6개월']
                     }
                 },
                 product_kho_bo: {
                     vi: {
-                        ingredients: ['Làm từ thịt bò (khoảng 90%), gia vị ướp, sấy khô', 'Mùi vị đậm đà, dai, cay nhẹ, thơm', 'Giàu đạm, ít béo'],
-                        serving: ['Ăn trực tiếp như đồ nhắm, snack', 'Xé nhỏ trộn gỏi đu đủ, gỏi xoài', 'Ăn kèm bia, nước ngọt'],
-                        storage: ['Nơi khô ráo, thoáng mát: 1-2 tuần sau khi mở gói', 'Ngăn mát tủ lạnh: kéo dài thời gian sử dụng', 'Đóng kín túi sau khi mở']
+                        ingredients: ['Thịt bò nạc 87%, phần còn lại là gia vị', 'Sả, tỏi, gừng, ớt tươi hoặc ớt bột', 'Bột ngũ vị hương, hoa hồi, quế, dầu màu điều', 'Đường, mật ong, nước mắm, dầu hào, xì dầu'],
+                        serving: ['Chế biến: ăn trực tiếp, vắt chanh hoặc quất; làm nộm đu đủ, gỏi xoài', 'Ăn kèm: bánh tráng trộn, mì tôm, xôi mặn, cháo'],
+                        storage: ['Ngăn mát (2–5°C): 1–3 tháng', 'Ngăn đông (-18°C): 4–6 tháng']
                     },
                     ko: {
-                        ingredients: ['소고기(약 90%), 양념, 건조 가공으로 제조', '진한 맛, 쫄깃함, 약간 매콤하고 향긋함', '단백질이 풍부하고 지방이 적음'],
-                        serving: ['그대로 안주나 간식으로', '파파야, 망고 무침에 찢어 넣어서', '맥주, 음료와 함께'],
-                        storage: ['개봉 후 서늘하고 건조한 곳: 1-2주', '냉장 보관 시 더 오래 보관 가능', '개봉 후 밀봉하여 보관']
+                        ingredients: ['소고기 살코기 87%, 나머지는 향신료', '레몬그라스, 마늘, 생강, 생고추 또는 고추분말', '오향분, 팔각, 계피, 아나토색소오일', '설탕, 꿀, 생선액젓, 오이스터소스, 간장'],
+                        serving: ['조리법: 그대로 먹기, 레몬이나 금귤즙을 뿌려서; 파파야 무침, 망고 무침에 활용', '곁들임: 반짱쫀, 라면, 짠찹쌀밥, 죽'],
+                        storage: ['냉장(2–5°C): 1–3개월', '냉동(-18°C): 4–6개월']
                     }
                 },
                 product_lap_xuong: {
                     vi: {
-                        ingredients: ['Làm từ thịt lợn và mỡ lợn (khoảng 80-90%), gia vị lên men, rượu, tỏi', 'Mùi vị đậm đà, hơi ngọt, thơm rượu và gia vị đặc trưng', 'Kết cấu dai, béo nhẹ, thơm khi nướng hoặc chiên'],
-                        serving: ['Nướng trên than hoặc chảo cho thơm', 'Ăn kèm cơm trắng, dưa chua, rau sống', 'Chiên sơ rồi cắt lát chấm tương ớt', 'Ăn kèm bia, làm món nhắm'],
-                        storage: ['Ở 2-4°C: 1-2 tuần', '-18°C trở xuống: 2-3 tháng', 'Treo nơi khô ráo, thoáng gió nếu chưa mở gói']
+                        ingredients: ['Thịt nạc heo 75%, mỡ heo 25%', 'Vỏ collagen', 'Rượu trắng, đường, muối, tiêu, tỏi, bột ngọt'],
+                        serving: ['Chế biến: áp chảo 5–7 phút, nồi chiên không dầu 160–180°C trong 8–10 phút', 'Ăn kèm: mì tôm, cơm chiên, bánh mì kẹp hot dog, salad'],
+                        storage: ['Ngăn mát (2–5°C): 3–5 ngày', 'Ngăn đông (-18°C): 1–3 tháng']
                     },
                     ko: {
-                        ingredients: ['돼지고기와 돼지기름(약 80-90%), 발효 양념, 술, 마늘로 제조', '진하고 약간 단맛이 나며 술과 향신료의 독특한 향', '쫄깃하고 살짝 기름지며 구우면 더 향긋함'],
-                        serving: ['숯불이나 팬에 구워서 향긋하게', '흰쌀밥, 절임 채소, 생채소와 함께', '살짝 튀긴 후 썰어 칠리소스에 찍어서', '맥주와 함께 안주로'],
-                        storage: ['2-4°C: 1-2주', '-18°C 이하: 2-3개월', '개봉 전에는 건조하고 통풍이 잘 되는 곳에 걸어서 보관']
+                        ingredients: ['돼지고기 살코기 75%, 돼지기름 25%', '콜라겐 케이싱', '백주(소주), 설탕, 소금, 후추, 마늘, 조미료'],
+                        serving: ['조리법: 팬에 5–7분 굽기, 에어프라이어 160–180°C에서 8–10분', '곁들임: 라면, 볶음밥, 핫도그빵, 샐러드'],
+                        storage: ['냉장(2–5°C): 3–5일', '냉동(-18°C): 1–3개월']
+                    }
+                },
+                product_banh_trung: {
+                    vi: {
+                        ingredients: ['Thịt ba chỉ hoặc nạc vai 10%, gạo nếp 70%, đậu xanh 20%', 'Muối, tiêu, hành khô', 'Gói trong lá dong'],
+                        serving: ['Chế biến: ăn nguội, hoặc rán vàng trên chảo ít dầu hay nồi chiên không dầu', 'Ăn kèm: dưa hành, giò lụa'],
+                        storage: ['Ngăn mát (2–5°C): 15–20 ngày', 'Ngăn đông (-18°C): 1–2 tháng']
+                    },
+                    ko: {
+                        ingredients: ['삼겹살 또는 목살 10%, 찹쌀 70%, 녹두 20%', '소금, 후추, 건조양파', '쫑잎(동)으로 포장'],
+                        serving: ['조리법: 차갑게 먹거나, 기름을 적게 두른 팬이나 에어프라이어에 노릇하게 구워서', '곁들임: 피클 양파, 짜루어'],
+                        storage: ['냉장(2–5°C): 15–20일', '냉동(-18°C): 1–2개월']
+                    }
+                },
+                product_jam_bong: {
+                    vi: {
+                        ingredients: ['Thịt đùi heo 60%, mỡ heo 30%', 'Muối, đường, tiêu, tỏi'],
+                        serving: ['Chế biến: ăn trực tiếp', 'Ăn kèm: bánh mì, xôi, bánh cuốn, bún bò, bún riêu'],
+                        storage: ['Ngăn mát (2–5°C): 5–7 ngày', 'Ngăn đông (-18°C): 1–2 tháng']
+                    },
+                    ko: {
+                        ingredients: ['돼지 다리살 60%, 돼지기름 30%', '소금, 설탕, 후추, 마늘'],
+                        serving: ['조리법: 그대로 먹기', '곁들임: 바게트빵, 찹쌀밥, 반꾸온, 분보, 분리에우'],
+                        storage: ['냉장(2–5°C): 5–7일', '냉동(-18°C): 1–2개월']
+                    }
+                },
+                product_nem_chua: {
+                    vi: {
+                        ingredients: ['Thịt nạc heo 65%, bì heo 25%', 'Thính gạo, tỏi, ớt chỉ thiên, tiêu bắc, đường, muối, bột canh', 'Lá đinh lăng, lá chuối tươi để gói'],
+                        serving: ['Chế biến: ăn trực tiếp, chấm tương ớt', 'Ăn kèm: món nhắm bia rượu'],
+                        storage: ['Ngăn mát (4–8°C): 5–7 ngày', 'Ngăn đông (-18°C): 3–4 tuần']
+                    },
+                    ko: {
+                        ingredients: ['돼지고기 살코기 65%, 돼지껍질 25%', '볶은 쌀가루(틴), 마늘, 고추, 후추, 설탕, 소금, 조미소금', '딩랑잎, 신선한 바나나잎으로 포장'],
+                        serving: ['조리법: 그대로 먹기, 칠리소스에 찍어서', '곁들임: 술·맥주 안주'],
+                        storage: ['냉장(4–8°C): 5–7일', '냉동(-18°C): 3–4주']
+                    }
+                },
+                product_ruoc: {
+                    vi: {
+                        ingredients: ['Thịt nạc thăn heo 90%', 'Nước mắm, muối hoặc hạt nêm, đường', 'Tiêu, hành tím hoặc tỏi băm'],
+                        serving: ['Chế biến: ăn trực tiếp, không cần nấu lại', 'Ăn kèm: cơm, cháo, xôi, bánh mì pate, bánh cuốn, bánh bông lan'],
+                        storage: ['Ngăn mát (2–5°C): 2–3 tháng', 'Ngăn đông (-18°C): 4–6 tháng']
+                    },
+                    ko: {
+                        ingredients: ['돼지 안심살 90%', '생선액젓, 소금 또는 조미료, 설탕', '후추, 자색양파 또는 다진 마늘'],
+                        serving: ['조리법: 그대로 먹기, 재조리 불필요', '곁들임: 밥, 죽, 찹쌀밥, 파테 바게트빵, 반꾸온, 카스테라'],
+                        storage: ['냉장(2–5°C): 2–3개월', '냉동(-18°C): 4–6개월']
+                    }
+                },
+                product_pate: {
+                    vi: {
+                        ingredients: ['Gan heo 35%, thịt nạc và mỡ phần 65%', 'Ruột bánh mì, sữa tươi, bơ, hành tây, tỏi, nước mắm, tiêu, muối, đường'],
+                        serving: ['Chế biến: ăn trực tiếp, phết lên bánh mì hoặc bánh quy', 'Ăn kèm: bánh mì chả lụa, dưa leo, đồ chua, xôi mặn'],
+                        storage: ['Ngăn mát (2–5°C): 3–7 ngày (pate tự làm), 2–3 ngày (sau khi mở hộp)', 'Ngăn đông (-18°C): 1–2 tháng']
+                    },
+                    ko: {
+                        ingredients: ['돼지간 35%, 살코기와 비계 65%', '바게트빵 속살, 우유, 버터, 양파, 마늘, 생선액젓, 후추, 소금, 설탕'],
+                        serving: ['조리법: 그대로 먹기, 바게트빵이나 크래커에 발라서', '곁들임: 짜루어 바게트빵, 오이, 피클, 짠찹쌀밥'],
+                        storage: ['냉장(2–5°C): 3–7일(수제 파테), 2–3일(개봉 후)', '냉동(-18°C): 1–2개월']
+                    }
+                },
+                product_gio_song: {
+                    vi: {
+                        ingredients: ['Thịt nạc 72,5%, mỡ phần 27,5%', 'Nước mắm, tiêu trắng, đường, bột ngọt hoặc hạt nêm, bột năng hoặc bột bắp, đá lạnh'],
+                        serving: ['Viên làm mọc thả canh, hoặc làm chả chiên, chả cốm, nhồi đậu phụ và rau củ', 'Ăn kèm: bún mọc, bún riêu, canh rau ngót, canh bí xanh'],
+                        storage: ['Ngăn mát (0–4°C): 1–2 ngày', 'Ngăn đông (-18°C): 1–3 tháng']
+                    },
+                    ko: {
+                        ingredients: ['살코기 72.5%, 비계 27.5%', '생선액젓, 백후추, 설탕, 조미료 또는 맛소금, 감자전분 또는 옥수수전분, 얼음'],
+                        serving: ['완자로 빚어 국에 넣거나, 튀김·구운 짜(짜꼼)로 만들거나, 두부·채소 속을 채워 조리', '곁들임: 분목(완자 쌀국수), 분리에우, 시금치국, 애호박국'],
+                        storage: ['냉장(0–4°C): 1–2일', '냉동(-18°C): 1–3개월']
+                    }
+                },
+                product_kho_lon: {
+                    vi: {
+                        ingredients: ['Thịt nạc lợn 80%', 'Sả băm, tỏi băm, nước mắm, dầu hào, đường, dầu màu điều, ngũ vị hương, bột ớt, hạt nêm'],
+                        serving: ['Chế biến: ăn trực tiếp, vắt thêm chanh hoặc quất, chấm tương ớt', 'Ăn kèm: xôi trắng, cơm cháy, cháo sườn, mì tôm, bánh tráng trộn'],
+                        storage: ['Ngăn mát (2–5°C): 1–2 tháng', 'Ngăn đông (-18°C): 3–6 tháng']
+                    },
+                    ko: {
+                        ingredients: ['돼지고기 살코기 80%', '다진 레몬그라스, 다진 마늘, 생선액젓, 오이스터소스, 설탕, 아나토색소오일, 오향분, 고추분말, 조미료'],
+                        serving: ['조리법: 그대로 먹기, 레몬이나 금귤즙을 뿌려서, 칠리소스에 찍어서', '곁들임: 흰 찹쌀밥, 누룽지, 갈비죽, 라면, 반짱쫀'],
+                        storage: ['냉장(2–5°C): 1–2개월', '냉동(-18°C): 3–6개월']
                     }
                 }
             };
