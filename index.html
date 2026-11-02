@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bibifood - Mang vị Việt, gửi yêu thương</title>
+    <title>Bibi food - Mang vị Việt, gửi yêu thương</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -49,13 +49,21 @@
         .header {
             background-color: var(--primary-brown);
             padding: 30px 40px;
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
         }
 
-        .header .header-logo-brand,
-        .header-menu-btn {
+        .header .header-logo {
+            grid-column: 2;
+        }
+
+        .header .header-language-wrap {
+            grid-column: 3;
+            justify-self: end;
+        }
+
+        .header .header-logo-brand {
             color: var(--white);
         }
 
@@ -105,14 +113,6 @@
             font-family: 'Sora', 'Pretendard', sans-serif;
             font-weight: 400;
             letter-spacing: 1px;
-        }
-
-        .header-menu-btn {
-            background: none;
-            border: none;
-            font-size: 48px;
-            cursor: pointer;
-            color: var(--primary-dark);
         }
 
         .icon-svg {
@@ -190,90 +190,6 @@
         }
 
         /* Side Menu (Hamburger) */
-        .menu-backdrop {
-            position: fixed;
-            inset: 0;
-            background-color: rgba(0,0,0,0.45);
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-            z-index: 100;
-        }
-
-        .menu-backdrop.open {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .side-menu {
-            position: fixed;
-            top: 0;
-            left: -280px;
-            width: 260px;
-            max-width: 80%;
-            height: 100vh;
-            background-color: var(--white);
-            box-shadow: 2px 0 12px rgba(0,0,0,0.15);
-            transition: left 0.3s ease;
-            z-index: 101;
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-        }
-
-        .side-menu.open {
-            left: 0;
-        }
-
-        .side-menu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 24px;
-        }
-
-        .side-menu-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--primary-dark);
-        }
-
-        .side-menu-close {
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--primary-dark);
-        }
-
-        .side-menu-nav {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .side-menu-nav a {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 8px;
-            border-radius: 8px;
-            color: var(--primary-dark);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            transition: background-color 0.2s ease;
-        }
-
-        .side-menu-nav a:hover {
-            background-color: var(--primary-bg);
-        }
-
-        .side-menu-nav a i {
-            font-size: 20px;
-            color: var(--primary-brown);
-        }
-
         /* Hero Section */
         .hero-banner {
             display: block;
@@ -646,6 +562,28 @@
             color: #555;
         }
 
+        .product-modal-add-cart {
+            width: 100%;
+            margin-top: 6px;
+            background-color: var(--primary-brown);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            padding: 13px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .product-modal-add-cart .icon-svg {
+            width: 18px;
+            height: 18px;
+        }
+
         /* All Products Modal */
         .all-products-backdrop {
             position: fixed;
@@ -762,143 +700,114 @@
 
         .order-workflow-close {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            background: none;
+            top: 14px;
+            right: 14px;
+            width: 34px;
+            height: 34px;
             border: none;
-            cursor: pointer;
+            border-radius: 50%;
+            background-color: #F4ECDD;
             color: var(--primary-dark);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .order-workflow-close:hover {
+            background-color: var(--light-gray);
         }
 
         .order-workflow-close .icon-svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        .order-workflow-logo {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 8px;
-        }
-
-        .order-workflow-logo .header-logo-text {
-            font-size: 26px;
+            width: 18px;
+            height: 18px;
         }
 
         .order-workflow-title {
-            font-size: 19px;
+            font-size: 22px;
             font-weight: 700;
             text-align: center;
             color: var(--primary-dark);
-            margin: 0 0 6px;
+            margin: 4px 0 22px;
         }
 
-        .order-workflow-subtitle {
-            font-size: 13px;
-            text-align: center;
-            color: #666;
-            margin: 0 0 18px;
-        }
-
-        .order-workflow-cards {
+        .order-workflow-options {
             display: flex;
             flex-direction: column;
-            gap: 14px;
-            margin-bottom: 18px;
+            gap: 12px;
         }
 
-        .order-workflow-card {
-            border: 1px solid var(--light-gray);
-            border-radius: 12px;
-            text-align: center;
-            padding: 16px 14px 14px;
-        }
-
-        .order-workflow-card.retail {
-            border-top: 4px solid var(--call-green);
-        }
-
-        .order-workflow-card.wholesale {
-            border-top: 4px solid var(--primary-brown);
-        }
-
-        .order-workflow-badge {
-            display: inline-block;
-            font-size: 12px;
-            font-weight: 600;
-            padding: 6px 12px;
-            border-radius: 20px;
-            margin-bottom: 10px;
-        }
-
-        .order-workflow-card.retail .order-workflow-badge {
-            background-color: #E3F3E5;
-            color: var(--call-green);
-        }
-
-        .order-workflow-card.wholesale .order-workflow-badge {
-            background-color: #F3E1E4;
-            color: var(--primary-brown);
-        }
-
-        .order-workflow-card-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin: 0 0 10px;
-            color: var(--primary-dark);
-        }
-
-        .order-workflow-card-desc {
-            font-size: 13px;
-            color: #555;
-            line-height: 1.5;
-            margin: 0 0 8px;
-        }
-
-        .order-workflow-card-note {
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin: 0 0 14px;
-        }
-
-        .order-workflow-btn {
-            display: block;
-            width: 100%;
-            border: 1px solid transparent;
-            border-radius: 8px;
-            padding: 12px 8px;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            white-space: nowrap;
-        }
-
-        .order-workflow-btn.retail-btn {
-            background-color: var(--call-green);
-            color: var(--white);
-            border-color: var(--call-green);
-        }
-
-        .order-workflow-btn.wholesale-btn {
-            background-color: var(--white);
-            color: var(--primary-brown);
-            border-color: var(--primary-brown);
-        }
-
-        .order-workflow-steps {
+        .order-workflow-option {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 6px;
-            font-size: 12px;
-            color: #777;
-            text-align: center;
+            align-items: center;
+            gap: 16px;
+            width: 100%;
+            font-family: inherit;
+            text-align: left;
+            background-color: var(--white);
+            border: 1.5px solid var(--light-gray);
+            border-radius: 16px;
+            padding: 16px 18px;
+            cursor: pointer;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
         }
 
-        .order-workflow-steps .step.active {
+        .order-workflow-option:hover {
+            border-color: var(--primary-brown);
+            box-shadow: 0 6px 18px rgba(122,35,51,0.12);
+        }
+
+        .order-workflow-option:active {
+            transform: scale(0.99);
+        }
+
+        .order-workflow-option:focus-visible {
+            outline: 3px solid rgba(122,35,51,0.3);
+            outline-offset: 2px;
+        }
+
+        .order-workflow-option-icon {
+            flex-shrink: 0;
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background-color: #F6E8EA;
             color: var(--primary-brown);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .order-workflow-option-icon .icon-svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .order-workflow-option:hover .order-workflow-option-icon {
+            background-color: var(--primary-brown);
+            color: var(--white);
+        }
+
+        .order-workflow-option-label {
+            flex: 1;
+            font-size: 18px;
             font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .order-workflow-option-arrow {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            color: #b3a59a;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .order-workflow-option:hover .order-workflow-option-arrow {
+            color: var(--primary-brown);
+            transform: translateX(3px);
         }
 
         /* Coming Soon Confirm Modal */
@@ -972,6 +881,898 @@
             background-color: var(--primary-brown);
             color: var(--white);
             border-color: var(--primary-brown);
+        }
+
+
+        /* Customer Info Form */
+        .cf-backdrop {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(46,27,18,0.6);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 240;
+        }
+
+        .cf-backdrop.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .cf-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -46%);
+            width: 460px;
+            max-width: calc(100% - 32px);
+            max-height: 92vh;
+            overflow-y: auto;
+            background-color: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 24px 60px rgba(46,27,18,0.35);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 241;
+        }
+
+        .cf-modal.open {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%);
+        }
+
+        .cf-header {
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-brown), #4F1621);
+            color: var(--white);
+            padding: 26px 24px 22px;
+            text-align: center;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .cf-header-icon {
+            width: 52px;
+            height: 52px;
+            margin: 0 auto 12px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.16);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cf-header-icon .icon-svg {
+            width: 26px;
+            height: 26px;
+        }
+
+        .cf-title {
+            font-size: 21px;
+            font-weight: 700;
+            margin: 0 0 4px;
+        }
+
+        .cf-subtitle {
+            font-size: 14px;
+            line-height: 1.5;
+            opacity: 0.85;
+            margin: 0;
+        }
+
+        .cf-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 34px;
+            height: 34px;
+            border: none;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.14);
+            color: var(--white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cf-close:hover {
+            background-color: rgba(255,255,255,0.26);
+        }
+
+        .cf-close .icon-svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .cf-body {
+            padding: 22px 24px 24px;
+        }
+
+        .cf-field {
+            margin-bottom: 16px;
+        }
+
+        .cf-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 6px;
+        }
+
+        .cf-optional {
+            font-size: 12px;
+            font-weight: 500;
+            color: #8a7a70;
+        }
+
+        .cf-input-wrap {
+            position: relative;
+        }
+
+        .cf-input-wrap .icon-svg {
+            position: absolute;
+            left: 14px;
+            top: 15px;
+            width: 18px;
+            height: 18px;
+            color: #9a8a80;
+            pointer-events: none;
+        }
+
+        .cf-input {
+            width: 100%;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 16px;
+            color: var(--primary-dark);
+            background-color: #FDFAF4;
+            border: 1.5px solid var(--light-gray);
+            border-radius: 12px;
+            padding: 12px 14px 12px 42px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        }
+
+        textarea.cf-input {
+            resize: vertical;
+            min-height: 76px;
+            line-height: 1.45;
+        }
+
+        .cf-input::placeholder {
+            color: #b3a59a;
+        }
+
+        .cf-input:focus {
+            outline: none;
+            background-color: var(--white);
+            border-color: var(--primary-brown);
+            box-shadow: 0 0 0 4px rgba(122,35,51,0.12);
+        }
+
+        .cf-trap {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+        }
+
+        .cf-pledge {
+            background-color: #FBF4E6;
+            border: 1px solid var(--light-gray);
+            border-left: 4px solid var(--gold);
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin: 6px 0 14px;
+        }
+
+        .cf-pledge-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary-brown);
+            margin: 0 0 8px;
+        }
+
+        .cf-pledge-title .icon-svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .cf-pledge-list {
+            margin: 0;
+            padding-left: 18px;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #5b4a40;
+        }
+
+        .cf-consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            line-height: 1.45;
+            color: var(--primary-dark);
+            cursor: pointer;
+            margin-bottom: 16px;
+        }
+
+        .cf-consent input {
+            width: 20px;
+            height: 20px;
+            margin: 1px 0 0;
+            flex-shrink: 0;
+            accent-color: var(--primary-brown);
+            cursor: pointer;
+        }
+
+        .cf-error {
+            display: none;
+            font-size: 13px;
+            font-weight: 600;
+            color: #B3261E;
+            background-color: #FCE9E7;
+            border-radius: 10px;
+            padding: 10px 12px;
+            margin-bottom: 14px;
+        }
+
+        .cf-error.show {
+            display: block;
+        }
+
+        .cf-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .cf-btn {
+            flex: 1;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 12px;
+            padding: 14px 16px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .cf-btn:active {
+            transform: scale(0.98);
+        }
+
+        .cf-btn-secondary {
+            background-color: var(--white);
+            color: var(--primary-brown);
+            border: 1.5px solid var(--primary-brown);
+            flex: 0 0 34%;
+        }
+
+        .cf-btn-primary {
+            background-color: var(--primary-brown);
+            color: var(--white);
+            border: 1.5px solid var(--primary-brown);
+        }
+
+        .cf-btn-primary:hover {
+            background-color: #5E1A27;
+        }
+
+        .cf-btn-primary:disabled {
+            opacity: 0.65;
+            cursor: default;
+        }
+
+        .cf-success {
+            display: none;
+            text-align: center;
+            padding: 34px 28px 30px;
+        }
+
+        .cf-modal.done .cf-form-view {
+            display: none;
+        }
+
+        .cf-modal.done .cf-success {
+            display: block;
+        }
+
+        .cf-success-icon {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            background-color: #E3F3E5;
+            color: var(--call-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cf-success-icon .icon-svg {
+            width: 38px;
+            height: 38px;
+        }
+
+        .cf-success-title {
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin: 0 0 8px;
+        }
+
+        .cf-success-text {
+            font-size: 15px;
+            line-height: 1.55;
+            color: #5b4a40;
+            margin: 0 0 22px;
+        }
+
+        @media (max-width: 576px) {
+            .cf-header {
+                padding: 22px 18px 18px;
+            }
+
+            .cf-body {
+                padding: 18px 18px 20px;
+            }
+
+            .cf-actions {
+                flex-direction: column-reverse;
+            }
+
+            .cf-btn-secondary {
+                flex: 1;
+            }
+        }
+
+
+        /* Wholesale account modal (reuses .cf-* styles) */
+        .ws-view {
+            display: none;
+        }
+
+        .cf-modal[data-view="login"] .ws-view-login,
+        .cf-modal[data-view="request"] .ws-view-request,
+        .cf-modal[data-view="sent"] .ws-view-sent,
+        .cf-modal[data-view="welcome"] .ws-view-welcome {
+            display: block;
+        }
+
+        .cf-modal[data-view="login"] .ws-head-request,
+        .cf-modal[data-view="login"] .ws-head-choose,
+        .cf-modal[data-view="choose"] .ws-head-login,
+        .cf-modal[data-view="choose"] .ws-head-request,
+        .cf-modal[data-view="request"] .ws-head-login,
+        .cf-modal[data-view="request"] .ws-head-choose,
+        .cf-modal[data-view="sent"] .ws-head-login,
+        .cf-modal[data-view="sent"] .ws-head-request,
+        .cf-modal[data-view="sent"] .ws-head-choose,
+        .cf-modal[data-view="welcome"] .ws-head-login,
+        .cf-modal[data-view="welcome"] .ws-head-request,
+        .cf-modal[data-view="welcome"] .ws-head-choose {
+            display: none;
+        }
+
+        .cf-modal[data-view="choose"] .ws-view-choose {
+            display: block;
+        }
+
+        .ws-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .ws-option {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            font-family: inherit;
+            text-align: left;
+            text-decoration: none;
+            color: var(--primary-dark);
+            background-color: var(--white);
+            border: 1.5px solid var(--light-gray);
+            border-radius: 16px;
+            padding: 16px 18px;
+            cursor: pointer;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+        }
+
+        .ws-option:hover {
+            border-color: var(--primary-brown);
+            box-shadow: 0 6px 18px rgba(122,35,51,0.12);
+        }
+
+        .ws-option:active {
+            transform: scale(0.99);
+        }
+
+        .ws-option:focus-visible {
+            outline: 3px solid rgba(122,35,51,0.3);
+            outline-offset: 2px;
+        }
+
+        .ws-option-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            background-color: #F6E8EA;
+            color: var(--primary-brown);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .ws-option-icon .icon-svg {
+            width: 26px;
+            height: 26px;
+        }
+
+        .ws-option:hover .ws-option-icon {
+            background-color: var(--primary-brown);
+            color: var(--white);
+        }
+
+        .ws-option-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .ws-option-label {
+            display: block;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .ws-option-sub {
+            display: block;
+            font-size: 14px;
+            color: #7a6a60;
+            margin-top: 2px;
+        }
+
+        .ws-option-arrow {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            color: #b3a59a;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .ws-option:hover .ws-option-arrow {
+            color: var(--primary-brown);
+            transform: translateX(3px);
+        }
+
+        .cf-modal[data-view="sent"] .cf-header,
+        .cf-modal[data-view="welcome"] .cf-header {
+            display: none;
+        }
+
+        .cf-modal[data-view="sent"] .cf-close-float,
+        .cf-modal[data-view="welcome"] .cf-close-float {
+            display: flex;
+        }
+
+        .cf-close-float {
+            display: none;
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 34px;
+            height: 34px;
+            border: none;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            color: var(--primary-dark);
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cf-close-float .icon-svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .cf-req {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary-brown);
+        }
+
+        .cf-input.invalid {
+            border-color: #B3261E;
+            background-color: #FFF8F7;
+        }
+
+        .cf-input.invalid:focus {
+            box-shadow: 0 0 0 4px rgba(179,38,30,0.12);
+        }
+
+        .cf-pw-toggle {
+            position: absolute;
+            right: 6px;
+            top: 6px;
+            width: 38px;
+            height: 38px;
+            border: none;
+            background: none;
+            color: #9a8a80;
+            cursor: pointer;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cf-pw-toggle:hover {
+            color: var(--primary-brown);
+        }
+
+        .cf-pw-toggle .icon-svg {
+            position: static;
+            width: 20px;
+            height: 20px;
+            color: inherit;
+        }
+
+        .cf-input.has-toggle {
+            padding-right: 50px;
+        }
+
+        .ws-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 20px 0 14px;
+            font-size: 13px;
+            color: #8a7a70;
+        }
+
+        .ws-divider::before,
+        .ws-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: var(--light-gray);
+        }
+
+        .ws-request-box {
+            text-align: center;
+        }
+
+        .ws-request-text {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #5b4a40;
+            margin: 0 0 12px;
+        }
+
+        .ws-note {
+            font-size: 12.5px;
+            line-height: 1.5;
+            color: #7a6a60;
+            background-color: #FBF4E6;
+            border-radius: 10px;
+            padding: 10px 12px;
+            margin: 2px 0 16px;
+        }
+
+        .ws-center {
+            text-align: center;
+            padding: 12px 6px 4px;
+        }
+
+        .ws-center .cf-success-icon {
+            margin-top: 8px;
+        }
+
+        .ws-center .cf-success-text {
+            margin-bottom: 20px;
+        }
+
+        .ws-center .cf-actions {
+            flex-direction: column-reverse;
+        }
+
+        /* Floating Cart Button */
+        .cart-fab {
+            position: fixed;
+            right: clamp(16px, calc(16px + (100vw - 360px) * 0.01026), 32px);
+            bottom: clamp(90px, calc(90px + (100vw - 360px) * 0.01026), 106px);
+            width: clamp(68px, calc(68px + (100vw - 360px) * 0.01538), 92px);
+            height: clamp(68px, calc(68px + (100vw - 360px) * 0.01538), 92px);
+            border-radius: 50%;
+            background-color: var(--white);
+            border: none;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 230;
+        }
+
+        .cart-fab .icon-svg {
+            width: clamp(32px, calc(32px + (100vw - 360px) * 0.00641), 44px);
+            height: clamp(32px, calc(32px + (100vw - 360px) * 0.00641), 44px);
+            color: var(--primary-brown);
+        }
+
+        .cart-fab-badge {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            min-width: clamp(26px, calc(26px + (100vw - 360px) * 0.00513), 34px);
+            height: clamp(26px, calc(26px + (100vw - 360px) * 0.00513), 34px);
+            padding: 0 6px;
+            border-radius: 999px;
+            background-color: var(--gold);
+            color: var(--primary-dark);
+            font-size: clamp(15px, calc(15px + (100vw - 360px) * 0.00256), 19px);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+        }
+
+        .cart-fab-badge.hidden {
+            display: none;
+        }
+
+        .cart-toast {
+            position: fixed;
+            right: clamp(16px, calc(16px + (100vw - 360px) * 0.01026), 32px);
+            bottom: clamp(172px, calc(172px + (100vw - 360px) * 0.01538), 212px);
+            width: min(340px, calc(100vw - 32px));
+            /* 10 rows x 38px + padding; scroll when there are more */
+            max-height: min(404px, calc(100vh - 230px));
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            -webkit-overflow-scrolling: touch;
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 16px;
+            line-height: 1.5;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+            opacity: 0;
+            transform: translateY(6px);
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            z-index: 231;
+        }
+
+        .cart-toast.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .cart-toast-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            height: 38px;
+            flex-shrink: 0;
+        }
+
+        .cart-toast-row + .cart-toast-row {
+            border-top: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .cart-toast-qty {
+            font-weight: 700;
+        }
+
+        .cart-toast-qty {
+            opacity: 0.8;
+            white-space: nowrap;
+        }
+
+        /* Add-to-cart icon on each product card */
+        .product-add-cart {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            width: clamp(32px, calc(32px + (100vw - 360px) * 0.00897), 46px);
+            height: clamp(32px, calc(32px + (100vw - 360px) * 0.00897), 46px);
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.95);
+            border: none;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .product-add-cart .icon-svg {
+            width: clamp(18px, calc(18px + (100vw - 360px) * 0.00513), 26px);
+            height: clamp(18px, calc(18px + (100vw - 360px) * 0.00513), 26px);
+            color: var(--primary-brown);
+        }
+
+        /* Cart Modal */
+        .cart-backdrop {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0,0,0,0.55);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 240;
+        }
+
+        .cart-backdrop.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .cart-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -40%);
+            width: 340px;
+            max-width: 90%;
+            max-height: 80vh;
+            background-color: var(--white);
+            border-radius: 16px;
+            padding: 18px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 241;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-modal.open {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%);
+        }
+
+        .cart-header {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+
+        .cart-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin: 0;
+            text-align: center;
+        }
+
+        .cart-close {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary-dark);
+        }
+
+        .cart-close .icon-svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .cart-list {
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .cart-item-image {
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .cart-item-name {
+            flex: 1;
+            font-size: 14px;
+            color: var(--primary-dark);
+        }
+
+        .cart-item-qty-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cart-item-qty-btn {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            border: 1px solid var(--light-gray);
+            background-color: var(--white);
+            color: var(--primary-brown);
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-item-qty {
+            min-width: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .cart-item-remove {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary-brown);
+            font-size: 18px;
+            line-height: 1;
+            padding: 2px 6px;
+        }
+
+        .cart-empty {
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+            margin: 10px 0 14px;
+        }
+
+        .cart-order-btn {
+            background-color: var(--primary-brown);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
         }
 
         /* Contact Section */
@@ -1062,23 +1863,6 @@
             justify-content: center;
             flex-wrap: wrap;
             margin-top: 4px;
-        }
-
-        .btn-order {
-            background-color: transparent;
-            color: var(--primary-brown);
-            border: 2px solid var(--primary-brown);
-            padding: 10px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 25px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .btn-order:hover {
-            background-color: var(--primary-brown);
-            color: var(--white);
         }
 
         .feature-strip {
@@ -1349,10 +2133,6 @@
 
         /* Responsive */
         @media (max-width: 767px) {
-            .header-menu-btn {
-                font-size: 24px;
-            }
-
             .header-logo-text {
                 font-size: 20px;
             }
@@ -1451,6 +2231,18 @@
                 padding: 30px 48px 44px;
             }
 
+            /* Tiêu đề các mục: Câu chuyện thương hiệu, Chất lượng, Khách hàng nói gì, Hỏi đáp */
+            .section-label {
+                font-size: 30px;
+                letter-spacing: 2px;
+                margin-bottom: 10px;
+            }
+
+            .section-title {
+                font-size: 44px;
+                margin-bottom: 32px;
+            }
+
             /* Chuyển carousel thành grid đầy đủ, không cuộn */
             .carousel-viewport {
                 overflow: visible;
@@ -1506,85 +2298,58 @@
                 margin-right: auto;
             }
 
-            /* Order Workflow Modal - phóng to gấp đôi trên màn hình lớn */
+            /* Order Workflow Modal - phóng to trên màn hình lớn */
             .order-workflow-modal {
-                width: 720px;
+                width: 640px;
                 border-radius: 32px;
-                padding: 40px 36px;
+                padding: 48px 44px 44px;
             }
 
             .order-workflow-close {
-                top: 20px;
-                right: 20px;
+                top: 22px;
+                right: 22px;
+                width: 56px;
+                height: 56px;
             }
 
             .order-workflow-close .icon-svg {
-                width: 40px;
-                height: 40px;
-            }
-
-            .order-workflow-logo {
-                margin-bottom: 16px;
-            }
-
-            .order-workflow-logo .header-logo-text {
-                font-size: 52px;
+                width: 28px;
+                height: 28px;
             }
 
             .order-workflow-title {
-                font-size: 38px;
-                margin: 0 0 12px;
+                font-size: 42px;
+                margin: 0 0 40px;
             }
 
-            .order-workflow-subtitle {
-                font-size: 26px;
-                margin: 0 0 36px;
+            .order-workflow-options {
+                gap: 22px;
             }
 
-            .order-workflow-cards {
-                flex-direction: row;
+            .order-workflow-option {
                 gap: 28px;
-                margin-bottom: 36px;
-            }
-
-            .order-workflow-card {
-                flex: 1;
                 border-radius: 24px;
-                border-top-width: 8px;
-                padding: 32px 28px 28px;
+                padding: 28px 32px;
             }
 
-            .order-workflow-badge {
-                font-size: 24px;
-                padding: 12px 24px;
-                border-radius: 40px;
-                margin-bottom: 20px;
+            .order-workflow-option-icon {
+                width: 92px;
+                height: 92px;
+                border-radius: 24px;
             }
 
-            .order-workflow-card-title {
-                font-size: 40px;
-                margin: 0 0 20px;
+            .order-workflow-option-icon .icon-svg {
+                width: 48px;
+                height: 48px;
             }
 
-            .order-workflow-card-desc {
-                font-size: 26px;
-                margin: 0 0 16px;
+            .order-workflow-option-label {
+                font-size: 34px;
             }
 
-            .order-workflow-card-note {
-                font-size: 26px;
-                margin: 0 0 28px;
-            }
-
-            .order-workflow-btn {
-                border-radius: 16px;
-                padding: 24px;
-                font-size: 30px;
-            }
-
-            .order-workflow-steps {
-                gap: 12px;
-                font-size: 24px;
+            .order-workflow-option-arrow {
+                width: 38px;
+                height: 38px;
             }
 
             /* Coming Soon Confirm Modal - phóng to trên màn hình lớn */
@@ -1612,41 +2377,41 @@
     </style>
 </head>
 <body>
-    <div class="container-mobile">
-        <!-- Side Menu -->
-        <div class="menu-backdrop" id="menuBackdrop"></div>
-        <nav class="side-menu" id="sideMenu">
-            <div class="side-menu-header">
-                <span class="side-menu-title header-logo-text"><span class="header-logo-bb"><img src="bibifood_logo_new.png" alt="BB" class="header-logo-bb-img"></span><span class="header-logo-brand">bibifood</span></span>
-                <button class="side-menu-close" id="sideMenuClose" aria-label="Đóng menu">
-                    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                </button>
-            </div>
-            <div class="side-menu-nav">
-                <a href="#" class="side-menu-link"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg> <span data-i18n="nav_home">Trang chủ</span></a>
-                <a href="#" class="side-menu-link" data-scroll-to=".carousel-section"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg> <span data-i18n="nav_products">Tất cả sản phẩm</span></a>
-                <a href="#" class="side-menu-link" data-scroll-to=".contact-section"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> <span data-i18n="nav_contact">Liên hệ</span></a>
-                <a href="https://bibifood.com" target="_blank" rel="noopener"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"/></svg> bibifood.com</a>
-            </div>
-        </nav>
+    <!-- Floating Cart -->
+    <button class="cart-fab" id="cartFabBtn" aria-label="Giỏ hàng">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-fab-badge hidden" id="cartFabBadge">0</span>
+    </button>
+    <div class="cart-backdrop" id="cartBackdrop"></div>
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <p class="cart-title" data-i18n="cart_title">Giỏ hàng</p>
+            <button class="cart-close" id="cartClose" aria-label="Đóng">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="cart-list" id="cartList"></div>
+        <p class="cart-empty" id="cartEmpty" data-i18n="cart_empty">Giỏ hàng trống</p>
+        <button class="cart-order-btn" id="cartOrderBtn" data-i18n="cart_order_btn">Đặt hàng ngay</button>
+    </div>
 
+    <div class="container-mobile">
         <!-- Header -->
         <header class="header">
-            <button class="header-menu-btn" id="menuOpenBtn" aria-label="Menu">
-                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
-            </button>
             <a href="#" class="header-logo">
-                <span class="header-logo-text"><span class="header-logo-bb"><img src="bibifood_logo_new.png" alt="BB" class="header-logo-bb-img"></span><span class="header-logo-brand">bibifood</span></span>
+                <span class="header-logo-text"><span class="header-logo-bb"><img src="bibifood_logo_new.png" alt="BB" class="header-logo-bb-img"></span><span class="header-logo-brand">Bibi food</span></span>
             </a>
             <div class="header-language-wrap">
                 <button class="header-language" id="langSelectBtn" aria-haspopup="true" aria-expanded="false">
                     <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"/></svg>
-                    <span class="flag-badges"><img src="flag_vn.png" alt="Vietnam" class="flag-icon"><img src="flag_kr.png" alt="Korea" class="flag-icon"></span>
+                    <span class="flag-badges"><img src="flag_vn.png" alt="Vietnam" class="flag-icon"><img src="flag_kr.png" alt="Korea" class="flag-icon"><img src="flag_en.svg" alt="English" class="flag-icon"><img src="flag_cn.svg" alt="中文" class="flag-icon"></span>
                     <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                 </button>
                 <div class="lang-dropdown" id="langDropdown">
                     <button class="lang-option" data-lang="vi"><img src="flag_vn.png" alt="Tiếng Việt" class="flag-icon"> Tiếng Việt</button>
                     <button class="lang-option" data-lang="ko"><img src="flag_kr.png" alt="한국어" class="flag-icon"> 한국어</button>
+                    <button class="lang-option" data-lang="en"><img src="flag_en.svg" alt="English" class="flag-icon"> English</button>
+                    <button class="lang-option" data-lang="zh"><img src="flag_cn.svg" alt="中文" class="flag-icon"> 中文</button>
                 </div>
             </div>
         </header>
@@ -1655,12 +2420,11 @@
 
         <!-- Hero Section -->
         <section class="hero-section">
-            <img src="bibifood_logo_new.png" alt="bibifood Logo" class="hero-logo">
+            <img src="bibifood_logo_new.png" alt="Bibi food Logo" class="hero-logo">
             <h1 class="hero-title"><span data-i18n="hero_title">Mang vị Việt, gửi yêu thương</span></h1>
-            <p class="hero-description" data-i18n="hero_desc">Khám phá bộ sưu tập Giò, Chả, Lạp xưởng và Nem lụi gia truyền từ bibifood.</p>
+            <p class="hero-description" data-i18n="hero_desc">Khám phá bộ sưu tập Giò, Chả, Lạp xưởng và Nem lụi gia truyền từ Bibi food.</p>
             <div class="hero-cta">
                 <button class="btn-menu" data-scroll-to=".carousel-section" data-i18n="btn_menu">Xem ngay sản phẩm</button>
-                <button class="btn-order" id="openOrderWorkflowBtn" data-i18n="btn_order">Đặt hàng ngay</button>
             </div>
         </section>
 
@@ -1700,6 +2464,7 @@
                 <button class="category-filter-btn" data-filter="nem" data-i18n="filter_nem">Nem</button>
                 <button class="category-filter-btn" data-filter="kho" data-i18n="filter_kho">Khô</button>
                 <button class="category-filter-btn" data-filter="banhtrung" data-i18n="filter_banhtrung">Bánh chưng</button>
+                <button class="category-filter-btn" data-filter="vien" data-i18n="filter_vien">Viên thả lẩu</button>
                 <button class="category-filter-btn" data-filter="khac" data-i18n="filter_khac">Khác</button>
             </div>
             <div class="carousel-viewport">
@@ -1896,6 +2661,35 @@
                         <p class="product-price">10,000 ₩</p>
                                 </div>
                             </div>
+                            <div class="product-card" data-category="vien">
+                                <div class="product-image-wrap">
+                                    <img src="vien_heo.jfif" alt="Viên heo" class="product-image">
+                                </div>
+                                <div class="product-info">
+                                    <p class="product-name" data-i18n="product_vien_heo">Viên heo</p>
+                        <p class="product-price">10,000 ₩</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-col">
+                            <div class="product-card" data-category="vien">
+                                <div class="product-image-wrap">
+                                    <img src="vien_bo.jfif" alt="Viên bò" class="product-image">
+                                </div>
+                                <div class="product-info">
+                                    <p class="product-name" data-i18n="product_vien_bo">Viên bò</p>
+                        <p class="product-price">10,000 ₩</p>
+                                </div>
+                            </div>
+                            <div class="product-card" data-category="gio">
+                                <div class="product-image-wrap">
+                                    <img src="cha_com.jfif" alt="Chả cốm" class="product-image">
+                                </div>
+                                <div class="product-info">
+                                    <p class="product-name" data-i18n="product_cha_com">Chả cốm</p>
+                        <p class="product-price">10,000 ₩</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1908,10 +2702,10 @@
         <!-- Company Story -->
         <section class="story-section">
             <span class="section-label" data-i18n="story_label">Câu chuyện thương hiệu</span>
-            <h2 class="section-title" data-i18n="story_title">Giới thiệu bibifood</h2>
+            <h2 class="section-title" data-i18n="story_title">Giới thiệu Bibi food</h2>
             <div class="story-content">
                 <video id="storyVideo" class="story-image" src="bibifood_story.mp4" autoplay muted playsinline></video>
-                <p class="story-text" data-i18n="story_text">bibifood ra đời từ nỗi nhớ hương vị quê nhà của những người con xa xứ. Chúng tôi tự tay chế biến Giò, Chả, Xúc xích, Nem lụi và Khô theo công thức gia truyền, dùng nguyên liệu chọn lọc và quy trình đóng gói an toàn, để mỗi bữa cơm của cộng đồng người Việt tại Hàn Quốc luôn đậm đà, ấm áp như ở nhà.</p>
+                <p class="story-text" data-i18n="story_text">Bibi food ra đời từ nỗi nhớ hương vị quê nhà của những người con xa xứ. Chúng tôi tự tay chế biến Giò, Chả, Xúc xích, Nem lụi và Khô theo công thức gia truyền, dùng nguyên liệu chọn lọc và quy trình đóng gói an toàn, để mỗi bữa cơm của cộng đồng người Việt tại Hàn Quốc luôn đậm đà, ấm áp như ở nhà.</p>
             </div>
         </section>
 
@@ -1932,7 +2726,7 @@
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-quote" data-i18n="testi_1_quote">Giò của bibifood ăn y hệt vị ở Việt Nam, mua cho cả nhà ăn Tết mà ai cũng khen. Đóng gói cẩn thận, giao hàng nhanh.</p>
+                    <p class="testimonial-quote" data-i18n="testi_1_quote">Giò của Bibi food ăn y hệt vị ở Việt Nam, mua cho cả nhà ăn Tết mà ai cũng khen. Đóng gói cẩn thận, giao hàng nhanh.</p>
                     <div class="testimonial-author">
                         <img src="https://i.pravatar.cc/80?img=47" alt="Chị Hương" class="testimonial-avatar">
                         <div>
@@ -1943,7 +2737,7 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-quote" data-i18n="testi_2_quote">Nem lụi thơm, chả lụa dai ngon, đặt hàng qua điện thoại rất tiện. Sẽ ủng hộ bibifood dài dài.</p>
+                    <p class="testimonial-quote" data-i18n="testi_2_quote">Nem lụi thơm, chả lụa dai ngon, đặt hàng qua điện thoại rất tiện. Sẽ ủng hộ Bibi food dài dài.</p>
                     <div class="testimonial-author">
                         <img src="https://i.pravatar.cc/80?img=32" alt="Anh Minh" class="testimonial-avatar">
                         <div>
@@ -1960,8 +2754,8 @@
             <span class="section-label" data-i18n="faq_label">Hỏi đáp</span>
             <h2 class="section-title" data-i18n="faq_title">Câu hỏi thường gặp</h2>
             <details class="faq-item">
-                <summary data-i18n="faq_q1">bibifood giao hàng ở những khu vực nào tại Hàn Quốc?</summary>
-                <p data-i18n="faq_a1">bibifood giao hàng trên toàn Hàn Quốc. Thời gian giao có thể khác nhau tùy khu vực, vui lòng liên hệ số điện thoại/KakaoTalk để biết thời gian cụ thể cho địa chỉ của bạn.</p>
+                <summary data-i18n="faq_q1">Bibi food giao hàng ở những khu vực nào tại Hàn Quốc?</summary>
+                <p data-i18n="faq_a1">Bibi food giao hàng trên toàn Hàn Quốc. Thời gian giao có thể khác nhau tùy khu vực, vui lòng liên hệ số điện thoại/KakaoTalk để biết thời gian cụ thể cho địa chỉ của bạn.</p>
             </details>
             <details class="faq-item">
                 <summary data-i18n="faq_q2">Sản phẩm nên bảo quản như thế nào?</summary>
@@ -1969,19 +2763,19 @@
             </details>
             <details class="faq-item">
                 <summary data-i18n="faq_q3">Làm sao để đặt hàng?</summary>
-                <p data-i18n="faq_a3">Bạn có thể đặt hàng trực tiếp qua số điện thoại hoặc KakaoTalk ở mục Liên hệ bên dưới. Đội ngũ bibifood sẽ tư vấn và xác nhận đơn hàng nhanh chóng.</p>
+                <p data-i18n="faq_a3">Bạn có thể đặt hàng trực tiếp qua số điện thoại hoặc KakaoTalk ở mục Liên hệ bên dưới. Đội ngũ Bibi food sẽ tư vấn và xác nhận đơn hàng nhanh chóng.</p>
             </details>
             <details class="faq-item">
-                <summary data-i18n="faq_q4">bibifood nhận những hình thức thanh toán nào?</summary>
+                <summary data-i18n="faq_q4">Bibi food nhận những hình thức thanh toán nào?</summary>
                 <p data-i18n="faq_a4">Hình thức thanh toán có thể thay đổi tùy đơn hàng, vui lòng liên hệ trực tiếp để biết thông tin thanh toán cụ thể.</p>
             </details>
             <details class="faq-item">
-                <summary data-i18n="faq_q5">Nguyên liệu của bibifood có nguồn gốc từ đâu?</summary>
-                <p data-i18n="faq_a5">bibifood chọn lọc nguyên liệu tươi, rõ nguồn gốc và tuân thủ quy trình chế biến, đóng gói an toàn thực phẩm.</p>
+                <summary data-i18n="faq_q5">Nguyên liệu của Bibi food có nguồn gốc từ đâu?</summary>
+                <p data-i18n="faq_a5">Bibi food chọn lọc nguyên liệu tươi, rõ nguồn gốc và tuân thủ quy trình chế biến, đóng gói an toàn thực phẩm.</p>
             </details>
             <details class="faq-item">
-                <summary data-i18n="faq_q6">Chính sách đổi trả của bibifood như thế nào?</summary>
-                <p data-i18n="faq_a6">Nếu sản phẩm gặp vấn đề khi nhận hàng, vui lòng liên hệ ngay để bibifood hỗ trợ đổi trả theo từng trường hợp cụ thể.</p>
+                <summary data-i18n="faq_q6">Chính sách đổi trả của Bibi food như thế nào?</summary>
+                <p data-i18n="faq_a6">Nếu sản phẩm gặp vấn đề khi nhận hàng, vui lòng liên hệ ngay để Bibi food hỗ trợ đổi trả theo từng trường hợp cụ thể.</p>
             </details>
         </section>
 
@@ -2019,7 +2813,7 @@
                 <a href="javascript:void(0)" data-i18n="footer_terms">Điều khoản sử dụng</a>
                 <a href="#" data-scroll-to=".contact-section" data-i18n="footer_contact">Liên hệ</a>
             </div>
-            <p class="footer-copyright" data-i18n="footer_text">&copy; 2026 bibifood. All rights reserved.</p>
+            <p class="footer-copyright" data-i18n="footer_text">&copy; 2026 Bibi food. All rights reserved.</p>
         </footer>
 
         <!-- All Products Modal -->
@@ -2038,6 +2832,7 @@
                 <button class="category-filter-btn" data-filter="nem" data-i18n="filter_nem">Nem</button>
                 <button class="category-filter-btn" data-filter="kho" data-i18n="filter_kho">Khô</button>
                 <button class="category-filter-btn" data-filter="banhtrung" data-i18n="filter_banhtrung">Bánh chưng</button>
+                <button class="category-filter-btn" data-filter="vien" data-i18n="filter_vien">Viên thả lẩu</button>
                 <button class="category-filter-btn" data-filter="khac" data-i18n="filter_khac">Khác</button>
             </div>
             <div class="all-products-grid">
@@ -2212,43 +3007,208 @@
                         <p class="product-price">10,000 ₩</p>
                     </div>
                 </div>
+                <div class="product-card" data-category="vien">
+                    <div class="product-image-wrap">
+                        <img src="vien_heo.jfif" alt="Viên heo" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name" data-i18n="product_vien_heo">Viên heo</p>
+                        <p class="product-price">10,000 ₩</p>
+                    </div>
+                </div>
+                <div class="product-card" data-category="vien">
+                    <div class="product-image-wrap">
+                        <img src="vien_bo.jfif" alt="Viên bò" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name" data-i18n="product_vien_bo">Viên bò</p>
+                        <p class="product-price">10,000 ₩</p>
+                    </div>
+                </div>
+                <div class="product-card" data-category="gio">
+                    <div class="product-image-wrap">
+                        <img src="cha_com.jfif" alt="Chả cốm" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name" data-i18n="product_cha_com">Chả cốm</p>
+                        <p class="product-price">10,000 ₩</p>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Order Workflow Modal -->
         <div class="order-workflow-backdrop" id="orderWorkflowBackdrop"></div>
-        <div class="order-workflow-modal" id="orderWorkflowModal">
+        <div class="order-workflow-modal" id="orderWorkflowModal" role="dialog" aria-modal="true">
             <button class="order-workflow-close" id="orderWorkflowClose" aria-label="Đóng">
                 <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
             </button>
-            <div class="order-workflow-logo">
-                <span class="header-logo-text"><span class="header-logo-bb"><img src="bibifood_logo_new.png" alt="BB" class="header-logo-bb-img"></span><span class="header-logo-brand">bibifood</span></span>
+            <p class="order-workflow-title" data-i18n="order_wf_title">Thanh toán</p>
+            <div class="order-workflow-options">
+                <button class="order-workflow-option" id="orderRetailBtn" type="button">
+                    <span class="order-workflow-option-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg></span>
+                    <span class="order-workflow-option-label" data-i18n="order_wf_retail_title">Mua lẻ</span>
+                    <svg class="order-workflow-option-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+                </button>
+                <button class="order-workflow-option" id="orderWholesaleBtn" type="button">
+                    <span class="order-workflow-option-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9a3 3 0 0 0 6 0a3 3 0 0 0 6 0a3 3 0 0 0 6 0"/><path d="M5 12v9h14v-9"/><path d="M10 21v-5h4v5"/></svg></span>
+                    <span class="order-workflow-option-label" data-i18n="order_wf_wholesale_title">Mua sỉ</span>
+                    <svg class="order-workflow-option-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+                </button>
             </div>
-            <p class="order-workflow-title" data-i18n="order_wf_title">Bạn muốn mua hàng theo hình thức nào?</p>
-            <p class="order-workflow-subtitle" data-i18n="order_wf_subtitle">Chọn hình thức phù hợp để tiếp tục đặt hàng.</p>
-            <div class="order-workflow-cards">
-                <div class="order-workflow-card retail">
-                    <span class="order-workflow-badge" data-i18n="order_wf_retail_badge">🚚 FREE SHIPPING</span>
-                    <p class="order-workflow-card-title" data-i18n="order_wf_retail_title">Mua lẻ</p>
-                    <p class="order-workflow-card-desc" data-i18n="order_wf_retail_desc">Miễn phí giao hàng cho đơn từ 35.000 won</p>
-                    <button class="order-workflow-btn retail-btn" id="orderRetailBtn" data-i18n="order_wf_retail_btn">Mua lẻ ngay</button>
+        </div>
+
+
+        <!-- Customer Info Form Modal -->
+        <div class="cf-backdrop" id="cfBackdrop"></div>
+        <div class="cf-modal" id="cfModal" role="dialog" aria-modal="true" aria-labelledby="cfTitle">
+            <div class="cf-header">
+                <button class="cf-close" id="cfClose" type="button" aria-label="Đóng"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+                <div class="cf-header-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg></div>
+                <p class="cf-title" id="cfTitle" data-i18n="cf_title">Thông tin người mua</p>
+                <p class="cf-subtitle" data-i18n="cf_subtitle">Để lại thông tin để Bibi food giao hàng và gửi ưu đãi đến bạn. Tất cả các mục đều không bắt buộc.</p>
+            </div>
+            <div class="cf-body">
+                <div class="cf-form-view">
+                    <form id="cfForm" novalidate autocomplete="on">
+                        <div class="cf-field">
+                            <label class="cf-label" for="cfName"><span data-i18n="cf_name_label">Tên người mua</span><span class="cf-optional" data-i18n="cf_optional">Tùy chọn</span></label>
+                            <div class="cf-input-wrap"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg><input class="cf-input" id="cfName" name="name" type="text" maxlength="100" autocomplete="name" data-i18n-placeholder="cf_name_ph" placeholder="Nguyễn Văn A"></div>
+                        </div>
+                        <div class="cf-field">
+                            <label class="cf-label" for="cfPhone"><span data-i18n="cf_phone_label">Số điện thoại</span><span class="cf-optional" data-i18n="cf_optional">Tùy chọn</span></label>
+                            <div class="cf-input-wrap"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><input class="cf-input" id="cfPhone" name="phone" type="tel" inputmode="tel" maxlength="30" autocomplete="tel" placeholder="010-1234-5678"></div>
+                        </div>
+                        <div class="cf-field">
+                            <label class="cf-label" for="cfAddress"><span data-i18n="cf_address_label">Địa chỉ nhận hàng</span><span class="cf-optional" data-i18n="cf_optional">Tùy chọn</span></label>
+                            <div class="cf-input-wrap"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><textarea class="cf-input" id="cfAddress" name="address" rows="2" maxlength="300" autocomplete="street-address" data-i18n-placeholder="cf_address_ph" placeholder="Số nhà, đường, quận/huyện, thành phố"></textarea></div>
+                        </div>
+                        <div class="cf-field">
+                            <label class="cf-label" for="cfFacebook"><span data-i18n="cf_facebook_label">Facebook</span><span class="cf-optional" data-i18n="cf_optional">Tùy chọn</span></label>
+                            <div class="cf-input-wrap"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg><input class="cf-input" id="cfFacebook" name="facebook" type="text" maxlength="200" autocomplete="off" data-i18n-placeholder="cf_facebook_ph" placeholder="Link hoặc tên Facebook"></div>
+                        </div>
+                        <input class="cf-trap" type="text" name="website" id="cfTrap" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                        <div class="cf-pledge">
+                            <p class="cf-pledge-title"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg><span data-i18n="cf_pledge_title">Cam kết bảo mật thông tin</span></p>
+                            <ul class="cf-pledge-list">
+                                <li data-i18n="cf_pledge_1">Thông tin của bạn chỉ được dùng để giao hàng.</li>
+                                <li data-i18n="cf_pledge_2">Khi Bibi food có chương trình giảm giá, chúng tôi sẽ gửi ưu đãi đến bạn để bạn không bỏ lỡ.</li>
+                                <li data-i18n="cf_pledge_3">Chúng tôi không chia sẻ thông tin của bạn cho bên thứ ba.</li>
+                            </ul>
+                        </div>
+
+                        <label class="cf-consent"><input type="checkbox" id="cfConsent"><span data-i18n="cf_consent">Tôi đồng ý để Bibi food sử dụng thông tin trên theo cam kết bảo mật và gửi cho tôi các chương trình ưu đãi.</span></label>
+
+                        <div class="cf-error" id="cfError" role="alert"></div>
+
+                        <div class="cf-actions">
+                            <button class="cf-btn cf-btn-secondary" id="cfBack" type="button" data-i18n="cf_back">Quay lại</button>
+                            <button class="cf-btn cf-btn-primary" id="cfSubmit" type="submit" data-i18n="cf_submit">Gửi thông tin</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="order-workflow-card wholesale">
-                    <span class="order-workflow-badge" data-i18n="order_wf_wholesale_badge">Dành cho cửa hàng</span>
-                    <p class="order-workflow-card-title" data-i18n="order_wf_wholesale_title">Mua sỉ</p>
-                    <p class="order-workflow-card-desc" data-i18n="order_wf_wholesale_desc">Hỗ trợ khai thuế vào ngày 10 hằng tháng cho các cửa hàng hợp tác</p>
-                    <p class="order-workflow-card-note" data-i18n="order_wf_wholesale_note">Đơn tối thiểu 500.000 won</p>
-                    <button class="order-workflow-btn wholesale-btn" id="orderWholesaleBtn" data-i18n="order_wf_wholesale_btn">Đăng ký mua sỉ</button>
+                <div class="cf-success" id="cfSuccess">
+                    <div class="cf-success-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    <p class="cf-success-title" data-i18n="cf_success_title">Cảm ơn bạn!</p>
+                    <p class="cf-success-text" data-i18n="cf_success_text">Bibi food đã nhận được thông tin của bạn. Chúng tôi sẽ liên hệ sớm để xác nhận đơn hàng.</p>
+                    <button class="cf-btn cf-btn-primary" id="cfDone" type="button" style="width:100%" data-i18n="cf_done">Đóng</button>
                 </div>
             </div>
-            <div class="order-workflow-steps">
-                <span class="step active" data-i18n="order_wf_step1">Chọn hình thức</span>
-                <span>→</span>
-                <span class="step" data-i18n="order_wf_step2">Thêm sản phẩm</span>
-                <span>→</span>
-                <span class="step" data-i18n="order_wf_step3">Kiểm tra điều kiện</span>
-                <span>→</span>
-                <span class="step" data-i18n="order_wf_step4">Thanh toán</span>
+        </div>
+
+
+        <!-- Wholesale Account Modal -->
+        <div class="cf-backdrop" id="wsBackdrop"></div>
+        <div class="cf-modal" id="wsModal" data-view="login" role="dialog" aria-modal="true" aria-labelledby="wsTitle">
+            <button class="cf-close-float" id="wsCloseFloat" type="button" aria-label="Đóng"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            <div class="cf-header">
+                <button class="cf-close" id="wsClose" type="button" aria-label="Đóng"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+                <div class="cf-header-icon ws-head-login"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+                <div class="cf-header-icon ws-head-request"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9a3 3 0 0 0 6 0a3 3 0 0 0 6 0a3 3 0 0 0 6 0"/><path d="M5 12v9h14v-9"/><path d="M10 21v-5h4v5"/></svg></div>
+                <p class="cf-title ws-head-login" id="wsTitle" data-i18n="ws_login_title">Đăng nhập mua sỉ</p>
+                <p class="cf-subtitle ws-head-login" data-i18n="ws_login_subtitle">Dành cho cửa hàng đối tác của Bibi food.</p>
+                <div class="cf-header-icon ws-head-choose"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                <p class="cf-title ws-head-choose" data-i18n="ws_go_request">Yêu cầu cấp tài khoản</p>
+                <p class="cf-subtitle ws-head-choose" data-i18n="ws_choose_subtitle">Chọn cách để Bibi food cấp tài khoản mua sỉ cho bạn.</p>
+                <p class="cf-title ws-head-request" data-i18n="ws_req_title">Yêu cầu cấp tài khoản</p>
+                <p class="cf-subtitle ws-head-request" data-i18n="ws_req_subtitle">Điền thông tin cửa hàng để Bibi food xét duyệt và cấp tài khoản mua sỉ cho bạn.</p>
+            </div>
+            <div class="cf-body">
+
+                <div class="ws-view ws-view-login">
+                    <form id="wsLoginForm" novalidate>
+                        <div class="cf-field"><label class="cf-label" for="wsUser"><span data-i18n="ws_username_label">Tên đăng nhập</span><span class="cf-req" data-i18n="ws_required">Bắt buộc</span></label><div class="cf-input-wrap"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg><input class="cf-input" id="wsUser" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="60" data-i18n-placeholder="ws_username_ph" placeholder="Số điện thoại hoặc tên đăng nhập"></div></div>
+                        <div class="cf-field"><label class="cf-label" for="wsPass"><span data-i18n="ws_password_label">Mật khẩu</span><span class="cf-req" data-i18n="ws_required">Bắt buộc</span></label><div class="cf-input-wrap"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><input class="cf-input has-toggle" id="wsPass" type="password" autocomplete="current-password" maxlength="100" data-i18n-placeholder="ws_password_ph" placeholder="Nhập mật khẩu"><button class="cf-pw-toggle" id="wsPassToggle" type="button" aria-label="Hiện mật khẩu"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div></div>
+                        <div class="cf-error" id="wsLoginError" role="alert"></div>
+                        <button class="cf-btn cf-btn-primary" id="wsLoginSubmit" type="submit" style="width:100%" data-i18n="ws_login_btn">Đăng nhập</button>
+                    </form>
+                    <div class="ws-divider"><span data-i18n="ws_no_account">Chưa có tài khoản?</span></div>
+                    <div class="ws-request-box">
+                        <p class="ws-request-text" data-i18n="ws_no_account_text">Gửi yêu cầu cấp tài khoản, Bibi food sẽ xét duyệt và liên hệ với bạn.</p>
+                        <button class="cf-btn cf-btn-secondary" id="wsGoRequest" type="button" style="width:100%;flex:none" data-i18n="ws_go_request">Yêu cầu cấp tài khoản</button>
+                    </div>
+                </div>
+
+                <div class="ws-view ws-view-choose">
+                    <div class="ws-options">
+                        <a class="ws-option" id="wsCallBtn" href="tel:01026162689">
+                            <span class="ws-option-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                            <span class="ws-option-text">
+                                <span class="ws-option-label" data-i18n="ws_call_provider">Gọi trực tiếp cho nhà cung cấp</span>
+                                <span class="ws-option-sub">010-2616-2689</span>
+                            </span>
+                            <svg class="ws-option-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+                        </a>
+                        <button class="ws-option" id="wsFormBtn" type="button">
+                            <span class="ws-option-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg></span>
+                            <span class="ws-option-text">
+                                <span class="ws-option-label" data-i18n="ws_go_request">Yêu cầu cấp tài khoản</span>
+                            </span>
+                            <svg class="ws-option-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+                        </button>
+                    </div>
+                    <button class="cf-btn cf-btn-secondary" id="wsChooseBack" type="button" style="width:100%;flex:none" data-i18n="cf_back">Quay lại</button>
+                </div>
+
+                <div class="ws-view ws-view-request">
+                    <form id="wsReqForm" novalidate>
+                        <div class="cf-field"><label class="cf-label" for="wsFullName"><span data-i18n="ws_fullname_label">Họ và tên</span><span class="cf-req" data-i18n="ws_required">Bắt buộc</span></label><div class="cf-input-wrap"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg><input class="cf-input" id="wsFullName" type="text" autocomplete="name" maxlength="100" data-i18n-placeholder="ws_fullname_ph" placeholder="Nguyễn Văn A"></div></div>
+                        <div class="cf-field"><label class="cf-label" for="wsPhone"><span data-i18n="ws_phone_label">Số điện thoại</span><span class="cf-req" data-i18n="ws_required">Bắt buộc</span></label><div class="cf-input-wrap"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><input class="cf-input" id="wsPhone" type="tel" inputmode="tel" autocomplete="tel" maxlength="30" placeholder="010-1234-5678"></div></div>
+                        <div class="cf-field"><label class="cf-label" for="wsAddress"><span data-i18n="ws_address_label">Địa chỉ</span><span class="cf-req" data-i18n="ws_required">Bắt buộc</span></label><div class="cf-input-wrap"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><textarea class="cf-input" id="wsAddress" rows="2" maxlength="300" autocomplete="street-address" data-i18n-placeholder="ws_address_ph" placeholder="Địa chỉ cửa hàng"></textarea></div></div>
+                        <div class="cf-field"><label class="cf-label" for="wsStore"><span data-i18n="ws_store_label">Tên cửa hàng</span><span class="cf-req" data-i18n="ws_required">Bắt buộc</span></label><div class="cf-input-wrap"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9a3 3 0 0 0 6 0a3 3 0 0 0 6 0a3 3 0 0 0 6 0"/><path d="M5 12v9h14v-9"/><path d="M10 21v-5h4v5"/></svg><input class="cf-input" id="wsStore" type="text" autocomplete="organization" maxlength="120" data-i18n-placeholder="ws_store_ph" placeholder="Tên cửa hàng của bạn"></div></div>
+                        <div class="cf-field"><label class="cf-label" for="wsLicense"><span data-i18n="ws_license_label">Mã số giấy phép kinh doanh</span><span class="cf-req" data-i18n="ws_required">Bắt buộc</span></label><div class="cf-input-wrap"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="11" r="2.5"/><path d="M5.5 17a3.5 3.5 0 0 1 7 0"/><line x1="15" y1="9" x2="19" y2="9"/><line x1="15" y1="13" x2="19" y2="13"/></svg><input class="cf-input" id="wsLicense" type="text" autocomplete="off" maxlength="40" placeholder="000-00-00000"></div></div>
+                        <input class="cf-trap" type="text" id="wsTrap" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <p class="ws-note" data-i18n="ws_req_note">Thông tin chỉ dùng để xét duyệt tài khoản mua sỉ và được Bibi food bảo mật. Sau khi duyệt, chúng tôi sẽ gửi tên đăng nhập và mật khẩu cho bạn qua số điện thoại.</p>
+                        <div class="cf-error" id="wsReqError" role="alert"></div>
+                        <div class="cf-actions">
+                            <button class="cf-btn cf-btn-secondary" id="wsBackLogin" type="button" data-i18n="cf_back">Quay lại</button>
+                            <button class="cf-btn cf-btn-primary" id="wsReqSubmit" type="submit" data-i18n="ws_req_submit">Gửi yêu cầu</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="ws-view ws-view-sent">
+                    <div class="ws-center">
+                        <div class="cf-success-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
+                        <p class="cf-success-title" data-i18n="ws_sent_title">Đã gửi yêu cầu!</p>
+                        <p class="cf-success-text" data-i18n="ws_sent_text">Bibi food đã nhận được yêu cầu cấp tài khoản của bạn. Chúng tôi sẽ kiểm tra thông tin và liên hệ qua số điện thoại bạn đã cung cấp.</p>
+                        <button class="cf-btn cf-btn-primary" id="wsSentDone" type="button" style="width:100%" data-i18n="cf_done">Đóng</button>
+                    </div>
+                </div>
+
+                <div class="ws-view ws-view-welcome">
+                    <div class="ws-center">
+                        <div class="cf-success-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <p class="cf-success-title"><span data-i18n="ws_welcome">Xin chào,</span> <span id="wsWelcomeName"></span></p>
+                        <p class="cf-success-text" data-i18n="ws_welcome_text">Bạn đã đăng nhập tài khoản mua sỉ. Chức năng đặt hàng sỉ đang được hoàn thiện, nhân viên Bibi food sẽ hỗ trợ bạn đặt hàng qua Facebook.</p>
+                        <div class="cf-actions">
+                            <button class="cf-btn cf-btn-secondary" id="wsLogout" type="button" data-i18n="ws_logout">Đăng xuất</button>
+                            <button class="cf-btn cf-btn-primary" id="wsChat" type="button" data-i18n="ws_chat">Nhắn tin Facebook</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -2285,6 +3245,10 @@
                     <p class="product-modal-section-title" data-i18n="detail_storage_title">Bảo quản</p>
                     <ul class="product-modal-list" id="productModalStorage"></ul>
                 </div>
+                <button class="product-modal-add-cart" id="productModalAddCart">
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <span data-i18n="modal_add_to_cart">Thêm vào giỏ hàng</span>
+                </button>
             </div>
         </div>
     </div>
@@ -2294,39 +3258,11 @@
 
     <script>
         (function () {
-            var sideMenu = document.getElementById('sideMenu');
-            var menuBackdrop = document.getElementById('menuBackdrop');
-            var menuOpenBtn = document.getElementById('menuOpenBtn');
-            var menuCloseBtn = document.getElementById('sideMenuClose');
-
-            function openMenu() {
-                sideMenu.classList.add('open');
-                menuBackdrop.classList.add('open');
-            }
-
-            function closeMenu() {
-                sideMenu.classList.remove('open');
-                menuBackdrop.classList.remove('open');
-            }
-
-            menuOpenBtn.addEventListener('click', openMenu);
-            menuCloseBtn.addEventListener('click', closeMenu);
-            menuBackdrop.addEventListener('click', closeMenu);
-
             document.querySelectorAll('[data-scroll-to]').forEach(function (el) {
                 el.addEventListener('click', function (e) {
                     e.preventDefault();
-                    closeMenu();
                     var target = el.getAttribute('data-scroll-to');
                     document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
-                });
-            });
-
-            document.querySelectorAll('.side-menu-link:not([data-scroll-to])').forEach(function (link) {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    closeMenu();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             });
         })();
@@ -2337,13 +3273,9 @@
 
             var translations = {
                 vi: {
-                    nav_home: 'Trang chủ',
-                    nav_products: 'Tất cả sản phẩm',
-                    nav_contact: 'Liên hệ',
                     hero_title: 'Mang vị Việt, gửi yêu thương',
-                    hero_desc: 'Khám phá bộ sưu tập Giò, Chả, Lạp xưởng và Nem lụi gia truyền từ bibifood.',
+                    hero_desc: 'Khám phá bộ sưu tập Giò, Chả, Lạp xưởng và Nem lụi gia truyền từ Bibi food.',
                     btn_menu: 'Xem ngay sản phẩm',
-                    btn_order: 'Đặt hàng ngay',
                     product_gio_bo: 'Giò bò',
                     product_gio_heo: 'Giò heo',
                     product_xx_ga: 'Xúc xích gà',
@@ -2363,10 +3295,14 @@
                     product_gio_song: 'Giò sống',
                     product_kho_lon: 'Khô lợn',
                     product_gio_xao: 'Giò sào',
+                    product_vien_heo: 'Viên heo',
+                    product_vien_bo: 'Viên bò',
+                    product_cha_com: 'Chả cốm',
                     contact_title: 'Thông tin liên hệ chi tiết',
                     contact_phone: '010-2616-2689 - Gọi ngay',
-                    footer_text: '© 2026 bibifood. All rights reserved.',
+                    footer_text: '© 2026 Bibi food. All rights reserved.',
                     modal_price_label: 'Giá',
+                    modal_add_to_cart: 'Thêm vào giỏ hàng',
                     detail_ingredients_title: 'Thành phần & Mùi vị',
                     detail_serving_title: 'Cách sử dụng',
                     detail_storage_title: 'Bảo quản',
@@ -2378,6 +3314,7 @@
                     filter_kho: 'Khô',
                     filter_banhtrung: 'Bánh chưng',
                     filter_khac: 'Khác',
+                    filter_vien: 'Viên thả lẩu',
                     carousel_title: 'Sản phẩm',
                     view_all_btn: 'Xem tất cả',
                     feature_taste_title: 'Hương vị truyền thống',
@@ -2389,61 +3326,108 @@
                     feature_delivery_title: 'Giao hàng tại Hàn Quốc',
                     feature_delivery_desc: 'Giao tận nơi trên toàn Hàn Quốc',
                     story_label: 'Câu chuyện thương hiệu',
-                    story_title: 'Giới thiệu bibifood',
-                    story_text: 'bibifood ra đời từ nỗi nhớ hương vị quê nhà của những người con xa xứ. Chúng tôi tự tay chế biến Giò, Chả, Xúc xích, Nem lụi và Khô theo công thức gia truyền, dùng nguyên liệu chọn lọc và quy trình đóng gói an toàn, để mỗi bữa cơm của cộng đồng người Việt tại Hàn Quốc luôn đậm đà, ấm áp như ở nhà.',
+                    story_title: 'Giới thiệu Bibi food',
+                    story_text: 'Bibi food ra đời từ nỗi nhớ hương vị quê nhà của những người con xa xứ. Chúng tôi tự tay chế biến Giò, Chả, Xúc xích, Nem lụi và Khô theo công thức gia truyền, dùng nguyên liệu chọn lọc và quy trình đóng gói an toàn, để mỗi bữa cơm của cộng đồng người Việt tại Hàn Quốc luôn đậm đà, ấm áp như ở nhà.',
                     cert_label: 'Chất lượng',
                     cert_title: 'Chứng nhận an toàn thực phẩm',
                     testi_label: 'Khách hàng nói gì',
                     testi_title: 'Cảm nhận khách hàng',
-                    testi_1_quote: 'Giò của bibifood ăn y hệt vị ở Việt Nam, mua cho cả nhà ăn Tết mà ai cũng khen. Đóng gói cẩn thận, giao hàng nhanh.',
+                    testi_1_quote: 'Giò của Bibi food ăn y hệt vị ở Việt Nam, mua cho cả nhà ăn Tết mà ai cũng khen. Đóng gói cẩn thận, giao hàng nhanh.',
                     testi_1_name: 'Chị Hương – Seoul',
-                    testi_2_quote: 'Nem lụi thơm, chả lụa dai ngon, đặt hàng qua điện thoại rất tiện. Sẽ ủng hộ bibifood dài dài.',
+                    testi_2_quote: 'Nem lụi thơm, chả lụa dai ngon, đặt hàng qua điện thoại rất tiện. Sẽ ủng hộ Bibi food dài dài.',
                     testi_2_name: 'Anh Minh – Suwon',
                     faq_label: 'Hỏi đáp',
                     faq_title: 'Câu hỏi thường gặp',
-                    faq_q1: 'bibifood giao hàng ở những khu vực nào tại Hàn Quốc?',
-                    faq_a1: 'bibifood giao hàng trên toàn Hàn Quốc. Thời gian giao có thể khác nhau tùy khu vực, vui lòng liên hệ số điện thoại/KakaoTalk để biết thời gian cụ thể cho địa chỉ của bạn.',
+                    faq_q1: 'Bibi food giao hàng ở những khu vực nào tại Hàn Quốc?',
+                    faq_a1: 'Bibi food giao hàng trên toàn Hàn Quốc. Thời gian giao có thể khác nhau tùy khu vực, vui lòng liên hệ số điện thoại/KakaoTalk để biết thời gian cụ thể cho địa chỉ của bạn.',
                     faq_q2: 'Sản phẩm nên bảo quản như thế nào?',
                     faq_a2: 'Các sản phẩm Giò, Chả, Xúc xích, Nem lụi, Khô nên được bảo quản trong ngăn mát hoặc ngăn đá tủ lạnh. Hạn sử dụng và cách bảo quản chi tiết được ghi trên bao bì từng sản phẩm.',
                     faq_q3: 'Làm sao để đặt hàng?',
-                    faq_a3: 'Bạn có thể đặt hàng trực tiếp qua số điện thoại hoặc KakaoTalk ở mục Liên hệ bên dưới. Đội ngũ bibifood sẽ tư vấn và xác nhận đơn hàng nhanh chóng.',
-                    faq_q4: 'bibifood nhận những hình thức thanh toán nào?',
+                    faq_a3: 'Bạn có thể đặt hàng trực tiếp qua số điện thoại hoặc KakaoTalk ở mục Liên hệ bên dưới. Đội ngũ Bibi food sẽ tư vấn và xác nhận đơn hàng nhanh chóng.',
+                    faq_q4: 'Bibi food nhận những hình thức thanh toán nào?',
                     faq_a4: 'Hình thức thanh toán có thể thay đổi tùy đơn hàng, vui lòng liên hệ trực tiếp để biết thông tin thanh toán cụ thể.',
-                    faq_q5: 'Nguyên liệu của bibifood có nguồn gốc từ đâu?',
-                    faq_a5: 'bibifood chọn lọc nguyên liệu tươi, rõ nguồn gốc và tuân thủ quy trình chế biến, đóng gói an toàn thực phẩm.',
-                    faq_q6: 'Chính sách đổi trả của bibifood như thế nào?',
-                    faq_a6: 'Nếu sản phẩm gặp vấn đề khi nhận hàng, vui lòng liên hệ ngay để bibifood hỗ trợ đổi trả theo từng trường hợp cụ thể.',
+                    faq_q5: 'Nguyên liệu của Bibi food có nguồn gốc từ đâu?',
+                    faq_a5: 'Bibi food chọn lọc nguyên liệu tươi, rõ nguồn gốc và tuân thủ quy trình chế biến, đóng gói an toàn thực phẩm.',
+                    faq_q6: 'Chính sách đổi trả của Bibi food như thế nào?',
+                    faq_a6: 'Nếu sản phẩm gặp vấn đề khi nhận hàng, vui lòng liên hệ ngay để Bibi food hỗ trợ đổi trả theo từng trường hợp cụ thể.',
                     facebook_btn: 'Facebook',
                     footer_privacy: 'Chính sách bảo mật',
                     footer_terms: 'Điều khoản sử dụng',
                     footer_contact: 'Liên hệ',
-                    order_wf_title: 'Bạn muốn mua hàng theo hình thức nào?',
-                    order_wf_subtitle: 'Chọn hình thức phù hợp để tiếp tục đặt hàng.',
-                    order_wf_retail_badge: '🚚 FREE SHIPPING',
+                    order_wf_title: 'Thanh toán',
                     order_wf_retail_title: 'Mua lẻ',
-                    order_wf_retail_desc: 'Miễn phí giao hàng cho đơn từ 35.000 won',
-                    order_wf_retail_btn: 'Mua lẻ ngay',
-                    order_wf_wholesale_badge: 'Dành cho cửa hàng',
                     order_wf_wholesale_title: 'Mua sỉ',
-                    order_wf_wholesale_desc: 'Hỗ trợ khai thuế vào ngày 10 hằng tháng cho các cửa hàng hợp tác',
-                    order_wf_wholesale_note: 'Đơn tối thiểu 500.000 won',
-                    order_wf_wholesale_btn: 'Đăng ký mua sỉ',
-                    order_wf_step1: 'Chọn hình thức',
-                    order_wf_step2: 'Thêm sản phẩm',
-                    order_wf_step3: 'Kiểm tra điều kiện',
-                    order_wf_step4: 'Thanh toán',
                     coming_soon_text: 'Phần này chúng tôi vẫn đang trong quá trình chuẩn bị. Bạn có muốn kết nối với nhân viên bán hàng bằng Facebook không?',
                     coming_soon_no: 'Không',
-                    coming_soon_yes: 'Có'
+                    coming_soon_yes: 'Có',
+                    cf_title: 'Thông tin người mua',
+                    cf_subtitle: 'Để lại thông tin để Bibi food giao hàng và gửi ưu đãi đến bạn. Tất cả các mục đều không bắt buộc.',
+                    cf_optional: 'Tùy chọn',
+                    cf_name_label: 'Tên người mua',
+                    cf_name_ph: 'Nguyễn Văn A',
+                    cf_phone_label: 'Số điện thoại',
+                    cf_address_label: 'Địa chỉ nhận hàng',
+                    cf_address_ph: 'Số nhà, đường, quận/huyện, thành phố',
+                    cf_facebook_label: 'Facebook',
+                    cf_facebook_ph: 'Link hoặc tên Facebook',
+                    cf_pledge_title: 'Cam kết bảo mật thông tin',
+                    cf_pledge_1: 'Thông tin của bạn chỉ được dùng để giao hàng.',
+                    cf_pledge_2: 'Khi Bibi food có chương trình giảm giá, chúng tôi sẽ gửi ưu đãi đến bạn để bạn không bỏ lỡ.',
+                    cf_pledge_3: 'Chúng tôi không chia sẻ thông tin của bạn cho bên thứ ba.',
+                    cf_consent: 'Tôi đồng ý để Bibi food sử dụng thông tin trên theo cam kết bảo mật và gửi cho tôi các chương trình ưu đãi.',
+                    cf_back: 'Quay lại',
+                    cf_submit: 'Gửi thông tin',
+                    cf_err_empty: 'Vui lòng điền ít nhất một thông tin.',
+                    cf_err_send: 'Không gửi được thông tin. Vui lòng thử lại sau.',
+                    cf_success_title: 'Cảm ơn bạn!',
+                    cf_success_text: 'Bibi food đã nhận được thông tin của bạn. Chúng tôi sẽ liên hệ sớm để xác nhận đơn hàng.',
+                    cf_done: 'Đóng',
+                    ws_required: 'Bắt buộc',
+                    ws_login_title: 'Đăng nhập mua sỉ',
+                    ws_login_subtitle: 'Dành cho cửa hàng đối tác của Bibi food.',
+                    ws_username_label: 'Tên đăng nhập',
+                    ws_username_ph: 'Số điện thoại hoặc tên đăng nhập',
+                    ws_password_label: 'Mật khẩu',
+                    ws_password_ph: 'Nhập mật khẩu',
+                    ws_login_btn: 'Đăng nhập',
+                    ws_no_account: 'Chưa có tài khoản?',
+                    ws_no_account_text: 'Gửi yêu cầu cấp tài khoản, Bibi food sẽ xét duyệt và liên hệ với bạn.',
+                    ws_go_request: 'Yêu cầu cấp tài khoản',
+                    ws_choose_subtitle: 'Chọn cách để Bibi food cấp tài khoản mua sỉ cho bạn.',
+                    ws_call_provider: 'Gọi trực tiếp cho nhà cung cấp',
+                    cart_title: 'Giỏ hàng',
+                    cart_empty: 'Giỏ hàng trống',
+                    cart_order_btn: 'Đặt hàng ngay',
+                    cart_remove: 'Xóa',
+                    ws_req_title: 'Yêu cầu cấp tài khoản',
+                    ws_req_subtitle: 'Điền thông tin cửa hàng để Bibi food xét duyệt và cấp tài khoản mua sỉ cho bạn.',
+                    ws_fullname_label: 'Họ và tên',
+                    ws_fullname_ph: 'Nguyễn Văn A',
+                    ws_phone_label: 'Số điện thoại',
+                    ws_address_label: 'Địa chỉ',
+                    ws_address_ph: 'Địa chỉ cửa hàng',
+                    ws_store_label: 'Tên cửa hàng',
+                    ws_store_ph: 'Tên cửa hàng của bạn',
+                    ws_license_label: 'Mã số giấy phép kinh doanh',
+                    ws_req_note: 'Thông tin chỉ dùng để xét duyệt tài khoản mua sỉ và được Bibi food bảo mật. Sau khi duyệt, chúng tôi sẽ gửi tên đăng nhập và mật khẩu cho bạn qua số điện thoại.',
+                    ws_req_submit: 'Gửi yêu cầu',
+                    ws_sent_title: 'Đã gửi yêu cầu!',
+                    ws_sent_text: 'Bibi food đã nhận được yêu cầu cấp tài khoản của bạn. Chúng tôi sẽ kiểm tra thông tin và liên hệ qua số điện thoại bạn đã cung cấp.',
+                    ws_welcome: 'Xin chào,',
+                    ws_welcome_text: 'Bạn đã đăng nhập tài khoản mua sỉ. Chức năng đặt hàng sỉ đang được hoàn thiện, nhân viên Bibi food sẽ hỗ trợ bạn đặt hàng qua Facebook.',
+                    ws_logout: 'Đăng xuất',
+                    ws_chat: 'Nhắn tin Facebook',
+                    ws_err_login_empty: 'Vui lòng nhập tên đăng nhập và mật khẩu.',
+                    ws_err_invalid: 'Tên đăng nhập hoặc mật khẩu không đúng.',
+                    ws_err_locked: 'Bạn nhập sai quá nhiều lần. Vui lòng thử lại sau 15 phút.',
+                    ws_err_inactive: 'Tài khoản này đang bị khóa. Vui lòng liên hệ Bibi food.',
+                    ws_err_required: 'Vui lòng điền đầy đủ tất cả các mục bắt buộc.',
+                    ws_err_duplicate: 'Số điện thoại này đã có yêu cầu đang chờ duyệt. Bibi food sẽ sớm liên hệ với bạn.'
                 },
                 ko: {
-                    nav_home: '홈',
-                    nav_products: '전체 상품',
-                    nav_contact: '연락처',
                     hero_title: '베트남의 맛, 사랑을 전합니다',
-                    hero_desc: 'bibifood의 정통 지오(Giò), 짜(Chả), 랍쓰엉(Lạp xưởng), 넴루이(Nem lụi) 컬렉션을 만나보세요.',
+                    hero_desc: 'Bibi food의 정통 지오(Giò), 짜(Chả), 랍쓰엉(Lạp xưởng), 넴루이(Nem lụi) 컬렉션을 만나보세요.',
                     btn_menu: '상품 바로가기',
-                    btn_order: '지금 주문하기',
                     product_gio_bo: '소고기 지오 (Giò bò)',
                     product_gio_heo: '돼지고기 지오 (Giò heo)',
                     product_xx_ga: '닭고기 소시지 (Xúc xích gà)',
@@ -2463,10 +3447,14 @@
                     product_gio_song: '지오 송 (Giò sống)',
                     product_kho_lon: '돼지고기 육포 (Khô lợn)',
                     product_gio_xao: '지오 사오 (Giò sào)',
+                    product_vien_heo: '돼지고기 완자 (Viên heo)',
+                    product_vien_bo: '소고기 완자 (Viên bò)',
+                    product_cha_com: '짜 꼼 (Chả cốm)',
                     contact_title: '상세 연락처 정보',
                     contact_phone: '010-2616-2689 - 지금 전화하기',
-                    footer_text: '© 2026 bibifood. 모든 권리 보유.',
+                    footer_text: '© 2026 Bibi food. 모든 권리 보유.',
                     modal_price_label: '가격',
+                    modal_add_to_cart: '장바구니에 담기',
                     detail_ingredients_title: '성분 & 맛',
                     detail_serving_title: '사용 방법',
                     detail_storage_title: '보관 방법',
@@ -2478,6 +3466,7 @@
                     filter_kho: '육포 (Khô)',
                     filter_banhtrung: '바인 쯩 (Bánh chưng)',
                     filter_khac: '기타',
+                    filter_vien: '전골용 완자',
                     carousel_title: '상품',
                     view_all_btn: '전체 보기',
                     feature_taste_title: '전통의 맛',
@@ -2489,54 +3478,410 @@
                     feature_delivery_title: '한국 전역 배송',
                     feature_delivery_desc: '한국 전역으로 배송해 드립니다',
                     story_label: '브랜드 스토리',
-                    story_title: 'bibifood 소개',
-                    story_text: 'bibifood는 타지에서 고향의 맛을 그리워하는 마음에서 시작되었습니다. 저희는 지오, 짜, 소시지, 넴루이, 육포를 전통 레시피로 직접 만들며, 엄선된 재료와 안전한 포장 과정을 거쳐 한국에 계신 베트남 커뮤니티의 식탁이 고향처럼 따뜻하고 깊은 맛을 느낄 수 있도록 합니다.',
+                    story_title: 'Bibi food 소개',
+                    story_text: 'Bibi food는 타지에서 고향의 맛을 그리워하는 마음에서 시작되었습니다. 저희는 지오, 짜, 소시지, 넴루이, 육포를 전통 레시피로 직접 만들며, 엄선된 재료와 안전한 포장 과정을 거쳐 한국에 계신 베트남 커뮤니티의 식탁이 고향처럼 따뜻하고 깊은 맛을 느낄 수 있도록 합니다.',
                     cert_label: '품질',
                     cert_title: '식품안전 인증',
                     testi_label: '고객 후기',
                     testi_title: '고객님의 이야기',
-                    testi_1_quote: 'bibifood의 지오는 베트남 현지 맛과 똑같아요. 명절에 온 가족이 먹었는데 다들 맛있다고 했어요. 포장도 꼼꼼하고 배송도 빨랐습니다.',
+                    testi_1_quote: 'Bibi food의 지오는 베트남 현지 맛과 똑같아요. 명절에 온 가족이 먹었는데 다들 맛있다고 했어요. 포장도 꼼꼼하고 배송도 빨랐습니다.',
                     testi_1_name: 'Chị Hương – 서울',
                     testi_2_quote: '넴루이가 향긋하고 짜 루어도 쫄깃해서 맛있어요. 전화로 주문하기도 편했습니다. 앞으로도 계속 이용할게요.',
                     testi_2_name: 'Anh Minh – 수원',
                     faq_label: '자주 묻는 질문',
                     faq_title: '자주 묻는 질문',
-                    faq_q1: 'bibifood는 한국 어느 지역까지 배송되나요?',
-                    faq_a1: 'bibifood는 한국 전역으로 배송됩니다. 지역에 따라 배송 시간이 다를 수 있으니 정확한 배송 일정은 전화 또는 카카오톡으로 문의해 주세요.',
+                    faq_q1: 'Bibi food는 한국 어느 지역까지 배송되나요?',
+                    faq_a1: 'Bibi food는 한국 전역으로 배송됩니다. 지역에 따라 배송 시간이 다를 수 있으니 정확한 배송 일정은 전화 또는 카카오톡으로 문의해 주세요.',
                     faq_q2: '상품은 어떻게 보관해야 하나요?',
                     faq_a2: '지오, 짜, 소시지, 넴루이, 육포 제품은 냉장 또는 냉동 보관해 주세요. 유통기한과 자세한 보관 방법은 제품 포장에 표기되어 있습니다.',
                     faq_q3: '주문은 어떻게 하나요?',
-                    faq_a3: '아래 연락처의 전화 또는 카카오톡으로 직접 주문하실 수 있습니다. bibifood 담당자가 빠르게 상담 및 주문 확인을 도와드립니다.',
+                    faq_a3: '아래 연락처의 전화 또는 카카오톡으로 직접 주문하실 수 있습니다. Bibi food 담당자가 빠르게 상담 및 주문 확인을 도와드립니다.',
                     faq_q4: '어떤 결제 방법을 이용할 수 있나요?',
                     faq_a4: '결제 방법은 주문 상황에 따라 다를 수 있으니 정확한 안내는 직접 문의해 주세요.',
-                    faq_q5: 'bibifood 재료의 원산지는 어디인가요?',
-                    faq_a5: 'bibifood는 신선하고 원산지가 명확한 재료를 엄선하며, 안전한 가공 및 포장 절차를 준수합니다.',
+                    faq_q5: 'Bibi food 재료의 원산지는 어디인가요?',
+                    faq_a5: 'Bibi food는 신선하고 원산지가 명확한 재료를 엄선하며, 안전한 가공 및 포장 절차를 준수합니다.',
                     faq_q6: '교환/환불 정책은 어떻게 되나요?',
                     faq_a6: '상품 수령 시 문제가 있다면 즉시 연락해 주세요. 상황에 맞게 교환/환불을 도와드립니다.',
                     facebook_btn: '페이스북',
                     footer_privacy: '개인정보처리방침',
                     footer_terms: '이용약관',
                     footer_contact: '연락처',
-                    order_wf_title: '어떤 방식으로 구매하시겠어요?',
-                    order_wf_subtitle: '알맞은 방식을 선택해 주문을 계속해 주세요.',
-                    order_wf_retail_badge: '🚚 무료 배송',
+                    order_wf_title: '결제',
                     order_wf_retail_title: '소매 구매',
-                    order_wf_retail_desc: '35,000원 이상 주문 시 무료 배송',
-                    order_wf_retail_btn: '지금 소매 구매',
-                    order_wf_wholesale_badge: '매장 전용',
                     order_wf_wholesale_title: '도매 구매',
-                    order_wf_wholesale_desc: '협력 매장을 위해 매월 10일 세금계산 지원',
-                    order_wf_wholesale_note: '최소 주문 500,000원',
-                    order_wf_wholesale_btn: '도매 등록하기',
-                    order_wf_step1: '방식 선택',
-                    order_wf_step2: '상품 추가',
-                    order_wf_step3: '조건 확인',
-                    order_wf_step4: '결제',
                     coming_soon_text: '이 부분은 아직 준비 중입니다. 페이스북으로 담당 직원과 연결해 드릴까요?',
                     coming_soon_no: '아니요',
-                    coming_soon_yes: '네'
+                    coming_soon_yes: '네',
+                    cf_title: '구매자 정보',
+                    cf_subtitle: '배송과 할인 혜택 안내를 위해 정보를 남겨 주세요. 모든 항목은 선택 사항입니다.',
+                    cf_optional: '선택',
+                    cf_name_label: '구매자 이름',
+                    cf_name_ph: '홍길동',
+                    cf_phone_label: '전화번호',
+                    cf_address_label: '배송 주소',
+                    cf_address_ph: '도로명, 상세 주소, 시/구',
+                    cf_facebook_label: '페이스북',
+                    cf_facebook_ph: '페이스북 링크 또는 이름',
+                    cf_pledge_title: '개인정보 보호 약속',
+                    cf_pledge_1: '회원님의 정보는 상품 배송 목적으로만 사용됩니다.',
+                    cf_pledge_2: 'Bibi food에서 할인 행사가 있을 때 혜택을 놓치지 않도록 안내해 드립니다.',
+                    cf_pledge_3: '회원님의 정보를 제3자와 공유하지 않습니다.',
+                    cf_consent: '위 정보를 개인정보 보호 약속에 따라 Bibi food가 사용하고, 할인 혜택을 안내받는 것에 동의합니다.',
+                    cf_back: '뒤로',
+                    cf_submit: '정보 보내기',
+                    cf_err_empty: '하나 이상의 정보를 입력해 주세요.',
+                    cf_err_send: '정보를 보내지 못했습니다. 잠시 후 다시 시도해 주세요.',
+                    cf_success_title: '감사합니다!',
+                    cf_success_text: 'Bibi food가 정보를 잘 받았습니다. 주문 확인을 위해 곧 연락드리겠습니다.',
+                    cf_done: '닫기',
+                    ws_required: '필수',
+                    ws_login_title: '도매 로그인',
+                    ws_login_subtitle: 'Bibi food 협력 매장 전용입니다.',
+                    ws_username_label: '아이디',
+                    ws_username_ph: '전화번호 또는 아이디',
+                    ws_password_label: '비밀번호',
+                    ws_password_ph: '비밀번호 입력',
+                    ws_login_btn: '로그인',
+                    ws_no_account: '계정이 없으신가요?',
+                    ws_no_account_text: '계정 발급을 요청하시면 Bibi food에서 심사 후 연락드립니다.',
+                    ws_go_request: '계정 발급 요청',
+                    ws_choose_subtitle: 'Bibi food에서 도매 계정을 발급받을 방법을 선택해 주세요.',
+                    ws_call_provider: '공급업체에 직접 전화',
+                    cart_title: '장바구니',
+                    cart_empty: '장바구니가 비어 있습니다',
+                    cart_order_btn: '지금 주문하기',
+                    cart_remove: '삭제',
+                    ws_req_title: '계정 발급 요청',
+                    ws_req_subtitle: '매장 정보를 입력해 주시면 Bibi food가 심사 후 도매 계정을 발급해 드립니다.',
+                    ws_fullname_label: '이름',
+                    ws_fullname_ph: '홍길동',
+                    ws_phone_label: '전화번호',
+                    ws_address_label: '주소',
+                    ws_address_ph: '매장 주소',
+                    ws_store_label: '매장 이름',
+                    ws_store_ph: '매장 이름을 입력하세요',
+                    ws_license_label: '사업자등록번호',
+                    ws_req_note: '입력하신 정보는 도매 계정 심사에만 사용되며 Bibi food가 안전하게 보호합니다. 승인 후 아이디와 비밀번호를 전화번호로 안내해 드립니다.',
+                    ws_req_submit: '요청 보내기',
+                    ws_sent_title: '요청이 접수되었습니다!',
+                    ws_sent_text: 'Bibi food가 계정 발급 요청을 받았습니다. 정보를 확인한 후 입력하신 전화번호로 연락드리겠습니다.',
+                    ws_welcome: '안녕하세요,',
+                    ws_welcome_text: '도매 계정으로 로그인되었습니다. 도매 주문 기능은 준비 중이며, Bibi food 담당자가 페이스북으로 주문을 도와드립니다.',
+                    ws_logout: '로그아웃',
+                    ws_chat: '페이스북 문의',
+                    ws_err_login_empty: '아이디와 비밀번호를 입력해 주세요.',
+                    ws_err_invalid: '아이디 또는 비밀번호가 올바르지 않습니다.',
+                    ws_err_locked: '여러 번 잘못 입력하셨습니다. 15분 후 다시 시도해 주세요.',
+                    ws_err_inactive: '이 계정은 잠겨 있습니다. Bibi food에 문의해 주세요.',
+                    ws_err_required: '필수 항목을 모두 입력해 주세요.',
+                    ws_err_duplicate: '이 전화번호로 심사 중인 요청이 이미 있습니다. Bibi food가 곧 연락드리겠습니다.'
+                },
+                en: {
+                  "hero_title": "Bringing Vietnamese flavor, sending love",
+                  "hero_desc": "Discover the family-recipe collection of Giò, Chả, Lạp xưởng and Nem lụi from Bibi food.",
+                  "btn_menu": "View products",
+                  "product_gio_bo": "Beef Giò (Giò bò)",
+                  "product_gio_heo": "Pork Giò (Giò heo)",
+                  "product_xx_ga": "Chicken Sausage (Xúc xích gà)",
+                  "product_xx_thuong": "Classic Sausage (Xúc xích thường)",
+                  "product_nem_lui": "Lemongrass Pork Skewers (Nem lụi)",
+                  "product_gio_tai": "Pork Ear Giò (Giò tai)",
+                  "product_cha_lua": "Vietnamese Pork Roll (Chả lụa)",
+                  "product_xx_phomai": "Cheese Sausage (Xúc xích phô mai)",
+                  "product_kho_ga": "Chicken Jerky (Khô gà)",
+                  "product_kho_bo": "Beef Jerky (Khô bò)",
+                  "product_lap_xuong": "Vietnamese Sausage (Lạp xưởng)",
+                  "product_banh_trung": "Sticky Rice Cake (Bánh chưng)",
+                  "product_jam_bong": "Ham (Jambon)",
+                  "product_nem_chua": "Thanh Hóa Fermented Pork (Nem chua)",
+                  "product_ruoc": "Pork Floss (Ruốc)",
+                  "product_pate": "Pâté (Pate)",
+                  "product_gio_song": "Raw Giò Mix (Giò sống)",
+                  "product_kho_lon": "Pork Jerky (Khô lợn)",
+                  "product_gio_xao": "Stir-fried Giò (Giò sào)",
+                  "product_vien_heo": "Pork Balls (Viên heo)",
+                  "product_vien_bo": "Beef Balls (Viên bò)",
+                  "product_cha_com": "Young Rice Pork Patty (Chả cốm)",
+                  "contact_title": "Contact details",
+                  "contact_phone": "010-2616-2689 - Call now",
+                  "footer_text": "© 2026 Bibi food. All rights reserved.",
+                  "modal_price_label": "Price",
+                  "modal_add_to_cart": "Add to cart",
+                  "detail_ingredients_title": "Ingredients & Flavor",
+                  "detail_serving_title": "How to use",
+                  "detail_storage_title": "Storage",
+                  "all_products_title": "All products",
+                  "filter_all": "All",
+                  "filter_gio": "Giò",
+                  "filter_xucxich": "Sausage",
+                  "filter_nem": "Nem",
+                  "filter_kho": "Jerky",
+                  "filter_banhtrung": "Bánh chưng",
+                  "filter_khac": "Other",
+                  "filter_vien": "Hotpot balls",
+                  "carousel_title": "Products",
+                  "view_all_btn": "View all",
+                  "feature_taste_title": "Traditional flavor",
+                  "feature_taste_desc": "Authentic Vietnamese family recipes",
+                  "feature_ingredient_title": "Selected ingredients",
+                  "feature_ingredient_desc": "Fresh, safe ingredients",
+                  "feature_pack_title": "Safe packaging",
+                  "feature_pack_desc": "Carefully packed to keep the full flavor",
+                  "feature_delivery_title": "Delivery in Korea",
+                  "feature_delivery_desc": "Delivered to your door across Korea",
+                  "story_label": "Our story",
+                  "story_title": "About Bibi food",
+                  "story_text": "Bibi food was born from the longing for the taste of home felt by those living far away. We handcraft Giò, Chả, sausages, Nem lụi and jerky from family recipes, using selected ingredients and safe packaging, so that every meal of the Vietnamese community in Korea is as rich and warm as at home.",
+                  "cert_label": "Quality",
+                  "cert_title": "Food safety certificates",
+                  "testi_label": "What customers say",
+                  "testi_title": "Customer reviews",
+                  "testi_1_quote": "Bibi food's Giò tastes exactly like in Vietnam. I bought it for the whole family at Tet and everyone loved it. Carefully packed and quick delivery.",
+                  "testi_1_name": "Ms. Hương – Seoul",
+                  "testi_2_quote": "The Nem lụi is fragrant and the Chả lụa is chewy and delicious. Ordering by phone is very convenient. I will keep supporting Bibi food.",
+                  "testi_2_name": "Mr. Minh – Suwon",
+                  "faq_label": "Q&A",
+                  "faq_title": "Frequently asked questions",
+                  "faq_q1": "Which areas in Korea does Bibi food deliver to?",
+                  "faq_a1": "Bibi food delivers all over Korea. Delivery time may vary by area; please contact us by phone/KakaoTalk for the exact time to your address.",
+                  "faq_q2": "How should the products be stored?",
+                  "faq_a2": "Giò, Chả, sausages, Nem lụi and jerky should be kept in the refrigerator or freezer. Shelf life and detailed storage instructions are printed on each product package.",
+                  "faq_q3": "How do I place an order?",
+                  "faq_a3": "You can order directly by phone or KakaoTalk in the Contact section below. The Bibi food team will advise and confirm your order quickly.",
+                  "faq_q4": "What payment methods does Bibi food accept?",
+                  "faq_a4": "Payment methods may vary by order. Please contact us directly for specific payment information.",
+                  "faq_q5": "Where do Bibi food's ingredients come from?",
+                  "faq_a5": "Bibi food selects fresh ingredients with clear origins and follows food-safe processing and packaging procedures.",
+                  "faq_q6": "What is Bibi food's return policy?",
+                  "faq_a6": "If there is a problem with your order on delivery, please contact us right away and Bibi food will arrange an exchange or refund case by case.",
+                  "facebook_btn": "Facebook",
+                  "footer_privacy": "Privacy policy",
+                  "footer_terms": "Terms of use",
+                  "footer_contact": "Contact",
+                  "order_wf_title": "Checkout",
+                  "order_wf_retail_title": "Retail",
+                  "order_wf_wholesale_title": "Wholesale",
+                  "coming_soon_text": "We are still preparing this part. Would you like to connect with a sales representative via Facebook?",
+                  "coming_soon_no": "No",
+                  "coming_soon_yes": "Yes",
+                  "cf_title": "Buyer information",
+                  "cf_subtitle": "Leave your details so Bibi food can deliver your order and send you special offers. All fields are optional.",
+                  "cf_optional": "Optional",
+                  "cf_name_label": "Buyer name",
+                  "cf_name_ph": "Your full name",
+                  "cf_phone_label": "Phone number",
+                  "cf_address_label": "Delivery address",
+                  "cf_address_ph": "Street, building, district, city",
+                  "cf_facebook_label": "Facebook",
+                  "cf_facebook_ph": "Facebook link or name",
+                  "cf_pledge_title": "Our privacy commitment",
+                  "cf_pledge_1": "Your information is used only to deliver your order.",
+                  "cf_pledge_2": "When Bibi food runs a discount event, we will send you the offer so you never miss it.",
+                  "cf_pledge_3": "We never share your information with third parties.",
+                  "cf_consent": "I agree that Bibi food may use the information above according to this commitment and send me promotions.",
+                  "cf_back": "Back",
+                  "cf_submit": "Submit",
+                  "cf_err_empty": "Please fill in at least one field.",
+                  "cf_err_send": "Could not send your information. Please try again later.",
+                  "cf_success_title": "Thank you!",
+                  "cf_success_text": "Bibi food has received your information. We will contact you soon to confirm your order.",
+                  "cf_done": "Close",
+                  "ws_required": "Required",
+                  "ws_login_title": "Wholesale login",
+                  "ws_login_subtitle": "For Bibi food partner stores.",
+                  "ws_username_label": "Username",
+                  "ws_username_ph": "Phone number or username",
+                  "ws_password_label": "Password",
+                  "ws_password_ph": "Enter your password",
+                  "ws_login_btn": "Log in",
+                  "ws_no_account": "Don't have an account?",
+                  "ws_no_account_text": "Send an account request and Bibi food will review it and contact you.",
+                  "ws_go_request": "Request an account",
+                  "ws_choose_subtitle": "Choose how you would like Bibi food to issue your wholesale account.",
+                  "ws_call_provider": "Call the supplier directly",
+                  "cart_title": "Cart",
+                  "cart_empty": "Your cart is empty",
+                  "cart_order_btn": "Order now",
+                  "cart_remove": "Remove",
+                  "ws_req_title": "Request an account",
+                  "ws_req_subtitle": "Fill in your store details so Bibi food can review them and issue your wholesale account.",
+                  "ws_fullname_label": "Full name",
+                  "ws_fullname_ph": "Your full name",
+                  "ws_phone_label": "Phone number",
+                  "ws_address_label": "Address",
+                  "ws_address_ph": "Store address",
+                  "ws_store_label": "Store name",
+                  "ws_store_ph": "Your store name",
+                  "ws_license_label": "Business license number",
+                  "ws_req_note": "Your information is used only to review the wholesale account and is kept confidential by Bibi food. After approval, we will send your username and password by phone.",
+                  "ws_req_submit": "Send request",
+                  "ws_sent_title": "Request sent!",
+                  "ws_sent_text": "Bibi food has received your account request. We will verify your information and contact you at the phone number you provided.",
+                  "ws_welcome": "Hello,",
+                  "ws_welcome_text": "You are logged in to your wholesale account. Wholesale ordering is still being finished; the Bibi food team will help you order via Facebook.",
+                  "ws_logout": "Log out",
+                  "ws_chat": "Message on Facebook",
+                  "ws_err_login_empty": "Please enter your username and password.",
+                  "ws_err_invalid": "Incorrect username or password.",
+                  "ws_err_locked": "Too many failed attempts. Please try again in 15 minutes.",
+                  "ws_err_inactive": "This account is locked. Please contact Bibi food.",
+                  "ws_err_required": "Please fill in all required fields.",
+                  "ws_err_duplicate": "This phone number already has a request pending review. Bibi food will contact you soon."
+                },
+                zh: {
+                  "hero_title": "传递越南风味，传递爱",
+                  "hero_desc": "探索 Bibi food 家传配方的越式肉糕（Giò）、肉卷（Chả）、腊肠（Lạp xưởng）和香茅烤肉串（Nem lụi）系列。",
+                  "btn_menu": "查看商品",
+                  "product_gio_bo": "牛肉越式肉糕 (Giò bò)",
+                  "product_gio_heo": "猪肉越式肉糕 (Giò heo)",
+                  "product_xx_ga": "鸡肉香肠 (Xúc xích gà)",
+                  "product_xx_thuong": "普通香肠 (Xúc xích thường)",
+                  "product_nem_lui": "香茅烤肉串 (Nem lụi)",
+                  "product_gio_tai": "猪耳肉糕 (Giò tai)",
+                  "product_cha_lua": "越式猪肉卷 (Chả lụa)",
+                  "product_xx_phomai": "芝士香肠 (Xúc xích phô mai)",
+                  "product_kho_ga": "鸡肉干 (Khô gà)",
+                  "product_kho_bo": "牛肉干 (Khô bò)",
+                  "product_lap_xuong": "越式腊肠 (Lạp xưởng)",
+                  "product_banh_trung": "越式粽子 (Bánh chưng)",
+                  "product_jam_bong": "火腿 (Jambon)",
+                  "product_nem_chua": "清化酸肉卷 (Nem chua)",
+                  "product_ruoc": "猪肉松 (Ruốc)",
+                  "product_pate": "肝酱 (Pate)",
+                  "product_gio_song": "生肉糜 (Giò sống)",
+                  "product_kho_lon": "猪肉干 (Khô lợn)",
+                  "product_gio_xao": "炒制肉糕 (Giò sào)",
+                  "product_vien_heo": "猪肉丸 (Viên heo)",
+                  "product_vien_bo": "牛肉丸 (Viên bò)",
+                  "product_cha_com": "青米肉饼 (Chả cốm)",
+                  "contact_title": "详细联系方式",
+                  "contact_phone": "010-2616-2689 - 立即致电",
+                  "footer_text": "© 2026 Bibi food. 版权所有。",
+                  "modal_price_label": "价格",
+                  "modal_add_to_cart": "加入购物车",
+                  "detail_ingredients_title": "成分与风味",
+                  "detail_serving_title": "食用方法",
+                  "detail_storage_title": "保存方法",
+                  "all_products_title": "全部商品",
+                  "filter_all": "全部",
+                  "filter_gio": "肉糕 (Giò)",
+                  "filter_xucxich": "香肠",
+                  "filter_nem": "酸肉卷 (Nem)",
+                  "filter_kho": "肉干",
+                  "filter_banhtrung": "粽子 (Bánh chưng)",
+                  "filter_khac": "其他",
+                  "filter_vien": "火锅丸子",
+                  "carousel_title": "商品",
+                  "view_all_btn": "查看全部",
+                  "feature_taste_title": "传统风味",
+                  "feature_taste_desc": "地道越南家传配方",
+                  "feature_ingredient_title": "精选食材",
+                  "feature_ingredient_desc": "新鲜安全的原料",
+                  "feature_pack_title": "安全包装",
+                  "feature_pack_desc": "细心包装，保留原味",
+                  "feature_delivery_title": "韩国境内配送",
+                  "feature_delivery_desc": "韩国全境送货上门",
+                  "story_label": "品牌故事",
+                  "story_title": "关于 Bibi food",
+                  "story_text": "Bibi food 源于远离家乡的人们对故乡味道的思念。我们依照家传配方亲手制作越式肉糕、肉卷、香肠、香茅烤肉串和肉干，选用精选食材并采用安全的包装流程，让旅居韩国的越南社区每一餐都像在家一样浓郁温暖。",
+                  "cert_label": "品质",
+                  "cert_title": "食品安全认证",
+                  "testi_label": "顾客评价",
+                  "testi_title": "顾客心声",
+                  "testi_1_quote": "Bibi food 的越式肉糕和越南的味道一模一样，过年买给全家吃，大家都夸好吃。包装仔细，送货也很快。",
+                  "testi_1_name": "香女士 – 首尔",
+                  "testi_2_quote": "香茅烤肉串很香，越式猪肉卷也很有嚼劲，电话订购非常方便。我会一直支持 Bibi food。",
+                  "testi_2_name": "明先生 – 水原",
+                  "faq_label": "问答",
+                  "faq_title": "常见问题",
+                  "faq_q1": "Bibi food 配送到韩国哪些地区？",
+                  "faq_a1": "Bibi food 可配送至韩国全境。各地区配送时间可能不同，请通过电话或 KakaoTalk 咨询您所在地址的具体时间。",
+                  "faq_q2": "商品应如何保存？",
+                  "faq_a2": "肉糕、肉卷、香肠、香茅烤肉串和肉干请放入冰箱冷藏或冷冻保存。保质期及详细保存方法标注在各商品包装上。",
+                  "faq_q3": "如何订购？",
+                  "faq_a3": "您可以通过下方联系方式中的电话或 KakaoTalk 直接订购。Bibi food 团队会尽快为您提供咨询并确认订单。",
+                  "faq_q4": "Bibi food 支持哪些付款方式？",
+                  "faq_a4": "付款方式可能因订单而异，请直接联系我们了解具体付款信息。",
+                  "faq_q5": "Bibi food 的原料来源于哪里？",
+                  "faq_a5": "Bibi food 精选来源明确的新鲜原料，并遵守食品安全的加工与包装流程。",
+                  "faq_q6": "Bibi food 的退换货政策是怎样的？",
+                  "faq_a6": "如收货时商品有问题，请立即联系我们，Bibi food 将根据具体情况协助换货或退款。",
+                  "facebook_btn": "Facebook",
+                  "footer_privacy": "隐私政策",
+                  "footer_terms": "使用条款",
+                  "footer_contact": "联系我们",
+                  "order_wf_title": "结算",
+                  "order_wf_retail_title": "零售",
+                  "order_wf_wholesale_title": "批发",
+                  "coming_soon_text": "该部分仍在准备中。您是否想通过 Facebook 联系销售人员？",
+                  "coming_soon_no": "否",
+                  "coming_soon_yes": "是",
+                  "cf_title": "买家信息",
+                  "cf_subtitle": "请留下您的信息，方便 Bibi food 为您发货并向您发送优惠。所有项目均为选填。",
+                  "cf_optional": "选填",
+                  "cf_name_label": "买家姓名",
+                  "cf_name_ph": "您的姓名",
+                  "cf_phone_label": "电话号码",
+                  "cf_address_label": "收货地址",
+                  "cf_address_ph": "街道、详细地址、区、城市",
+                  "cf_facebook_label": "Facebook",
+                  "cf_facebook_ph": "Facebook 链接或名称",
+                  "cf_pledge_title": "隐私保护承诺",
+                  "cf_pledge_1": "您的信息仅用于发货。",
+                  "cf_pledge_2": "当 Bibi food 举办折扣活动时，我们会将优惠发送给您，让您不错过。",
+                  "cf_pledge_3": "我们不会向第三方分享您的信息。",
+                  "cf_consent": "我同意 Bibi food 按照上述承诺使用以上信息，并向我发送优惠活动。",
+                  "cf_back": "返回",
+                  "cf_submit": "提交信息",
+                  "cf_err_empty": "请至少填写一项信息。",
+                  "cf_err_send": "信息发送失败，请稍后再试。",
+                  "cf_success_title": "谢谢您！",
+                  "cf_success_text": "Bibi food 已收到您的信息，我们会尽快联系您确认订单。",
+                  "cf_done": "关闭",
+                  "ws_required": "必填",
+                  "ws_login_title": "批发登录",
+                  "ws_login_subtitle": "仅限 Bibi food 合作商家。",
+                  "ws_username_label": "用户名",
+                  "ws_username_ph": "电话号码或用户名",
+                  "ws_password_label": "密码",
+                  "ws_password_ph": "请输入密码",
+                  "ws_login_btn": "登录",
+                  "ws_no_account": "还没有账号？",
+                  "ws_no_account_text": "提交开通账号申请，Bibi food 审核后会与您联系。",
+                  "ws_go_request": "申请开通账号",
+                  "ws_choose_subtitle": "请选择 Bibi food 为您开通批发账号的方式。",
+                  "ws_call_provider": "直接致电供应商",
+                  "cart_title": "购物车",
+                  "cart_empty": "购物车是空的",
+                  "cart_order_btn": "立即订购",
+                  "cart_remove": "删除",
+                  "ws_req_title": "申请开通账号",
+                  "ws_req_subtitle": "请填写店铺信息，Bibi food 审核通过后将为您开通批发账号。",
+                  "ws_fullname_label": "姓名",
+                  "ws_fullname_ph": "您的姓名",
+                  "ws_phone_label": "电话号码",
+                  "ws_address_label": "地址",
+                  "ws_address_ph": "店铺地址",
+                  "ws_store_label": "店铺名称",
+                  "ws_store_ph": "请输入店铺名称",
+                  "ws_license_label": "营业执照号码",
+                  "ws_req_note": "您填写的信息仅用于审核批发账号，Bibi food 会严格保密。审核通过后，我们将通过电话把用户名和密码告知您。",
+                  "ws_req_submit": "提交申请",
+                  "ws_sent_title": "申请已提交！",
+                  "ws_sent_text": "Bibi food 已收到您的开通账号申请。我们会核实信息，并通过您提供的电话号码联系您。",
+                  "ws_welcome": "您好，",
+                  "ws_welcome_text": "您已登录批发账号。批发下单功能正在完善中，Bibi food 工作人员将通过 Facebook 协助您下单。",
+                  "ws_logout": "退出登录",
+                  "ws_chat": "Facebook 联系",
+                  "ws_err_login_empty": "请输入用户名和密码。",
+                  "ws_err_invalid": "用户名或密码不正确。",
+                  "ws_err_locked": "错误次数过多，请 15 分钟后再试。",
+                  "ws_err_inactive": "该账号已被锁定，请联系 Bibi food。",
+                  "ws_err_required": "请填写所有必填项。",
+                  "ws_err_duplicate": "该电话号码已有待审核的申请，Bibi food 会尽快与您联系。"
                 }
             };
+            window.translations = translations;
 
             function applyLanguage(lang) {
                 var dict = translations[lang];
@@ -2547,10 +3892,22 @@
                         el.textContent = dict[key];
                     }
                 });
+                document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+                    var key = el.getAttribute('data-i18n-placeholder');
+                    if (dict[key]) {
+                        el.setAttribute('placeholder', dict[key]);
+                    }
+                });
                 document.documentElement.setAttribute('lang', lang);
                 window.currentLang = lang;
                 if (typeof window.renderProductModalDetails === 'function') {
                     window.renderProductModalDetails();
+                }
+                if (typeof window.renderCartList === 'function') {
+                    window.renderCartList();
+                }
+                if (typeof window.updateCartToast === 'function') {
+                    window.updateCartToast();
                 }
             }
 
@@ -2588,6 +3945,7 @@
             var listIngredients = document.getElementById('productModalIngredients');
             var listServing = document.getElementById('productModalServing');
             var listStorage = document.getElementById('productModalStorage');
+            var addCartBtn = document.getElementById('productModalAddCart');
             var currentKey = null;
 
             var productDetails = {
@@ -2818,8 +4176,741 @@
                         serving: ['조리법: 그대로 먹기', '곁들임: 바게트빵, 찹쌀밥, 반꾸온, 분보, 분리에우'],
                         storage: ['냉장(2–5°C): 5–7일', '냉동(-18°C): 1–2개월']
                     }
+                },
+                product_vien_heo: {
+                    vi: {
+                        ingredients: ['Thịt nạc heo xay: 700 g, mỡ heo băm nhỏ: 200 g', 'Nước mắm truyền thống: 5 g, đường cát: 4 g, hạt nêm: 1 muỗng canh, bột ngọt: 4 g, tiêu xay: 2 g, bột năng: 2 muỗng canh, hành tím băm: 2 củ, tỏi băm: 1 củ, trứng gà: 1 quả'],
+                        serving: ['Cách 1: Luộc viên trong nước sôi khoảng 5–7 phút đến khi nổi lên và chín, ăn với các món lẩu', 'Cách 2: Chiên vàng đều bằng dầu ăn ở lửa vừa, dùng với canh rau, lẩu, bún hoặc mì'],
+                        storage: ['Viên sống: bảo quản ngăn đá -18°C trở xuống, dùng trong khoảng 1–2 tháng']
+                    },
+                    ko: {
+                        ingredients: ['다진 돼지 살코기 700g, 잘게 다진 돼지 비계 200g', '전통 생선액젓 5g, 설탕 4g, 조미료 1큰술, 맛소금 4g, 후추 2g, 타피오카 전분 2큰술, 다진 자색양파 2개, 다진 마늘 1통, 달걀 1개'],
+                        serving: ['방법 1: 끓는 물에 5–7분간 삶아 떠오르면 익은 것, 전골 요리에 곁들여 드세요', '방법 2: 중불에서 식용유로 노릇하게 튀겨 채소국, 전골, 쌀국수 또는 면과 함께 드세요'],
+                        storage: ['생 완자: -18°C 이하 냉동 보관, 약 1–2개월 이내 섭취']
+                    }
+                },
+                product_vien_bo: {
+                    vi: {
+                        ingredients: ['Thịt bò xay (bắp hoặc thăn): 800 g', 'Mỡ bò hoặc mỡ heo băm nhỏ: 50 g', 'Nước mắm truyền thống: 5 g, đường cát: 4 g, hạt nêm: 1 muỗng canh, bột ngọt: 4 g, tiêu xay: 2 g, bột năng: 2–3 muỗng canh, hành tím băm: 2 củ, nước đá lạnh: 100 g'],
+                        serving: ['Cách 1: Luộc viên trong nước sôi khoảng 5–7 phút đến khi nổi lên và chín, ăn với các món lẩu', 'Cách 2: Chiên vàng đều bằng dầu ăn ở lửa vừa, dùng với canh rau, lẩu, bún hoặc mì'],
+                        storage: ['Viên sống: bảo quản ngăn đá -18°C trở xuống, dùng trong khoảng 1–2 tháng']
+                    },
+                    ko: {
+                        ingredients: ['다진 소고기(사태 또는 안심) 800g', '다진 소기름 또는 돼지 비계 50g', '전통 생선액젓 5g, 설탕 4g, 조미료 1큰술, 맛소금 4g, 후추 2g, 타피오카 전분 2–3큰술, 다진 자색양파 2개, 차가운 얼음물 100g'],
+                        serving: ['방법 1: 끓는 물에 5–7분간 삶아 떠오르면 익은 것, 전골 요리에 곁들여 드세요', '방법 2: 중불에서 식용유로 노릇하게 튀겨 채소국, 전골, 쌀국수 또는 면과 함께 드세요'],
+                        storage: ['생 완자: -18°C 이하 냉동 보관, 약 1–2개월 이내 섭취']
+                    }
+                },
+                product_cha_com: {
+                    vi: {
+                        ingredients: ['Thành phần (cho 1000 g): thịt nạc heo: 500 g, mỡ heo: 150 g, cốm non (cốm xanh): 200 g, trứng gà: 3–4 quả, nước mắm truyền thống: 5 g', 'Đường cát: 4 g, hạt nêm: 5 g, bột ngọt: 2 g, tiêu xay: 2 g', 'Lá chuối để gói, dây buộc'],
+                        serving: ['Chiên vàng hai mặt hoặc nướng sơ trước khi ăn để giòn và thơm', 'Ăn kèm rau thơm, dưa chua hoặc chấm nước mắm'],
+                        storage: ['Ngăn đá -18°C trở xuống: 1–2 tháng']
+                    },
+                    ko: {
+                        ingredients: ['재료(1000g 기준): 돼지 살코기 500g, 돼지 비계 150g, 어린 쪽(푸른 꼼) 200g, 달걀 3–4개, 전통 생선액젓 5g', '설탕 4g, 조미료 5g, 맛소금 2g, 후추 2g', '포장용 바나나잎, 묶음용 끈'],
+                        serving: ['먹기 전 앞뒤로 노릇하게 튀기거나 살짝 구워 바삭하고 향긋하게 드세요', '향채, 절임 채소와 함께 드시거나 생선액젓에 찍어 드세요'],
+                        storage: ['-18°C 이하 냉동: 1–2개월']
+                    }
                 }
             };
+
+            var productDetailsExtra = {
+              "product_gio_bo": {
+                "en": {
+                  "ingredients": [
+                    "Lean beef 75%, pork fat 25%",
+                    "Pepper, garlic, fish sauce, sugar, seasoning powder, MSG",
+                    "Wrapped in fresh banana leaves"
+                  ],
+                  "serving": [
+                    "Ready to eat",
+                    "Serve with: baguette, sticky rice, steamed rice rolls (bánh cuốn), beef noodle soup (bún bò), crab noodle soup (bún riêu)"
+                  ],
+                  "storage": [
+                    "Refrigerator (2–5°C): 5–7 days",
+                    "Freezer (-18°C): 1–2 months"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "牛瘦肉75%，猪油25%",
+                    "胡椒、大蒜、鱼露、糖、调味粉、味精",
+                    "以新鲜香蕉叶包裹"
+                  ],
+                  "serving": [
+                    "可直接食用",
+                    "搭配：法棍面包、糯米饭、越式蒸卷（bánh cuốn）、牛肉米线（bún bò）、蟹汤米线（bún riêu）"
+                  ],
+                  "storage": [
+                    "冷藏（2–5°C）：5–7天",
+                    "冷冻（-18°C）：1–2个月"
+                  ]
+                }
+              },
+              "product_gio_heo": {
+                "en": {
+                  "ingredients": [
+                    "Lean pork 75%, fat 20%",
+                    "Pepper, garlic, fish sauce, sugar, seasoning powder, MSG",
+                    "Wrapped in fresh banana leaves"
+                  ],
+                  "serving": [
+                    "Ready to eat",
+                    "Serve with: baguette, sticky rice, steamed rice rolls (bánh cuốn), beef noodle soup (bún bò), crab noodle soup (bún riêu)"
+                  ],
+                  "storage": [
+                    "Refrigerator (2–5°C): 5–7 days",
+                    "Freezer (-18°C): 1–2 months"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "猪瘦肉75%，脂肪20%",
+                    "胡椒、大蒜、鱼露、糖、调味粉、味精",
+                    "以新鲜香蕉叶包裹"
+                  ],
+                  "serving": [
+                    "可直接食用",
+                    "搭配：法棍面包、糯米饭、越式蒸卷（bánh cuốn）、牛肉米线（bún bò）、蟹汤米线（bún riêu）"
+                  ],
+                  "storage": [
+                    "冷藏（2–5°C）：5–7天",
+                    "冷冻（-18°C）：1–2个月"
+                  ]
+                }
+              },
+              "product_xx_ga": {
+                "en": {
+                  "ingredients": [
+                    "Chicken breast 65%, pork fat or olive oil 15%",
+                    "Salt, pepper, sugar, seasoning powder, garlic, dried onion, corn or potato starch, collagen casing"
+                  ],
+                  "serving": [
+                    "Pan-fry 5–7 minutes, or air-fry at 160–180°C for 8–10 minutes",
+                    "Serve with: instant noodles, fried rice, hot dog buns, salad"
+                  ],
+                  "storage": [
+                    "Refrigerator (2–5°C): 3–5 days",
+                    "Freezer (-18°C): 1–3 months"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "鸡胸肉65%，猪油或橄榄油15%",
+                    "盐、胡椒、糖、调味粉、大蒜、干洋葱、玉米淀粉或土豆淀粉、胶原蛋白肠衣"
+                  ],
+                  "serving": [
+                    "平底锅煎5–7分钟，或空气炸锅160–180°C炸8–10分钟",
+                    "搭配：方便面、炒饭、热狗面包、沙拉"
+                  ],
+                  "storage": [
+                    "冷藏（2–5°C）：3–5天",
+                    "冷冻（-18°C）：1–3个月"
+                  ]
+                }
+              },
+              "product_xx_thuong": {
+                "en": {
+                  "ingredients": [
+                    "Pork 65%, pork fat 20%",
+                    "Salt, sugar, pepper, garlic, MSG, collagen casing"
+                  ],
+                  "serving": [
+                    "Pan-fry 5–7 minutes, or air-fry at 160–180°C for 8–10 minutes",
+                    "Serve with: instant noodles, fried rice, hot dog buns, salad"
+                  ],
+                  "storage": [
+                    "Refrigerator (2–5°C): 3–5 days",
+                    "Freezer (-18°C): 1–3 months"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "猪肉65%，猪油20%",
+                    "盐、糖、胡椒、大蒜、味精、胶原蛋白肠衣"
+                  ],
+                  "serving": [
+                    "平底锅煎5–7分钟，或空气炸锅160–180°C炸8–10分钟",
+                    "搭配：方便面、炒饭、热狗面包、沙拉"
+                  ],
+                  "storage": [
+                    "冷藏（2–5°C）：3–5天",
+                    "冷冻（-18°C）：1–3个月"
+                  ]
+                }
+              },
+              "product_nem_lui": {
+                "en": {
+                  "ingredients": [
+                    "Ground lean pork 70%, pork neck fat 12.5%",
+                    "Lemongrass, dried onion, garlic, pepper, sugar, fish sauce, oyster sauce, tapioca starch, annatto oil"
+                  ],
+                  "serving": [
+                    "Pan-fry 5–7 minutes, or air-fry at 160–180°C for 8–10 minutes",
+                    "Serve with: eat as is, or wrap in rice paper"
+                  ],
+                  "storage": [
+                    "Refrigerator (2–5°C): 2–3 days",
+                    "Freezer (-18°C): 3–4 weeks"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "猪瘦肉糜70%，猪颈脂肪12.5%",
+                    "香茅、干洋葱、大蒜、胡椒、糖、鱼露、蚝油、木薯淀粉、胭脂树籽油"
+                  ],
+                  "serving": [
+                    "平底锅煎5–7分钟，或空气炸锅160–180°C炸8–10分钟",
+                    "搭配：直接食用，或用米纸卷着吃"
+                  ],
+                  "storage": [
+                    "冷藏（2–5°C）：2–3天",
+                    "冷冻（-18°C）：3–4周"
+                  ]
+                }
+              },
+              "product_gio_tai": {
+                "en": {
+                  "ingredients": [
+                    "Pork fat 15%, pork ear and lean pork 65%, pork ear 20%",
+                    "Fish sauce, pepper, salt, sugar, seasoning powder",
+                    "Wrapped in fresh banana leaves"
+                  ],
+                  "serving": [
+                    "Ready to eat",
+                    "Serve with: baguette, sticky rice, steamed rice rolls (bánh cuốn), beef noodle soup (bún bò), crab noodle soup (bún riêu)"
+                  ],
+                  "storage": [
+                    "Refrigerator (2–5°C): 5–7 days",
+                    "Freezer (-18°C): 1–2 months"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "猪油15%，猪耳和猪瘦肉65%，猪耳20%",
+                    "鱼露、胡椒、盐、糖、调味粉",
+                    "以新鲜香蕉叶包裹"
+                  ],
+                  "serving": [
+                    "可直接食用",
+                    "搭配：法棍面包、糯米饭、越式蒸卷（bánh cuốn）、牛肉米线（bún bò）、蟹汤米线（bún riêu）"
+                  ],
+                  "storage": [
+                    "冷藏（2–5°C）：5–7天",
+                    "冷冻（-18°C）：1–2个月"
+                  ]
+                }
+              },
+              "product_cha_lua": {
+                "en": {
+                  "ingredients": [
+                    "Lean pork 85%, pork fat 15%",
+                    "Fish sauce, pepper, sugar, salt, MSG",
+                    "Wrapped in fresh banana leaves"
+                  ],
+                  "serving": [
+                    "Ready to eat",
+                    "Serve with: baguette, sticky rice, steamed rice rolls (bánh cuốn), beef noodle soup (bún bò), crab noodle soup (bún riêu)"
+                  ],
+                  "storage": [
+                    "Refrigerator (2–5°C): 5–7 days",
+                    "Freezer (-18°C): 1–2 months"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "猪瘦肉85%，猪油15%",
+                    "鱼露、胡椒、糖、盐、味精",
+                    "以新鲜香蕉叶包裹"
+                  ],
+                  "serving": [
+                    "可直接食用",
+                    "搭配：法棍面包、糯米饭、越式蒸卷（bánh cuốn）、牛肉米线（bún bò）、蟹汤米线（bún riêu）"
+                  ],
+                  "storage": [
+                    "冷藏（2–5°C）：5–7天",
+                    "冷冻（-18°C）：1–2个月"
+                  ]
+                }
+              },
+              "product_xx_phomai": {
+                "en": {
+                  "ingredients": [
+                    "Pork 65%, pork fat and cheese 35%",
+                    "Mozzarella cheese",
+                    "Salt, sugar, pepper, garlic, chili powder, collagen casing"
+                  ],
+                  "serving": [
+                    "Pan-fry 5–7 minutes, or air-fry at 160–180°C for 8–10 minutes",
+                    "Serve with: instant noodles, fried rice, hot dog buns, salad"
+                  ],
+                  "storage": [
+                    "Refrigerator (2–5°C): 3–5 days",
+                    "Freezer (-18°C): 1–3 months"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "猪肉65%，猪油和芝士35%",
+                    "马苏里拉芝士",
+                    "盐、糖、胡椒、大蒜、辣椒粉、胶原蛋白肠衣"
+                  ],
+                  "serving": [
+                    "平底锅煎5–7分钟，或空气炸锅160–180°C炸8–10分钟",
+                    "搭配：方便面、炒饭、热狗面包、沙拉"
+                  ],
+                  "storage": [
+                    "冷藏（2–5°C）：3–5天",
+                    "冷冻（-18°C）：1–3个月"
+                  ]
+                }
+              },
+              "product_kho_ga": {
+                "en": {
+                  "ingredients": [
+                    "Chicken breast 87%, the rest is seasoning",
+                    "Lime leaves, fresh chili, dried chili, lemongrass, garlic, shallot, ginger",
+                    "Fish sauce, sugar, oyster sauce, seasoning powder, five-spice powder",
+                    "Annatto oil"
+                  ],
+                  "serving": [
+                    "Ready to eat; squeeze lime or kumquat juice over it",
+                    "Serve with: sticky rice, rice, congee, rice paper salad (bánh tráng trộn), instant noodles"
+                  ],
+                  "storage": [
+                    "Refrigerator (2–5°C): 2–3 months",
+                    "Freezer (-18°C): 3–6 months"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "鸡胸肉87%，其余为调味料",
+                    "青柠叶、鲜辣椒、干辣椒、香茅、大蒜、红葱头、生姜",
+                    "鱼露、糖、蚝油、调味粉、五香粉",
+                    "胭脂树籽油"
+                  ],
+                  "serving": [
+                    "可直接食用，可挤上青柠或金桔汁",
+                    "搭配：糯米饭、米饭、粥、越式拌米纸（bánh tráng trộn）、方便面"
+                  ],
+                  "storage": [
+                    "冷藏（2–5°C）：2–3个月",
+                    "冷冻（-18°C）：3–6个月"
+                  ]
+                }
+              },
+              "product_kho_bo": {
+                "en": {
+                  "ingredients": [
+                    "Lean beef 87%, the rest is seasoning",
+                    "Lemongrass, garlic, ginger, fresh chili or chili powder",
+                    "Five-spice powder, star anise, cinnamon, annatto oil",
+                    "Sugar, honey, fish sauce, oyster sauce, soy sauce"
+                  ],
+                  "serving": [
+                    "Ready to eat; squeeze lime or kumquat juice over it; use in papaya or mango salad",
+                    "Serve with: rice paper salad, instant noodles, savory sticky rice, congee"
+                  ],
+                  "storage": [
+                    "Refrigerator (2–5°C): 1–3 months",
+                    "Freezer (-18°C): 4–6 months"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "牛瘦肉87%，其余为调味料",
+                    "香茅、大蒜、生姜、鲜辣椒或辣椒粉",
+                    "五香粉、八角、肉桂、胭脂树籽油",
+                    "糖、蜂蜜、鱼露、蚝油、酱油"
+                  ],
+                  "serving": [
+                    "可直接食用，可挤上青柠或金桔汁；也可用于木瓜丝沙拉、芒果沙拉",
+                    "搭配：越式拌米纸、方便面、咸味糯米饭、粥"
+                  ],
+                  "storage": [
+                    "冷藏（2–5°C）：1–3个月",
+                    "冷冻（-18°C）：4–6个月"
+                  ]
+                }
+              },
+              "product_lap_xuong": {
+                "en": {
+                  "ingredients": [
+                    "Lean pork 75%, pork fat 25%",
+                    "Collagen casing",
+                    "White liquor, sugar, salt, pepper, garlic, MSG"
+                  ],
+                  "serving": [
+                    "Pan-fry 5–7 minutes, or air-fry at 160–180°C for 8–10 minutes",
+                    "Serve with: instant noodles, fried rice, hot dog buns, salad"
+                  ],
+                  "storage": [
+                    "Refrigerator (2–5°C): 3–5 days",
+                    "Freezer (-18°C): 1–3 months"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "猪瘦肉75%，猪油25%",
+                    "胶原蛋白肠衣",
+                    "白酒、糖、盐、胡椒、大蒜、味精"
+                  ],
+                  "serving": [
+                    "平底锅煎5–7分钟，或空气炸锅160–180°C炸8–10分钟",
+                    "搭配：方便面、炒饭、热狗面包、沙拉"
+                  ],
+                  "storage": [
+                    "冷藏（2–5°C）：3–5天",
+                    "冷冻（-18°C）：1–3个月"
+                  ]
+                }
+              },
+              "product_banh_trung": {
+                "en": {
+                  "ingredients": [
+                    "Pork belly or shoulder 10%, glutinous rice 70%, mung beans 20%",
+                    "Salt, pepper, dried onion",
+                    "Wrapped in dong leaves"
+                  ],
+                  "serving": [
+                    "Eat cold, or pan-fry golden with a little oil or air-fry",
+                    "Serve with: pickled onions, Chả lụa"
+                  ],
+                  "storage": [
+                    "Refrigerator (2–5°C): 15–20 days",
+                    "Freezer (-18°C): 1–2 months"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "五花肉或肩肉10%，糯米70%，绿豆20%",
+                    "盐、胡椒、干洋葱",
+                    "以栋叶（lá dong）包裹"
+                  ],
+                  "serving": [
+                    "可凉食，或用少量油煎至金黄，也可用空气炸锅",
+                    "搭配：腌洋葱、越式猪肉卷"
+                  ],
+                  "storage": [
+                    "冷藏（2–5°C）：15–20天",
+                    "冷冻（-18°C）：1–2个月"
+                  ]
+                }
+              },
+              "product_jam_bong": {
+                "en": {
+                  "ingredients": [
+                    "Pork leg meat 60%, pork fat 30%",
+                    "Salt, sugar, pepper, garlic"
+                  ],
+                  "serving": [
+                    "Ready to eat",
+                    "Serve with: baguette, sticky rice, steamed rice rolls (bánh cuốn), beef noodle soup (bún bò), crab noodle soup (bún riêu)"
+                  ],
+                  "storage": [
+                    "Refrigerator (2–5°C): 5–7 days",
+                    "Freezer (-18°C): 1–2 months"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "猪腿肉60%，猪油30%",
+                    "盐、糖、胡椒、大蒜"
+                  ],
+                  "serving": [
+                    "可直接食用",
+                    "搭配：法棍面包、糯米饭、越式蒸卷（bánh cuốn）、牛肉米线（bún bò）、蟹汤米线（bún riêu）"
+                  ],
+                  "storage": [
+                    "冷藏（2–5°C）：5–7天",
+                    "冷冻（-18°C）：1–2个月"
+                  ]
+                }
+              },
+              "product_nem_chua": {
+                "en": {
+                  "ingredients": [
+                    "Lean pork 65%, pork skin 25%",
+                    "Roasted rice powder, garlic, bird's eye chili, black pepper, sugar, salt, seasoned salt",
+                    "Ming aralia leaves and fresh banana leaves for wrapping"
+                  ],
+                  "serving": [
+                    "Ready to eat; dip in chili sauce",
+                    "Serve with: a snack with beer or liquor"
+                  ],
+                  "storage": [
+                    "Refrigerator (4–8°C): 5–7 days",
+                    "Freezer (-18°C): 3–4 weeks"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "猪瘦肉65%，猪皮25%",
+                    "炒米粉、大蒜、朝天椒、黑胡椒、糖、盐、调味盐",
+                    "以福禄桐叶和新鲜香蕉叶包裹"
+                  ],
+                  "serving": [
+                    "可直接食用，蘸辣椒酱",
+                    "搭配：啤酒或白酒的下酒小菜"
+                  ],
+                  "storage": [
+                    "冷藏（4–8°C）：5–7天",
+                    "冷冻（-18°C）：3–4周"
+                  ]
+                }
+              },
+              "product_ruoc": {
+                "en": {
+                  "ingredients": [
+                    "Pork tenderloin 90%",
+                    "Fish sauce, salt or seasoning powder, sugar",
+                    "Pepper, shallot or minced garlic"
+                  ],
+                  "serving": [
+                    "Ready to eat, no need to cook again",
+                    "Serve with: rice, congee, sticky rice, pâté baguette, steamed rice rolls, sponge cake"
+                  ],
+                  "storage": [
+                    "Refrigerator (2–5°C): 2–3 months",
+                    "Freezer (-18°C): 4–6 months"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "猪里脊肉90%",
+                    "鱼露、盐或调味粉、糖",
+                    "胡椒、红葱头或蒜末"
+                  ],
+                  "serving": [
+                    "可直接食用，无需再次加热",
+                    "搭配：米饭、粥、糯米饭、肝酱法棍、越式蒸卷、海绵蛋糕"
+                  ],
+                  "storage": [
+                    "冷藏（2–5°C）：2–3个月",
+                    "冷冻（-18°C）：4–6个月"
+                  ]
+                }
+              },
+              "product_pate": {
+                "en": {
+                  "ingredients": [
+                    "Pork liver 35%, lean meat and fat 65%",
+                    "Bread crumb, fresh milk, butter, onion, garlic, fish sauce, pepper, salt, sugar"
+                  ],
+                  "serving": [
+                    "Ready to eat; spread on bread or crackers",
+                    "Serve with: Chả lụa baguette, cucumber, pickles, savory sticky rice"
+                  ],
+                  "storage": [
+                    "Refrigerator (2–5°C): 3–7 days (homemade), 2–3 days after opening",
+                    "Freezer (-18°C): 1–2 months"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "猪肝35%，瘦肉和肥肉65%",
+                    "面包芯、鲜牛奶、黄油、洋葱、大蒜、鱼露、胡椒、盐、糖"
+                  ],
+                  "serving": [
+                    "可直接食用，涂抹在面包或饼干上",
+                    "搭配：越式猪肉卷法棍、黄瓜、腌菜、咸味糯米饭"
+                  ],
+                  "storage": [
+                    "冷藏（2–5°C）：3–7天（自制），开封后2–3天",
+                    "冷冻（-18°C）：1–2个月"
+                  ]
+                }
+              },
+              "product_gio_song": {
+                "en": {
+                  "ingredients": [
+                    "Lean meat 72.5%, fat 27.5%",
+                    "Fish sauce, white pepper, sugar, MSG or seasoning powder, tapioca or corn starch, ice"
+                  ],
+                  "serving": [
+                    "Shape into meatballs for soup, or make fried Chả, Chả cốm, or stuff tofu and vegetables",
+                    "Serve with: meatball noodle soup (bún mọc), crab noodle soup (bún riêu), sweet leaf soup, winter melon soup"
+                  ],
+                  "storage": [
+                    "Refrigerator (0–4°C): 1–2 days",
+                    "Freezer (-18°C): 1–3 months"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "瘦肉72.5%，肥肉27.5%",
+                    "鱼露、白胡椒、糖、味精或调味粉、木薯淀粉或玉米淀粉、冰块"
+                  ],
+                  "serving": [
+                    "可捏成丸子煮汤，或做成煎肉饼、青米肉饼，也可酿豆腐和蔬菜",
+                    "搭配：肉丸米线（bún mọc）、蟹汤米线（bún riêu）、守宫木汤、冬瓜汤"
+                  ],
+                  "storage": [
+                    "冷藏（0–4°C）：1–2天",
+                    "冷冻（-18°C）：1–3个月"
+                  ]
+                }
+              },
+              "product_kho_lon": {
+                "en": {
+                  "ingredients": [
+                    "Lean pork 80%",
+                    "Minced lemongrass, minced garlic, fish sauce, oyster sauce, sugar, annatto oil, five-spice powder, chili powder, seasoning powder"
+                  ],
+                  "serving": [
+                    "Ready to eat; squeeze lime or kumquat juice over it; dip in chili sauce",
+                    "Serve with: plain sticky rice, scorched rice, rib congee, instant noodles, rice paper salad"
+                  ],
+                  "storage": [
+                    "Refrigerator (2–5°C): 1–2 months",
+                    "Freezer (-18°C): 3–6 months"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "猪瘦肉80%",
+                    "香茅末、蒜末、鱼露、蚝油、糖、胭脂树籽油、五香粉、辣椒粉、调味粉"
+                  ],
+                  "serving": [
+                    "可直接食用，可挤上青柠或金桔汁，蘸辣椒酱",
+                    "搭配：白糯米饭、锅巴、排骨粥、方便面、越式拌米纸"
+                  ],
+                  "storage": [
+                    "冷藏（2–5°C）：1–2个月",
+                    "冷冻（-18°C）：3–6个月"
+                  ]
+                }
+              },
+              "product_gio_xao": {
+                "en": {
+                  "ingredients": [
+                    "Pork ear 400 g, pork tongue 300 g, pork snout 200 g",
+                    "Dried wood ear mushrooms 40 g, dried shiitake 30 g, traditional fish sauce, black pepper, dried onion, seasoning powder",
+                    "MSG, sugar, fresh ginger, vinegar, coarse salt, white liquor",
+                    "Wrapped in banana leaves, tied with bamboo strips"
+                  ],
+                  "serving": [
+                    "Ready to eat",
+                    "Serve with: baguette, sticky rice, steamed rice rolls (bánh cuốn), beef noodle soup (bún bò), crab noodle soup (bún riêu)"
+                  ],
+                  "storage": [
+                    "Refrigerator (2–5°C): 5–7 days",
+                    "Freezer (-18°C): 1–2 months"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "猪耳400克，猪舌300克，猪鼻200克",
+                    "干木耳40克，干香菇30克，传统鱼露、黑胡椒、干洋葱、调味粉",
+                    "味精、糖、生姜、醋、粗盐、白酒",
+                    "以香蕉叶包裹，竹篾捆扎"
+                  ],
+                  "serving": [
+                    "可直接食用",
+                    "搭配：法棍面包、糯米饭、越式蒸卷（bánh cuốn）、牛肉米线（bún bò）、蟹汤米线（bún riêu）"
+                  ],
+                  "storage": [
+                    "冷藏（2–5°C）：5–7天",
+                    "冷冻（-18°C）：1–2个月"
+                  ]
+                }
+              },
+              "product_vien_heo": {
+                "en": {
+                  "ingredients": [
+                    "Ground lean pork: 700 g, minced pork fat: 200 g",
+                    "Traditional fish sauce: 5 g, sugar: 4 g, seasoning powder: 1 tbsp, MSG: 4 g, ground pepper: 2 g, tapioca starch: 2 tbsp, minced shallots: 2 bulbs, minced garlic: 1 bulb, egg: 1"
+                  ],
+                  "serving": [
+                    "Method 1: Boil in boiling water for about 5–7 minutes until they float and are cooked; enjoy with hotpot",
+                    "Method 2: Fry evenly golden in oil over medium heat; serve with vegetable soup, hotpot, noodles or rice noodles"
+                  ],
+                  "storage": [
+                    "Raw balls: store in the freezer at -18°C or below; consume within about 1–2 months"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "猪瘦肉糜：700克，猪肥肉碎：200克",
+                    "传统鱼露5克、白砂糖4克、调味粉1汤匙、味精4克、胡椒粉2克、木薯淀粉2汤匙、红葱头末2颗、蒜末1头、鸡蛋1个"
+                  ],
+                  "serving": [
+                    "方法一：放入沸水煮约5–7分钟，浮起即熟，可搭配火锅食用",
+                    "方法二：中火用油煎至金黄，搭配蔬菜汤、火锅、米线或面条"
+                  ],
+                  "storage": [
+                    "生丸子：置于-18°C以下冷冻保存，约1–2个月内食用完"
+                  ]
+                }
+              },
+              "product_vien_bo": {
+                "en": {
+                  "ingredients": [
+                    "Ground beef (shank or tenderloin): 800 g",
+                    "Beef fat or minced pork fat: 50 g",
+                    "Traditional fish sauce: 5 g, sugar: 4 g, seasoning powder: 1 tbsp, MSG: 4 g, ground pepper: 2 g, tapioca starch: 2–3 tbsp, minced shallots: 2 bulbs, ice water: 100 g"
+                  ],
+                  "serving": [
+                    "Method 1: Boil in boiling water for about 5–7 minutes until they float and are cooked; enjoy with hotpot",
+                    "Method 2: Fry evenly golden in oil over medium heat; serve with vegetable soup, hotpot, noodles or rice noodles"
+                  ],
+                  "storage": [
+                    "Raw balls: store in the freezer at -18°C or below; consume within about 1–2 months"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "牛肉糜（牛腱或里脊）：800克",
+                    "牛油或猪肥肉碎：50克",
+                    "传统鱼露5克、白砂糖4克、调味粉1汤匙、味精4克、胡椒粉2克、木薯淀粉2–3汤匙、红葱头末2颗、冰水100克"
+                  ],
+                  "serving": [
+                    "方法一：放入沸水煮约5–7分钟，浮起即熟，可搭配火锅食用",
+                    "方法二：中火用油煎至金黄，搭配蔬菜汤、火锅、米线或面条"
+                  ],
+                  "storage": [
+                    "生丸子：置于-18°C以下冷冻保存，约1–2个月内食用完"
+                  ]
+                }
+              },
+              "product_cha_com": {
+                "en": {
+                  "ingredients": [
+                    "Per 1000 g: lean pork 500 g, pork fat 150 g, young green rice flakes (cốm) 200 g, eggs 3–4, traditional fish sauce 5 g",
+                    "Sugar 4 g, seasoning powder 5 g, MSG 2 g, ground pepper 2 g",
+                    "Banana leaves for wrapping, string"
+                  ],
+                  "serving": [
+                    "Pan-fry both sides until golden, or lightly grill before eating for a crisp, fragrant bite",
+                    "Serve with fresh herbs, pickles, or dip in fish sauce"
+                  ],
+                  "storage": [
+                    "Freezer at -18°C or below: 1–2 months"
+                  ]
+                },
+                "zh": {
+                  "ingredients": [
+                    "每1000克：猪瘦肉500克，猪肥肉150克，青米（cốm）200克，鸡蛋3–4个，传统鱼露5克",
+                    "白砂糖4克、调味粉5克、味精2克、胡椒粉2克",
+                    "香蕉叶包裹，棉绳捆扎"
+                  ],
+                  "serving": [
+                    "两面煎至金黄，或先略微烤一下再吃，酥脆香浓",
+                    "搭配香草、腌菜，或蘸鱼露食用"
+                  ],
+                  "storage": [
+                    "-18°C以下冷冻：1–2个月"
+                  ]
+                }
+              }
+            };
+            Object.keys(productDetailsExtra).forEach(function (key) {
+                if (productDetails[key]) {
+                    productDetails[key].en = productDetailsExtra[key].en;
+                    productDetails[key].zh = productDetailsExtra[key].zh;
+                }
+            });
 
             function fillList(ul, items) {
                 ul.innerHTML = '';
@@ -2867,6 +4958,13 @@
             closeBtn.addEventListener('click', closeModal);
             backdrop.addEventListener('click', closeModal);
 
+            addCartBtn.addEventListener('click', function () {
+                if (typeof window.addToCart === 'function') {
+                    window.addToCart(currentKey);
+                }
+                closeModal();
+            });
+
             window.renderProductModalDetails = renderDetails;
         })();
 
@@ -2898,7 +4996,6 @@
         })();
 
         (function () {
-            var openBtn = document.getElementById('openOrderWorkflowBtn');
             var backdrop = document.getElementById('orderWorkflowBackdrop');
             var modal = document.getElementById('orderWorkflowModal');
             var closeBtn = document.getElementById('orderWorkflowClose');
@@ -2916,17 +5013,314 @@
                 modal.classList.remove('open');
             }
 
-            if (openBtn) openBtn.addEventListener('click', openOrderWorkflow);
             closeBtn.addEventListener('click', closeOrderWorkflow);
             backdrop.addEventListener('click', closeOrderWorkflow);
             retailBtn.addEventListener('click', function () {
                 closeOrderWorkflow();
-                openComingSoon();
+                openCustomerForm();
             });
             wholesaleBtn.addEventListener('click', function () {
                 closeOrderWorkflow();
-                openComingSoon();
+                openWholesale();
             });
+            window.openOrderWorkflow = openOrderWorkflow;
+        })();
+
+
+        (function () {
+            // Dán URL Google Apps Script (xem backend/HUONG_DAN.md) vào đây
+            var CUSTOMER_FORM_ENDPOINT = '';
+
+            var backdrop = document.getElementById('cfBackdrop');
+            var modal = document.getElementById('cfModal');
+            var form = document.getElementById('cfForm');
+            var closeBtn = document.getElementById('cfClose');
+            var backBtn = document.getElementById('cfBack');
+            var doneBtn = document.getElementById('cfDone');
+            var submitBtn = document.getElementById('cfSubmit');
+            var errorEl = document.getElementById('cfError');
+
+            function t(key, fallback) {
+                var dict = (window.translations && window.translations[window.currentLang || 'vi']) || {};
+                return dict[key] || fallback;
+            }
+
+            function showError(msg) {
+                errorEl.textContent = msg;
+                errorEl.classList.toggle('show', !!msg);
+            }
+
+            function openForm() {
+                modal.classList.remove('done');
+                showError('');
+                submitBtn.disabled = false;
+                backdrop.classList.add('open');
+                modal.classList.add('open');
+            }
+
+            function closeForm() {
+                backdrop.classList.remove('open');
+                modal.classList.remove('open');
+            }
+
+            function cartSummary() {
+                try {
+                    var cart = JSON.parse(localStorage.getItem('bibifood_cart')) || {};
+                    var vi = (window.translations && window.translations.vi) || {};
+                    return Object.keys(cart).map(function (key) {
+                        return (vi[key] || key) + ' x' + cart[key].qty;
+                    }).join(', ');
+                } catch (e) {
+                    return '';
+                }
+            }
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var payload = {
+                    name: document.getElementById('cfName').value.trim(),
+                    phone: document.getElementById('cfPhone').value.trim(),
+                    address: document.getElementById('cfAddress').value.trim(),
+                    facebook: document.getElementById('cfFacebook').value.trim(),
+                    consent: document.getElementById('cfConsent').checked,
+                    website: document.getElementById('cfTrap').value,
+                    lang: window.currentLang || 'vi',
+                    cart: cartSummary()
+                };
+
+                if (!payload.name && !payload.phone && !payload.address && !payload.facebook) {
+                    showError(t('cf_err_empty', 'Vui lòng điền ít nhất một thông tin.'));
+                    return;
+                }
+                if (!CUSTOMER_FORM_ENDPOINT) {
+                    showError(t('cf_err_send', 'Không gửi được thông tin. Vui lòng thử lại sau.'));
+                    return;
+                }
+
+                showError('');
+                submitBtn.disabled = true;
+                // text/plain tránh preflight CORS; Apps Script vẫn đọc được body
+                fetch(CUSTOMER_FORM_ENDPOINT, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(payload)
+                }).then(function () {
+                    form.reset();
+                    modal.classList.add('done');
+                    modal.scrollTop = 0;
+                }).catch(function () {
+                    submitBtn.disabled = false;
+                    showError(t('cf_err_send', 'Không gửi được thông tin. Vui lòng thử lại sau.'));
+                });
+            });
+
+            closeBtn.addEventListener('click', closeForm);
+            backdrop.addEventListener('click', closeForm);
+            doneBtn.addEventListener('click', closeForm);
+            backBtn.addEventListener('click', function () {
+                closeForm();
+                if (typeof window.openOrderWorkflow === 'function') window.openOrderWorkflow();
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && modal.classList.contains('open')) closeForm();
+            });
+
+            window.openCustomerForm = openForm;
+        })();
+
+
+        (function () {
+            // Dán URL Google Apps Script mua sỉ (xem backend/HUONG_DAN_MUA_SI.md) vào đây
+            var WHOLESALE_ENDPOINT = '';
+            var SESSION_KEY = 'bibifood_ws_user';
+
+            var backdrop = document.getElementById('wsBackdrop');
+            var modal = document.getElementById('wsModal');
+            var loginForm = document.getElementById('wsLoginForm');
+            var reqForm = document.getElementById('wsReqForm');
+            var loginError = document.getElementById('wsLoginError');
+            var reqError = document.getElementById('wsReqError');
+            var loginBtn = document.getElementById('wsLoginSubmit');
+            var reqBtn = document.getElementById('wsReqSubmit');
+            var passInput = document.getElementById('wsPass');
+
+            function t(key, fallback) {
+                var dict = (window.translations && window.translations[window.currentLang || 'vi']) || {};
+                return dict[key] || fallback;
+            }
+
+            function setError(el, msg) {
+                el.textContent = msg || '';
+                el.classList.toggle('show', !!msg);
+            }
+
+            function getSession() {
+                try { return sessionStorage.getItem(SESSION_KEY); } catch (e) { return null; }
+            }
+
+            function setView(view) {
+                modal.setAttribute('data-view', view);
+                modal.scrollTop = 0;
+            }
+
+            function openWholesale() {
+                setError(loginError, '');
+                setError(reqError, '');
+                loginBtn.disabled = false;
+                reqBtn.disabled = false;
+                var user = getSession();
+                if (user) {
+                    document.getElementById('wsWelcomeName').textContent = user;
+                    setView('welcome');
+                } else {
+                    setView('login');
+                }
+                backdrop.classList.add('open');
+                modal.classList.add('open');
+            }
+
+            function closeWholesale() {
+                backdrop.classList.remove('open');
+                modal.classList.remove('open');
+            }
+
+            function post(payload) {
+                if (!WHOLESALE_ENDPOINT) return Promise.reject(new Error('no-endpoint'));
+                // text/plain tránh preflight CORS; Apps Script trả JSON đọc được
+                return fetch(WHOLESALE_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(payload)
+                }).then(function (res) { return res.json(); });
+            }
+
+            function markInvalid(input, invalid) {
+                input.classList.toggle('invalid', invalid);
+            }
+
+            // -------- login
+            loginForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var userEl = document.getElementById('wsUser');
+                var username = userEl.value.trim();
+                var password = passInput.value;
+                markInvalid(userEl, !username);
+                markInvalid(passInput, !password);
+                if (!username || !password) {
+                    setError(loginError, t('ws_err_login_empty', 'Vui lòng nhập tên đăng nhập và mật khẩu.'));
+                    return;
+                }
+                setError(loginError, '');
+                loginBtn.disabled = true;
+                post({ action: 'login', username: username, password: password }).then(function (res) {
+                    loginBtn.disabled = false;
+                    if (res && res.ok) {
+                        try { sessionStorage.setItem(SESSION_KEY, res.name || username); } catch (e) {}
+                        loginForm.reset();
+                        document.getElementById('wsWelcomeName').textContent = res.name || username;
+                        setView('welcome');
+                        return;
+                    }
+                    var map = {
+                        locked: ['ws_err_locked', 'Bạn nhập sai quá nhiều lần. Vui lòng thử lại sau 15 phút.'],
+                        inactive: ['ws_err_inactive', 'Tài khoản này đang bị khóa. Vui lòng liên hệ Bibi food.']
+                    };
+                    var m = map[res && res.error] || ['ws_err_invalid', 'Tên đăng nhập hoặc mật khẩu không đúng.'];
+                    setError(loginError, t(m[0], m[1]));
+                }).catch(function () {
+                    loginBtn.disabled = false;
+                    setError(loginError, t('cf_err_send', 'Không gửi được thông tin. Vui lòng thử lại sau.'));
+                });
+            });
+
+            document.getElementById('wsPassToggle').addEventListener('click', function () {
+                var show = passInput.type === 'password';
+                passInput.type = show ? 'text' : 'password';
+            });
+
+            // -------- request account
+            var reqFields = ['wsFullName', 'wsPhone', 'wsAddress', 'wsStore', 'wsLicense'];
+            reqFields.forEach(function (id) {
+                document.getElementById(id).addEventListener('input', function () {
+                    markInvalid(this, false);
+                });
+            });
+
+            reqForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var missing = false;
+                reqFields.forEach(function (id) {
+                    var el = document.getElementById(id);
+                    var bad = !el.value.trim();
+                    markInvalid(el, bad);
+                    if (bad) missing = true;
+                });
+                if (missing) {
+                    setError(reqError, t('ws_err_required', 'Vui lòng điền đầy đủ tất cả các mục bắt buộc.'));
+                    return;
+                }
+                setError(reqError, '');
+                reqBtn.disabled = true;
+                post({
+                    action: 'request_account',
+                    fullName: document.getElementById('wsFullName').value.trim(),
+                    phone: document.getElementById('wsPhone').value.trim(),
+                    address: document.getElementById('wsAddress').value.trim(),
+                    store: document.getElementById('wsStore').value.trim(),
+                    license: document.getElementById('wsLicense').value.trim(),
+                    website: document.getElementById('wsTrap').value
+                }).then(function (res) {
+                    reqBtn.disabled = false;
+                    if (res && res.ok) {
+                        reqForm.reset();
+                        setView('sent');
+                        return;
+                    }
+                    if (res && res.error === 'duplicate') {
+                        setError(reqError, t('ws_err_duplicate', 'Số điện thoại này đã có yêu cầu đang chờ duyệt. Bibi food sẽ sớm liên hệ với bạn.'));
+                    } else if (res && res.error === 'required') {
+                        setError(reqError, t('ws_err_required', 'Vui lòng điền đầy đủ tất cả các mục bắt buộc.'));
+                    } else {
+                        setError(reqError, t('cf_err_send', 'Không gửi được thông tin. Vui lòng thử lại sau.'));
+                    }
+                }).catch(function () {
+                    reqBtn.disabled = false;
+                    setError(reqError, t('cf_err_send', 'Không gửi được thông tin. Vui lòng thử lại sau.'));
+                });
+            });
+
+            // -------- navigation
+            document.getElementById('wsGoRequest').addEventListener('click', function () {
+                setView('choose');
+            });
+            document.getElementById('wsFormBtn').addEventListener('click', function () {
+                setError(reqError, '');
+                setView('request');
+            });
+            document.getElementById('wsChooseBack').addEventListener('click', function () {
+                setError(loginError, '');
+                setView('login');
+            });
+            document.getElementById('wsBackLogin').addEventListener('click', function () {
+                setView('choose');
+            });
+            document.getElementById('wsSentDone').addEventListener('click', closeWholesale);
+            document.getElementById('wsLogout').addEventListener('click', function () {
+                try { sessionStorage.removeItem(SESSION_KEY); } catch (e) {}
+                setView('login');
+            });
+            document.getElementById('wsChat').addEventListener('click', function () {
+                window.open('https://m.me/bibifood', '_blank', 'noopener');
+            });
+            document.getElementById('wsClose').addEventListener('click', closeWholesale);
+            document.getElementById('wsCloseFloat').addEventListener('click', closeWholesale);
+            backdrop.addEventListener('click', closeWholesale);
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && modal.classList.contains('open')) closeWholesale();
+            });
+
+            window.openWholesale = openWholesale;
         })();
 
         (function () {
@@ -3047,6 +5441,193 @@
                 }
                 video.muted = !video.muted;
             });
+        })();
+
+        (function () {
+            var STORAGE_KEY = 'bibifood_cart';
+            var CART_ICON_SVG = '<svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>';
+
+            function loadCart() {
+                try {
+                    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+                } catch (e) {
+                    return {};
+                }
+            }
+            function saveCart() {
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+                } catch (e) {}
+            }
+
+            var cart = loadCart();
+
+            var fabBadge = document.getElementById('cartFabBadge');
+            var fabBtn = document.getElementById('cartFabBtn');
+            var cartBackdrop = document.getElementById('cartBackdrop');
+            var cartModal = document.getElementById('cartModal');
+            var cartCloseBtn = document.getElementById('cartClose');
+            var cartListEl = document.getElementById('cartList');
+            var cartEmptyEl = document.getElementById('cartEmpty');
+            var cartOrderBtn = document.getElementById('cartOrderBtn');
+
+            function cartCount() {
+                return Object.keys(cart).reduce(function (sum, key) {
+                    return sum + cart[key].qty;
+                }, 0);
+            }
+
+            function updateBadge() {
+                var count = cartCount();
+                fabBadge.textContent = count;
+                fabBadge.classList.toggle('hidden', count === 0);
+            }
+
+            function productNameFor(key) {
+                var dict = (window.translations && window.translations[window.currentLang || 'vi']) || {};
+                return dict[key] || key;
+            }
+
+            function productImageFor(key) {
+                var nameEl = document.querySelector('.product-name[data-i18n="' + key + '"]');
+                var card = nameEl && nameEl.closest('.product-card');
+                var img = card && card.querySelector('.product-image');
+                return img ? img.src : '';
+            }
+
+            // Floating product list above the cart button was removed; kept as a no-op for existing callers.
+            function updateToast() {}
+
+            function changeQty(key, delta) {
+                if (!cart[key]) return;
+                cart[key].qty += delta;
+                if (cart[key].qty <= 0) {
+                    delete cart[key];
+                }
+                saveCart();
+                updateBadge();
+                renderCartList();
+                updateToast();
+            }
+
+            function renderCartList() {
+                var keys = Object.keys(cart);
+                cartListEl.innerHTML = '';
+                cartEmptyEl.hidden = keys.length > 0;
+                keys.forEach(function (key) {
+                    var item = cart[key];
+                    var row = document.createElement('div');
+                    row.className = 'cart-item';
+
+                    var imgEl = document.createElement('img');
+                    imgEl.className = 'cart-item-image';
+                    imgEl.src = productImageFor(key);
+                    imgEl.alt = productNameFor(key);
+
+                    var nameSpan = document.createElement('span');
+                    nameSpan.className = 'cart-item-name';
+                    nameSpan.textContent = productNameFor(key);
+
+                    var qtyGroup = document.createElement('div');
+                    qtyGroup.className = 'cart-item-qty-group';
+
+                    var minusBtn = document.createElement('button');
+                    minusBtn.className = 'cart-item-qty-btn';
+                    minusBtn.setAttribute('aria-label', 'Giảm số lượng');
+                    minusBtn.textContent = '−';
+                    minusBtn.addEventListener('click', function () {
+                        changeQty(key, -1);
+                    });
+
+                    var qtySpan = document.createElement('span');
+                    qtySpan.className = 'cart-item-qty';
+                    qtySpan.textContent = item.qty;
+
+                    var plusBtn = document.createElement('button');
+                    plusBtn.className = 'cart-item-qty-btn';
+                    plusBtn.setAttribute('aria-label', 'Tăng số lượng');
+                    plusBtn.textContent = '+';
+                    plusBtn.addEventListener('click', function () {
+                        changeQty(key, 1);
+                    });
+
+                    qtyGroup.appendChild(minusBtn);
+                    qtyGroup.appendChild(qtySpan);
+                    qtyGroup.appendChild(plusBtn);
+
+                    var removeBtn = document.createElement('button');
+                    removeBtn.className = 'cart-item-remove';
+                    removeBtn.setAttribute('aria-label', (window.translations && window.translations[window.currentLang || 'vi'] || {}).cart_remove || 'Xóa');
+                    removeBtn.innerHTML = '&times;';
+                    removeBtn.addEventListener('click', function () {
+                        delete cart[key];
+                        saveCart();
+                        updateBadge();
+                        renderCartList();
+                        updateToast();
+                    });
+
+                    row.appendChild(imgEl);
+                    row.appendChild(nameSpan);
+                    row.appendChild(qtyGroup);
+                    row.appendChild(removeBtn);
+                    cartListEl.appendChild(row);
+                });
+            }
+
+            function addToCart(key) {
+                if (!key) return;
+                cart[key] = cart[key] || { qty: 0 };
+                cart[key].qty += 1;
+                saveCart();
+                updateBadge();
+                renderCartList();
+                updateToast();
+            }
+
+            document.querySelectorAll('.product-card').forEach(function (card) {
+                var wrap = card.querySelector('.product-image-wrap');
+                var nameEl = card.querySelector('.product-name');
+                if (!wrap || !nameEl) return;
+                var key = nameEl.getAttribute('data-i18n');
+
+                var btn = document.createElement('button');
+                btn.className = 'product-add-cart';
+                btn.setAttribute('aria-label', 'Thêm vào giỏ');
+                btn.innerHTML = CART_ICON_SVG;
+                btn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    addToCart(key);
+                });
+                wrap.appendChild(btn);
+            });
+
+            window.addToCart = addToCart;
+
+            function openCart() {
+                renderCartList();
+                cartBackdrop.classList.add('open');
+                cartModal.classList.add('open');
+            }
+            function closeCart() {
+                cartBackdrop.classList.remove('open');
+                cartModal.classList.remove('open');
+            }
+
+            fabBtn.addEventListener('click', openCart);
+            cartCloseBtn.addEventListener('click', closeCart);
+            cartBackdrop.addEventListener('click', closeCart);
+            cartOrderBtn.addEventListener('click', function () {
+                closeCart();
+                if (typeof window.openOrderWorkflow === 'function') {
+                    window.openOrderWorkflow();
+                }
+            });
+
+            updateBadge();
+            updateToast();
+            window.renderCartList = renderCartList;
+            window.updateCartToast = updateToast;
         })();
     </script>
 </body>
