@@ -6,7 +6,7 @@
  */
 
 var TIMEZONE = 'Asia/Seoul';
-var HEADERS = ['Thời gian', 'Tên người mua', 'Số điện thoại', 'Địa chỉ', 'Facebook', 'Giỏ hàng', 'Ngôn ngữ', 'Đồng ý nhận ưu đãi'];
+var HEADERS = ['Thời gian', 'Tên người mua', 'Số điện thoại', 'Mã bưu điện', 'Địa chỉ', 'Địa chỉ chi tiết', 'Facebook', 'Giỏ hàng', 'Ngôn ngữ', 'Đồng ý nhận ưu đãi'];
 var MAX_LEN = 500;
 
 function doPost(e) {
@@ -23,11 +23,14 @@ function doPost(e) {
 
     var name = clean_(data.name);
     var phone = clean_(data.phone);
+    var zipcode = clean_(data.zipcode);
     var address = clean_(data.address);
+    var addressDetail = clean_(data.addressDetail);
     var facebook = clean_(data.facebook);
 
-    if (!name && !phone && !address && !facebook) {
-      return json_({ ok: false, error: 'empty' });
+    // Tên, số điện thoại, địa chỉ (chọn từ công cụ tìm địa chỉ Hàn Quốc) và địa chỉ chi tiết là bắt buộc; Facebook thì không
+    if (!name || !phone || !address || !addressDetail || !/^\d{5}$/.test(zipcode) || !/[가-힣]/.test(address)) {
+      return json_({ ok: false, error: 'required' });
     }
 
     var sheet = getTodaySheet_();
@@ -36,7 +39,9 @@ function doPost(e) {
       Utilities.formatDate(now, TIMEZONE, 'yyyy-MM-dd HH:mm:ss'),
       name,
       phone,
+      zipcode,
       address,
+      addressDetail,
       facebook,
       clean_(data.cart),
       clean_(data.lang),
@@ -69,12 +74,13 @@ function getTodaySheet_() {
       .setFontColor('#FFFFFF');
     sheet.setFrozenRows(1);
     // Giữ nguyên số 0 đầu của số điện thoại
-    sheet.getRange('C:C').setNumberFormat('@');
-    sheet.setColumnWidths(1, 1, 150);
-    sheet.setColumnWidths(2, 3, 180);
-    sheet.setColumnWidth(4, 280);
-    sheet.setColumnWidth(5, 220);
-    sheet.setColumnWidth(6, 320);
+    sheet.getRange('C:D').setNumberFormat('@'); // số điện thoại + mã bưu điện (giữ số 0 đầu)
+    sheet.setColumnWidth(1, 150);
+    sheet.setColumnWidths(2, 3, 150);
+    sheet.setColumnWidth(5, 320);
+    sheet.setColumnWidth(6, 180);
+    sheet.setColumnWidth(7, 200);
+    sheet.setColumnWidth(8, 320);
   }
   return sheet;
 }

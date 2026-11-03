@@ -1,0 +1,23 @@
+{
+  "name": "bibifood-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend local cho web Bibi food (auth + quản trị)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node --no-warnings src/index.js",
+    "dev": "node --no-warnings --watch src/index.js",
+    "seed": "node src/seed.js",
+    "test": "node --no-warnings test/smoke.js"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "express": "^4.22.3",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.5.0"
+  }
+}

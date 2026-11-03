@@ -1,0 +1,1622 @@
+{
+  "categories": {
+    "gio": {
+      "vi": "Giò",
+      "ko": "지오 (Giò)",
+      "en": "Giò",
+      "zh": "肉糕 (Giò)"
+    },
+    "xucxich": {
+      "vi": "Xúc xích",
+      "ko": "소시지 (Xúc xích)",
+      "en": "Sausage",
+      "zh": "香肠"
+    },
+    "nem": {
+      "vi": "Nem",
+      "ko": "넴 (Nem)",
+      "en": "Nem",
+      "zh": "酸肉卷 (Nem)"
+    },
+    "kho": {
+      "vi": "Khô",
+      "ko": "육포 (Khô)",
+      "en": "Jerky",
+      "zh": "肉干"
+    },
+    "banhtrung": {
+      "vi": "Bánh chưng",
+      "ko": "바인 쯩 (Bánh chưng)",
+      "en": "Bánh chưng",
+      "zh": "粽子 (Bánh chưng)"
+    },
+    "khac": {
+      "vi": "Khác",
+      "ko": "기타",
+      "en": "Other",
+      "zh": "其他"
+    },
+    "vien": {
+      "vi": "Viên thả lẩu",
+      "ko": "전골용 완자",
+      "en": "Hotpot balls",
+      "zh": "火锅丸子"
+    }
+  },
+  "products": [
+    {
+      "key": "product_gio_bo",
+      "category": "gio",
+      "image": "gio_bo_new.jfif",
+      "names": {
+        "vi": "Giò bò",
+        "ko": "소고기 지오 (Giò bò)",
+        "en": "Beef Giò (Giò bò)",
+        "zh": "牛肉越式肉糕 (Giò bò)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Thịt bò nạc 75%, mỡ lợn 25%",
+            "Hạt tiêu, tỏi, nước mắm cốt, đường, hạt nêm, bột ngọt",
+            "Gói trong lá chuối tươi"
+          ],
+          "serving": [
+            "Chế biến: ăn trực tiếp",
+            "Ăn kèm: bánh mì, xôi, bánh cuốn, bún bò, bún riêu"
+          ],
+          "storage": [
+            "Ngăn mát (2–5°C): 5–7 ngày",
+            "Ngăn đông (-18°C): 1–2 tháng"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "소고기 살코기 75%, 돼지기름 25%",
+            "후추, 마늘, 생선액젓(느억맘), 설탕, 조미료, 맛소금",
+            "신선한 바나나잎으로 포장"
+          ],
+          "serving": [
+            "조리법: 그대로 먹기",
+            "곁들임: 바게트빵, 찹쌀밥, 반꾸온, 분보(쇠고기 쌀국수), 분리에우"
+          ],
+          "storage": [
+            "냉장(2–5°C): 5–7일",
+            "냉동(-18°C): 1–2개월"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Lean beef 75%, pork fat 25%",
+            "Pepper, garlic, fish sauce, sugar, seasoning powder, MSG",
+            "Wrapped in fresh banana leaves"
+          ],
+          "serving": [
+            "Ready to eat",
+            "Serve with: baguette, sticky rice, steamed rice rolls (bánh cuốn), beef noodle soup (bún bò), crab noodle soup (bún riêu)"
+          ],
+          "storage": [
+            "Refrigerator (2–5°C): 5–7 days",
+            "Freezer (-18°C): 1–2 months"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "牛瘦肉75%，猪油25%",
+            "胡椒、大蒜、鱼露、糖、调味粉、味精",
+            "以新鲜香蕉叶包裹"
+          ],
+          "serving": [
+            "可直接食用",
+            "搭配：法棍面包、糯米饭、越式蒸卷（bánh cuốn）、牛肉米线（bún bò）、蟹汤米线（bún riêu）"
+          ],
+          "storage": [
+            "冷藏（2–5°C）：5–7天",
+            "冷冻（-18°C）：1–2个月"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_gio_tai",
+      "category": "gio",
+      "image": "gio_tai.jpeg",
+      "names": {
+        "vi": "Giò tai",
+        "ko": "지오 따이 (Giò tai)",
+        "en": "Pork Ear Giò (Giò tai)",
+        "zh": "猪耳肉糕 (Giò tai)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Mỡ heo 15%, tai heo và thịt nạc heo 65%, tai heo 20%",
+            "Nước mắm cốt, hạt tiêu, muối, đường, hạt nêm",
+            "Gói trong lá chuối tươi"
+          ],
+          "serving": [
+            "Chế biến: ăn trực tiếp",
+            "Ăn kèm: bánh mì, xôi, bánh cuốn, bún bò, bún riêu"
+          ],
+          "storage": [
+            "Ngăn mát (2–5°C): 5–7 ngày",
+            "Ngăn đông (-18°C): 1–2 tháng"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "돼지기름 15%, 돼지귀와 돼지고기 살코기 65%, 돼지귀 20%",
+            "생선액젓, 후추, 소금, 설탕, 조미료",
+            "신선한 바나나잎으로 포장"
+          ],
+          "serving": [
+            "조리법: 그대로 먹기",
+            "곁들임: 바게트빵, 찹쌀밥, 반꾸온, 분보, 분리에우"
+          ],
+          "storage": [
+            "냉장(2–5°C): 5–7일",
+            "냉동(-18°C): 1–2개월"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Pork fat 15%, pork ear and lean pork 65%, pork ear 20%",
+            "Fish sauce, pepper, salt, sugar, seasoning powder",
+            "Wrapped in fresh banana leaves"
+          ],
+          "serving": [
+            "Ready to eat",
+            "Serve with: baguette, sticky rice, steamed rice rolls (bánh cuốn), beef noodle soup (bún bò), crab noodle soup (bún riêu)"
+          ],
+          "storage": [
+            "Refrigerator (2–5°C): 5–7 days",
+            "Freezer (-18°C): 1–2 months"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "猪油15%，猪耳和猪瘦肉65%，猪耳20%",
+            "鱼露、胡椒、盐、糖、调味粉",
+            "以新鲜香蕉叶包裹"
+          ],
+          "serving": [
+            "可直接食用",
+            "搭配：法棍面包、糯米饭、越式蒸卷（bánh cuốn）、牛肉米线（bún bò）、蟹汤米线（bún riêu）"
+          ],
+          "storage": [
+            "冷藏（2–5°C）：5–7天",
+            "冷冻（-18°C）：1–2个月"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_jam_bong",
+      "category": "gio",
+      "image": "jam_bong.jfif",
+      "names": {
+        "vi": "Jambon",
+        "ko": "잠봉 (Jambon)",
+        "en": "Ham (Jambon)",
+        "zh": "火腿 (Jambon)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Thịt đùi heo 60%, mỡ heo 30%",
+            "Muối, đường, tiêu, tỏi"
+          ],
+          "serving": [
+            "Chế biến: ăn trực tiếp",
+            "Ăn kèm: bánh mì, xôi, bánh cuốn, bún bò, bún riêu"
+          ],
+          "storage": [
+            "Ngăn mát (2–5°C): 5–7 ngày",
+            "Ngăn đông (-18°C): 1–2 tháng"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "돼지 다리살 60%, 돼지기름 30%",
+            "소금, 설탕, 후추, 마늘"
+          ],
+          "serving": [
+            "조리법: 그대로 먹기",
+            "곁들임: 바게트빵, 찹쌀밥, 반꾸온, 분보, 분리에우"
+          ],
+          "storage": [
+            "냉장(2–5°C): 5–7일",
+            "냉동(-18°C): 1–2개월"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Pork leg meat 60%, pork fat 30%",
+            "Salt, sugar, pepper, garlic"
+          ],
+          "serving": [
+            "Ready to eat",
+            "Serve with: baguette, sticky rice, steamed rice rolls (bánh cuốn), beef noodle soup (bún bò), crab noodle soup (bún riêu)"
+          ],
+          "storage": [
+            "Refrigerator (2–5°C): 5–7 days",
+            "Freezer (-18°C): 1–2 months"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "猪腿肉60%，猪油30%",
+            "盐、糖、胡椒、大蒜"
+          ],
+          "serving": [
+            "可直接食用",
+            "搭配：法棍面包、糯米饭、越式蒸卷（bánh cuốn）、牛肉米线（bún bò）、蟹汤米线（bún riêu）"
+          ],
+          "storage": [
+            "冷藏（2–5°C）：5–7天",
+            "冷冻（-18°C）：1–2个月"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_gio_heo",
+      "category": "gio",
+      "image": "gio_lon.jpg",
+      "names": {
+        "vi": "Giò heo",
+        "ko": "돼지고기 지오 (Giò heo)",
+        "en": "Pork Giò (Giò heo)",
+        "zh": "猪肉越式肉糕 (Giò heo)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Thịt nạc 75%, mỡ 20%",
+            "Hạt tiêu, tỏi, nước mắm cốt, đường, hạt nêm, bột ngọt",
+            "Gói trong lá chuối tươi"
+          ],
+          "serving": [
+            "Chế biến: ăn trực tiếp",
+            "Ăn kèm: bánh mì, xôi, bánh cuốn, bún bò, bún riêu"
+          ],
+          "storage": [
+            "Ngăn mát (2–5°C): 5–7 ngày",
+            "Ngăn đông (-18°C): 1–2 tháng"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "살코기 75%, 돼지기름 20%",
+            "후추, 마늘, 생선액젓, 설탕, 조미료, 맛소금",
+            "신선한 바나나잎으로 포장"
+          ],
+          "serving": [
+            "조리법: 그대로 먹기",
+            "곁들임: 바게트빵, 찹쌀밥, 반꾸온, 분보, 분리에우"
+          ],
+          "storage": [
+            "냉장(2–5°C): 5–7일",
+            "냉동(-18°C): 1–2개월"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Lean pork 75%, fat 20%",
+            "Pepper, garlic, fish sauce, sugar, seasoning powder, MSG",
+            "Wrapped in fresh banana leaves"
+          ],
+          "serving": [
+            "Ready to eat",
+            "Serve with: baguette, sticky rice, steamed rice rolls (bánh cuốn), beef noodle soup (bún bò), crab noodle soup (bún riêu)"
+          ],
+          "storage": [
+            "Refrigerator (2–5°C): 5–7 days",
+            "Freezer (-18°C): 1–2 months"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "猪瘦肉75%，脂肪20%",
+            "胡椒、大蒜、鱼露、糖、调味粉、味精",
+            "以新鲜香蕉叶包裹"
+          ],
+          "serving": [
+            "可直接食用",
+            "搭配：法棍面包、糯米饭、越式蒸卷（bánh cuốn）、牛肉米线（bún bò）、蟹汤米线（bún riêu）"
+          ],
+          "storage": [
+            "冷藏（2–5°C）：5–7天",
+            "冷冻（-18°C）：1–2个月"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_cha_lua",
+      "category": "gio",
+      "image": "cha_lua.jpg",
+      "names": {
+        "vi": "Chả lụa",
+        "ko": "짜 루어 (Chả lụa)",
+        "en": "Vietnamese Pork Roll (Chả lụa)",
+        "zh": "越式猪肉卷 (Chả lụa)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Thịt nạc heo 85%, mỡ heo 15%",
+            "Nước mắm cốt, tiêu, đường, muối, bột ngọt",
+            "Gói trong lá chuối tươi"
+          ],
+          "serving": [
+            "Chế biến: ăn trực tiếp",
+            "Ăn kèm: bánh mì, xôi, bánh cuốn, bún bò, bún riêu"
+          ],
+          "storage": [
+            "Ngăn mát (2–5°C): 5–7 ngày",
+            "Ngăn đông (-18°C): 1–2 tháng"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "돼지고기 살코기 85%, 돼지기름 15%",
+            "생선액젓, 후추, 설탕, 소금, 조미료",
+            "신선한 바나나잎으로 포장"
+          ],
+          "serving": [
+            "조리법: 그대로 먹기",
+            "곁들임: 바게트빵, 찹쌀밥, 반꾸온, 분보, 분리에우"
+          ],
+          "storage": [
+            "냉장(2–5°C): 5–7일",
+            "냉동(-18°C): 1–2개월"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Lean pork 85%, pork fat 15%",
+            "Fish sauce, pepper, sugar, salt, MSG",
+            "Wrapped in fresh banana leaves"
+          ],
+          "serving": [
+            "Ready to eat",
+            "Serve with: baguette, sticky rice, steamed rice rolls (bánh cuốn), beef noodle soup (bún bò), crab noodle soup (bún riêu)"
+          ],
+          "storage": [
+            "Refrigerator (2–5°C): 5–7 days",
+            "Freezer (-18°C): 1–2 months"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "猪瘦肉85%，猪油15%",
+            "鱼露、胡椒、糖、盐、味精",
+            "以新鲜香蕉叶包裹"
+          ],
+          "serving": [
+            "可直接食用",
+            "搭配：法棍面包、糯米饭、越式蒸卷（bánh cuốn）、牛肉米线（bún bò）、蟹汤米线（bún riêu）"
+          ],
+          "storage": [
+            "冷藏（2–5°C）：5–7天",
+            "冷冻（-18°C）：1–2个月"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_gio_song",
+      "category": "gio",
+      "image": "gio_song.jfif",
+      "names": {
+        "vi": "Giò sống",
+        "ko": "지오 송 (Giò sống)",
+        "en": "Raw Giò Mix (Giò sống)",
+        "zh": "生肉糜 (Giò sống)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Thịt nạc 72,5%, mỡ phần 27,5%",
+            "Nước mắm, tiêu trắng, đường, bột ngọt hoặc hạt nêm, bột năng hoặc bột bắp, đá lạnh"
+          ],
+          "serving": [
+            "Viên làm mọc thả canh, hoặc làm chả chiên, chả cốm, nhồi đậu phụ và rau củ",
+            "Ăn kèm: bún mọc, bún riêu, canh rau ngót, canh bí xanh"
+          ],
+          "storage": [
+            "Ngăn mát (0–4°C): 1–2 ngày",
+            "Ngăn đông (-18°C): 1–3 tháng"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "살코기 72.5%, 비계 27.5%",
+            "생선액젓, 백후추, 설탕, 조미료 또는 맛소금, 감자전분 또는 옥수수전분, 얼음"
+          ],
+          "serving": [
+            "완자로 빚어 국에 넣거나, 튀김·구운 짜(짜꼼)로 만들거나, 두부·채소 속을 채워 조리",
+            "곁들임: 분목(완자 쌀국수), 분리에우, 시금치국, 애호박국"
+          ],
+          "storage": [
+            "냉장(0–4°C): 1–2일",
+            "냉동(-18°C): 1–3개월"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Lean meat 72.5%, fat 27.5%",
+            "Fish sauce, white pepper, sugar, MSG or seasoning powder, tapioca or corn starch, ice"
+          ],
+          "serving": [
+            "Shape into meatballs for soup, or make fried Chả, Chả cốm, or stuff tofu and vegetables",
+            "Serve with: meatball noodle soup (bún mọc), crab noodle soup (bún riêu), sweet leaf soup, winter melon soup"
+          ],
+          "storage": [
+            "Refrigerator (0–4°C): 1–2 days",
+            "Freezer (-18°C): 1–3 months"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "瘦肉72.5%，肥肉27.5%",
+            "鱼露、白胡椒、糖、味精或调味粉、木薯淀粉或玉米淀粉、冰块"
+          ],
+          "serving": [
+            "可捏成丸子煮汤，或做成煎肉饼、青米肉饼，也可酿豆腐和蔬菜",
+            "搭配：肉丸米线（bún mọc）、蟹汤米线（bún riêu）、守宫木汤、冬瓜汤"
+          ],
+          "storage": [
+            "冷藏（0–4°C）：1–2天",
+            "冷冻（-18°C）：1–3个月"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_gio_xao",
+      "category": "gio",
+      "image": "gio_xao.jfif",
+      "names": {
+        "vi": "Giò sào",
+        "ko": "지오 사오 (Giò sào)",
+        "en": "Stir-fried Giò (Giò sào)",
+        "zh": "炒制肉糕 (Giò sào)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Tai heo: 400 g, Lưỡi heo: 300 g, Mũi heo: 200 g",
+            "Mộc nhĩ khô: 40 g, Nấm hương khô: 30 g, nước mắm truyền thống, hạt tiêu đen, hành khô, hạt nêm",
+            "Bột ngọt, đường, gừng tươi, giấm, muối hạt, rượu trắng",
+            "Gói trong lá chuối, buộc lạt"
+          ],
+          "serving": [
+            "Chế biến: ăn trực tiếp",
+            "Ăn kèm: bánh mì, xôi, bánh cuốn, bún bò, bún riêu"
+          ],
+          "storage": [
+            "Ngăn mát (2–5°C): 5–7 ngày",
+            "Ngăn đông (-18°C): 1–2 tháng"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "돼지귀 400g, 돼지혀 300g, 돼지코 200g",
+            "건목이버섯 40g, 건표고버섯 30g, 전통 생선액젓, 흑후추, 건조양파, 조미료",
+            "맛소금, 설탕, 생강, 식초, 굵은소금, 백주(소주)",
+            "바나나잎으로 포장, 대나무 끈으로 묶음"
+          ],
+          "serving": [
+            "조리법: 그대로 먹기",
+            "곁들임: 바게트빵, 찹쌀밥, 반꾸온, 분보, 분리에우"
+          ],
+          "storage": [
+            "냉장(2–5°C): 5–7일",
+            "냉동(-18°C): 1–2개월"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Pork ear 400 g, pork tongue 300 g, pork snout 200 g",
+            "Dried wood ear mushrooms 40 g, dried shiitake 30 g, traditional fish sauce, black pepper, dried onion, seasoning powder",
+            "MSG, sugar, fresh ginger, vinegar, coarse salt, white liquor",
+            "Wrapped in banana leaves, tied with bamboo strips"
+          ],
+          "serving": [
+            "Ready to eat",
+            "Serve with: baguette, sticky rice, steamed rice rolls (bánh cuốn), beef noodle soup (bún bò), crab noodle soup (bún riêu)"
+          ],
+          "storage": [
+            "Refrigerator (2–5°C): 5–7 days",
+            "Freezer (-18°C): 1–2 months"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "猪耳400克，猪舌300克，猪鼻200克",
+            "干木耳40克，干香菇30克，传统鱼露、黑胡椒、干洋葱、调味粉",
+            "味精、糖、生姜、醋、粗盐、白酒",
+            "以香蕉叶包裹，竹篾捆扎"
+          ],
+          "serving": [
+            "可直接食用",
+            "搭配：法棍面包、糯米饭、越式蒸卷（bánh cuốn）、牛肉米线（bún bò）、蟹汤米线（bún riêu）"
+          ],
+          "storage": [
+            "冷藏（2–5°C）：5–7天",
+            "冷冻（-18°C）：1–2个月"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_xx_thuong",
+      "category": "xucxich",
+      "image": "xuc_xich_thuong.jfif",
+      "names": {
+        "vi": "Xúc xích thường",
+        "ko": "일반 소시지 (Xúc xích thường)",
+        "en": "Classic Sausage (Xúc xích thường)",
+        "zh": "普通香肠 (Xúc xích thường)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Thịt heo 65%, mỡ heo 20%",
+            "Muối, đường, tiêu, tỏi, bột ngọt, vỏ collagen"
+          ],
+          "serving": [
+            "Chế biến: áp chảo 5–7 phút, nồi chiên không dầu 160–180°C trong 8–10 phút",
+            "Ăn kèm: mì tôm, cơm chiên, bánh mì kẹp hot dog, salad"
+          ],
+          "storage": [
+            "Ngăn mát (2–5°C): 3–5 ngày",
+            "Ngăn đông (-18°C): 1–3 tháng"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "돼지고기 65%, 돼지기름 20%",
+            "소금, 설탕, 후추, 마늘, 조미료, 콜라겐 케이싱"
+          ],
+          "serving": [
+            "조리법: 팬에 5–7분 굽기, 에어프라이어 160–180°C에서 8–10분",
+            "곁들임: 라면, 볶음밥, 핫도그빵, 샐러드"
+          ],
+          "storage": [
+            "냉장(2–5°C): 3–5일",
+            "냉동(-18°C): 1–3개월"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Pork 65%, pork fat 20%",
+            "Salt, sugar, pepper, garlic, MSG, collagen casing"
+          ],
+          "serving": [
+            "Pan-fry 5–7 minutes, or air-fry at 160–180°C for 8–10 minutes",
+            "Serve with: instant noodles, fried rice, hot dog buns, salad"
+          ],
+          "storage": [
+            "Refrigerator (2–5°C): 3–5 days",
+            "Freezer (-18°C): 1–3 months"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "猪肉65%，猪油20%",
+            "盐、糖、胡椒、大蒜、味精、胶原蛋白肠衣"
+          ],
+          "serving": [
+            "平底锅煎5–7分钟，或空气炸锅160–180°C炸8–10分钟",
+            "搭配：方便面、炒饭、热狗面包、沙拉"
+          ],
+          "storage": [
+            "冷藏（2–5°C）：3–5天",
+            "冷冻（-18°C）：1–3个月"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_lap_xuong",
+      "category": "xucxich",
+      "image": "lap_xuong.jfif",
+      "names": {
+        "vi": "Lạp xưởng",
+        "ko": "랍쓰엉 (Lạp xưởng)",
+        "en": "Vietnamese Sausage (Lạp xưởng)",
+        "zh": "越式腊肠 (Lạp xưởng)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Thịt nạc heo 75%, mỡ heo 25%",
+            "Vỏ collagen",
+            "Rượu trắng, đường, muối, tiêu, tỏi, bột ngọt"
+          ],
+          "serving": [
+            "Chế biến: áp chảo 5–7 phút, nồi chiên không dầu 160–180°C trong 8–10 phút",
+            "Ăn kèm: mì tôm, cơm chiên, bánh mì kẹp hot dog, salad"
+          ],
+          "storage": [
+            "Ngăn mát (2–5°C): 3–5 ngày",
+            "Ngăn đông (-18°C): 1–3 tháng"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "돼지고기 살코기 75%, 돼지기름 25%",
+            "콜라겐 케이싱",
+            "백주(소주), 설탕, 소금, 후추, 마늘, 조미료"
+          ],
+          "serving": [
+            "조리법: 팬에 5–7분 굽기, 에어프라이어 160–180°C에서 8–10분",
+            "곁들임: 라면, 볶음밥, 핫도그빵, 샐러드"
+          ],
+          "storage": [
+            "냉장(2–5°C): 3–5일",
+            "냉동(-18°C): 1–3개월"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Lean pork 75%, pork fat 25%",
+            "Collagen casing",
+            "White liquor, sugar, salt, pepper, garlic, MSG"
+          ],
+          "serving": [
+            "Pan-fry 5–7 minutes, or air-fry at 160–180°C for 8–10 minutes",
+            "Serve with: instant noodles, fried rice, hot dog buns, salad"
+          ],
+          "storage": [
+            "Refrigerator (2–5°C): 3–5 days",
+            "Freezer (-18°C): 1–3 months"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "猪瘦肉75%，猪油25%",
+            "胶原蛋白肠衣",
+            "白酒、糖、盐、胡椒、大蒜、味精"
+          ],
+          "serving": [
+            "平底锅煎5–7分钟，或空气炸锅160–180°C炸8–10分钟",
+            "搭配：方便面、炒饭、热狗面包、沙拉"
+          ],
+          "storage": [
+            "冷藏（2–5°C）：3–5天",
+            "冷冻（-18°C）：1–3个月"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_xx_ga",
+      "category": "xucxich",
+      "image": "xucxich_ga.jpg",
+      "names": {
+        "vi": "Xúc xích gà",
+        "ko": "닭고기 소시지 (Xúc xích gà)",
+        "en": "Chicken Sausage (Xúc xích gà)",
+        "zh": "鸡肉香肠 (Xúc xích gà)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Thịt ức gà 65%, mỡ heo hoặc dầu olive 15%",
+            "Muối, tiêu, đường, hạt nêm, tỏi, hành khô, bột bắp hoặc tinh bột khoai tây, vỏ collagen"
+          ],
+          "serving": [
+            "Chế biến: áp chảo 5–7 phút, nồi chiên không dầu 160–180°C trong 8–10 phút",
+            "Ăn kèm: mì tôm, cơm chiên, bánh mì kẹp hot dog, salad"
+          ],
+          "storage": [
+            "Ngăn mát (2–5°C): 3–5 ngày",
+            "Ngăn đông (-18°C): 1–3 tháng"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "닭가슴살 65%, 돼지기름 또는 올리브오일 15%",
+            "소금, 후추, 설탕, 조미료, 마늘, 건조양파, 옥수수전분 또는 감자전분, 콜라겐 케이싱"
+          ],
+          "serving": [
+            "조리법: 팬에 5–7분 굽기, 에어프라이어 160–180°C에서 8–10분",
+            "곁들임: 라면, 볶음밥, 핫도그빵, 샐러드"
+          ],
+          "storage": [
+            "냉장(2–5°C): 3–5일",
+            "냉동(-18°C): 1–3개월"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Chicken breast 65%, pork fat or olive oil 15%",
+            "Salt, pepper, sugar, seasoning powder, garlic, dried onion, corn or potato starch, collagen casing"
+          ],
+          "serving": [
+            "Pan-fry 5–7 minutes, or air-fry at 160–180°C for 8–10 minutes",
+            "Serve with: instant noodles, fried rice, hot dog buns, salad"
+          ],
+          "storage": [
+            "Refrigerator (2–5°C): 3–5 days",
+            "Freezer (-18°C): 1–3 months"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "鸡胸肉65%，猪油或橄榄油15%",
+            "盐、胡椒、糖、调味粉、大蒜、干洋葱、玉米淀粉或土豆淀粉、胶原蛋白肠衣"
+          ],
+          "serving": [
+            "平底锅煎5–7分钟，或空气炸锅160–180°C炸8–10分钟",
+            "搭配：方便面、炒饭、热狗面包、沙拉"
+          ],
+          "storage": [
+            "冷藏（2–5°C）：3–5天",
+            "冷冻（-18°C）：1–3个月"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_xx_phomai",
+      "category": "xucxich",
+      "image": "xuc_xich_pho_mai.jpg",
+      "names": {
+        "vi": "Xúc xích phô mai",
+        "ko": "치즈 소시지 (Xúc xích phô mai)",
+        "en": "Cheese Sausage (Xúc xích phô mai)",
+        "zh": "芝士香肠 (Xúc xích phô mai)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Thịt heo 65%, mỡ heo và phô mai 35%",
+            "Phô mai Mozzarella",
+            "Muối, đường, tiêu, tỏi, bột ớt, vỏ collagen"
+          ],
+          "serving": [
+            "Chế biến: áp chảo 5–7 phút, nồi chiên không dầu 160–180°C trong 8–10 phút",
+            "Ăn kèm: mì tôm, cơm chiên, bánh mì kẹp hot dog, salad"
+          ],
+          "storage": [
+            "Ngăn mát (2–5°C): 3–5 ngày",
+            "Ngăn đông (-18°C): 1–3 tháng"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "돼지고기 65%, 돼지기름과 치즈 35%",
+            "모짜렐라 치즈",
+            "소금, 설탕, 후추, 마늘, 고추분말, 콜라겐 케이싱"
+          ],
+          "serving": [
+            "조리법: 팬에 5–7분 굽기, 에어프라이어 160–180°C에서 8–10분",
+            "곁들임: 라면, 볶음밥, 핫도그빵, 샐러드"
+          ],
+          "storage": [
+            "냉장(2–5°C): 3–5일",
+            "냉동(-18°C): 1–3개월"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Pork 65%, pork fat and cheese 35%",
+            "Mozzarella cheese",
+            "Salt, sugar, pepper, garlic, chili powder, collagen casing"
+          ],
+          "serving": [
+            "Pan-fry 5–7 minutes, or air-fry at 160–180°C for 8–10 minutes",
+            "Serve with: instant noodles, fried rice, hot dog buns, salad"
+          ],
+          "storage": [
+            "Refrigerator (2–5°C): 3–5 days",
+            "Freezer (-18°C): 1–3 months"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "猪肉65%，猪油和芝士35%",
+            "马苏里拉芝士",
+            "盐、糖、胡椒、大蒜、辣椒粉、胶原蛋白肠衣"
+          ],
+          "serving": [
+            "平底锅煎5–7分钟，或空气炸锅160–180°C炸8–10分钟",
+            "搭配：方便面、炒饭、热狗面包、沙拉"
+          ],
+          "storage": [
+            "冷藏（2–5°C）：3–5天",
+            "冷冻（-18°C）：1–3个月"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_nem_lui",
+      "category": "nem",
+      "image": "nem_lui.JPG",
+      "names": {
+        "vi": "Nem lụi",
+        "ko": "넴루이 (Nem lụi)",
+        "en": "Lemongrass Pork Skewers (Nem lụi)",
+        "zh": "香茅烤肉串 (Nem lụi)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Thịt heo xay nạc 70%, mỡ gáy 12,5%",
+            "Sả cây, hành khô, tỏi, tiêu, đường, nước mắm, dầu hào, bột năng, dầu điều"
+          ],
+          "serving": [
+            "Chế biến: áp chảo 5–7 phút, nồi chiên không dầu 160–180°C trong 8–10 phút",
+            "Ăn kèm: ăn trực tiếp hoặc ăn kèm với bánh tráng quấn"
+          ],
+          "storage": [
+            "Ngăn mát (2–5°C): 2–3 ngày",
+            "Ngăn đông (-18°C): 3–4 tuần"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "간 돼지고기 살코기 70%, 목살 지방 12.5%",
+            "레몬그라스, 건조양파, 마늘, 후추, 설탕, 생선액젓, 오이스터소스, 감자전분, 아나토색소오일"
+          ],
+          "serving": [
+            "조리법: 팬에 5–7분 굽기, 에어프라이어 160–180°C에서 8–10분",
+            "곁들임: 그대로 먹거나 라이스페이퍼에 싸서"
+          ],
+          "storage": [
+            "냉장(2–5°C): 2–3일",
+            "냉동(-18°C): 3–4주"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Ground lean pork 70%, pork neck fat 12.5%",
+            "Lemongrass, dried onion, garlic, pepper, sugar, fish sauce, oyster sauce, tapioca starch, annatto oil"
+          ],
+          "serving": [
+            "Pan-fry 5–7 minutes, or air-fry at 160–180°C for 8–10 minutes",
+            "Serve with: eat as is, or wrap in rice paper"
+          ],
+          "storage": [
+            "Refrigerator (2–5°C): 2–3 days",
+            "Freezer (-18°C): 3–4 weeks"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "猪瘦肉糜70%，猪颈脂肪12.5%",
+            "香茅、干洋葱、大蒜、胡椒、糖、鱼露、蚝油、木薯淀粉、胭脂树籽油"
+          ],
+          "serving": [
+            "平底锅煎5–7分钟，或空气炸锅160–180°C炸8–10分钟",
+            "搭配：直接食用，或用米纸卷着吃"
+          ],
+          "storage": [
+            "冷藏（2–5°C）：2–3天",
+            "冷冻（-18°C）：3–4周"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_nem_chua",
+      "category": "nem",
+      "image": "nem_chua_thanh_hoa.jfif",
+      "names": {
+        "vi": "Nem chua Thanh Hóa",
+        "ko": "탄호아 넴쭈아 (Nem chua Thanh Hóa)",
+        "en": "Thanh Hóa Fermented Pork (Nem chua)",
+        "zh": "清化酸肉卷 (Nem chua)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Thịt nạc heo 65%, bì heo 25%",
+            "Thính gạo, tỏi, ớt chỉ thiên, tiêu bắc, đường, muối, bột canh",
+            "Lá đinh lăng, lá chuối tươi để gói"
+          ],
+          "serving": [
+            "Chế biến: ăn trực tiếp, chấm tương ớt",
+            "Ăn kèm: món nhắm bia rượu"
+          ],
+          "storage": [
+            "Ngăn mát (4–8°C): 5–7 ngày",
+            "Ngăn đông (-18°C): 3–4 tuần"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "돼지고기 살코기 65%, 돼지껍질 25%",
+            "볶은 쌀가루(틴), 마늘, 고추, 후추, 설탕, 소금, 조미소금",
+            "딩랑잎, 신선한 바나나잎으로 포장"
+          ],
+          "serving": [
+            "조리법: 그대로 먹기, 칠리소스에 찍어서",
+            "곁들임: 술·맥주 안주"
+          ],
+          "storage": [
+            "냉장(4–8°C): 5–7일",
+            "냉동(-18°C): 3–4주"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Lean pork 65%, pork skin 25%",
+            "Roasted rice powder, garlic, bird's eye chili, black pepper, sugar, salt, seasoned salt",
+            "Ming aralia leaves and fresh banana leaves for wrapping"
+          ],
+          "serving": [
+            "Ready to eat; dip in chili sauce",
+            "Serve with: a snack with beer or liquor"
+          ],
+          "storage": [
+            "Refrigerator (4–8°C): 5–7 days",
+            "Freezer (-18°C): 3–4 weeks"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "猪瘦肉65%，猪皮25%",
+            "炒米粉、大蒜、朝天椒、黑胡椒、糖、盐、调味盐",
+            "以福禄桐叶和新鲜香蕉叶包裹"
+          ],
+          "serving": [
+            "可直接食用，蘸辣椒酱",
+            "搭配：啤酒或白酒的下酒小菜"
+          ],
+          "storage": [
+            "冷藏（4–8°C）：5–7天",
+            "冷冻（-18°C）：3–4周"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_kho_bo",
+      "category": "kho",
+      "image": "kho_bo.jfif",
+      "names": {
+        "vi": "Khô bò",
+        "ko": "소고기 육포 (Khô bò)",
+        "en": "Beef Jerky (Khô bò)",
+        "zh": "牛肉干 (Khô bò)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Thịt bò nạc 87%, phần còn lại là gia vị",
+            "Sả, tỏi, gừng, ớt tươi hoặc ớt bột",
+            "Bột ngũ vị hương, hoa hồi, quế, dầu màu điều",
+            "Đường, mật ong, nước mắm, dầu hào, xì dầu"
+          ],
+          "serving": [
+            "Chế biến: ăn trực tiếp, vắt chanh hoặc quất; làm nộm đu đủ, gỏi xoài",
+            "Ăn kèm: bánh tráng trộn, mì tôm, xôi mặn, cháo"
+          ],
+          "storage": [
+            "Ngăn mát (2–5°C): 1–3 tháng",
+            "Ngăn đông (-18°C): 4–6 tháng"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "소고기 살코기 87%, 나머지는 향신료",
+            "레몬그라스, 마늘, 생강, 생고추 또는 고추분말",
+            "오향분, 팔각, 계피, 아나토색소오일",
+            "설탕, 꿀, 생선액젓, 오이스터소스, 간장"
+          ],
+          "serving": [
+            "조리법: 그대로 먹기, 레몬이나 금귤즙을 뿌려서; 파파야 무침, 망고 무침에 활용",
+            "곁들임: 반짱쫀, 라면, 짠찹쌀밥, 죽"
+          ],
+          "storage": [
+            "냉장(2–5°C): 1–3개월",
+            "냉동(-18°C): 4–6개월"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Lean beef 87%, the rest is seasoning",
+            "Lemongrass, garlic, ginger, fresh chili or chili powder",
+            "Five-spice powder, star anise, cinnamon, annatto oil",
+            "Sugar, honey, fish sauce, oyster sauce, soy sauce"
+          ],
+          "serving": [
+            "Ready to eat; squeeze lime or kumquat juice over it; use in papaya or mango salad",
+            "Serve with: rice paper salad, instant noodles, savory sticky rice, congee"
+          ],
+          "storage": [
+            "Refrigerator (2–5°C): 1–3 months",
+            "Freezer (-18°C): 4–6 months"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "牛瘦肉87%，其余为调味料",
+            "香茅、大蒜、生姜、鲜辣椒或辣椒粉",
+            "五香粉、八角、肉桂、胭脂树籽油",
+            "糖、蜂蜜、鱼露、蚝油、酱油"
+          ],
+          "serving": [
+            "可直接食用，可挤上青柠或金桔汁；也可用于木瓜丝沙拉、芒果沙拉",
+            "搭配：越式拌米纸、方便面、咸味糯米饭、粥"
+          ],
+          "storage": [
+            "冷藏（2–5°C）：1–3个月",
+            "冷冻（-18°C）：4–6个月"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_kho_lon",
+      "category": "kho",
+      "image": "kho_lon.jfif",
+      "names": {
+        "vi": "Khô lợn",
+        "ko": "돼지고기 육포 (Khô lợn)",
+        "en": "Pork Jerky (Khô lợn)",
+        "zh": "猪肉干 (Khô lợn)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Thịt nạc lợn 80%",
+            "Sả băm, tỏi băm, nước mắm, dầu hào, đường, dầu màu điều, ngũ vị hương, bột ớt, hạt nêm"
+          ],
+          "serving": [
+            "Chế biến: ăn trực tiếp, vắt thêm chanh hoặc quất, chấm tương ớt",
+            "Ăn kèm: xôi trắng, cơm cháy, cháo sườn, mì tôm, bánh tráng trộn"
+          ],
+          "storage": [
+            "Ngăn mát (2–5°C): 1–2 tháng",
+            "Ngăn đông (-18°C): 3–6 tháng"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "돼지고기 살코기 80%",
+            "다진 레몬그라스, 다진 마늘, 생선액젓, 오이스터소스, 설탕, 아나토색소오일, 오향분, 고추분말, 조미료"
+          ],
+          "serving": [
+            "조리법: 그대로 먹기, 레몬이나 금귤즙을 뿌려서, 칠리소스에 찍어서",
+            "곁들임: 흰 찹쌀밥, 누룽지, 갈비죽, 라면, 반짱쫀"
+          ],
+          "storage": [
+            "냉장(2–5°C): 1–2개월",
+            "냉동(-18°C): 3–6개월"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Lean pork 80%",
+            "Minced lemongrass, minced garlic, fish sauce, oyster sauce, sugar, annatto oil, five-spice powder, chili powder, seasoning powder"
+          ],
+          "serving": [
+            "Ready to eat; squeeze lime or kumquat juice over it; dip in chili sauce",
+            "Serve with: plain sticky rice, scorched rice, rib congee, instant noodles, rice paper salad"
+          ],
+          "storage": [
+            "Refrigerator (2–5°C): 1–2 months",
+            "Freezer (-18°C): 3–6 months"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "猪瘦肉80%",
+            "香茅末、蒜末、鱼露、蚝油、糖、胭脂树籽油、五香粉、辣椒粉、调味粉"
+          ],
+          "serving": [
+            "可直接食用，可挤上青柠或金桔汁，蘸辣椒酱",
+            "搭配：白糯米饭、锅巴、排骨粥、方便面、越式拌米纸"
+          ],
+          "storage": [
+            "冷藏（2–5°C）：1–2个月",
+            "冷冻（-18°C）：3–6个月"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_kho_ga",
+      "category": "kho",
+      "image": "kho_ga.jpg",
+      "names": {
+        "vi": "Khô gà",
+        "ko": "닭고기 육포 (Khô gà)",
+        "en": "Chicken Jerky (Khô gà)",
+        "zh": "鸡肉干 (Khô gà)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Ức gà 87%, phần còn lại là gia vị",
+            "Lá chanh, ớt tươi, ớt khô, sả, tỏi, hành tím, gừng",
+            "Nước mắm, đường, dầu hào, hạt nêm, bột ngũ vị hương",
+            "Dầu màu điều"
+          ],
+          "serving": [
+            "Chế biến: ăn trực tiếp, vắt thêm nước chanh hoặc quất",
+            "Ăn kèm: xôi, cơm, cháo, bánh tráng trộn, mì tôm"
+          ],
+          "storage": [
+            "Ngăn mát (2–5°C): 2–3 tháng",
+            "Ngăn đông (-18°C): 3–6 tháng"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "닭가슴살 87%, 나머지는 향신료",
+            "라임잎, 생고추, 건고추, 레몬그라스, 마늘, 자색양파, 생강",
+            "생선액젓, 설탕, 오이스터소스, 조미료, 오향분",
+            "아나토색소오일"
+          ],
+          "serving": [
+            "조리법: 그대로 먹기, 레몬이나 금귤즙을 뿌려서",
+            "곁들임: 찹쌀밥, 밥, 죽, 반짱쫀(파파야 무침), 라면"
+          ],
+          "storage": [
+            "냉장(2–5°C): 2–3개월",
+            "냉동(-18°C): 3–6개월"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Chicken breast 87%, the rest is seasoning",
+            "Lime leaves, fresh chili, dried chili, lemongrass, garlic, shallot, ginger",
+            "Fish sauce, sugar, oyster sauce, seasoning powder, five-spice powder",
+            "Annatto oil"
+          ],
+          "serving": [
+            "Ready to eat; squeeze lime or kumquat juice over it",
+            "Serve with: sticky rice, rice, congee, rice paper salad (bánh tráng trộn), instant noodles"
+          ],
+          "storage": [
+            "Refrigerator (2–5°C): 2–3 months",
+            "Freezer (-18°C): 3–6 months"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "鸡胸肉87%，其余为调味料",
+            "青柠叶、鲜辣椒、干辣椒、香茅、大蒜、红葱头、生姜",
+            "鱼露、糖、蚝油、调味粉、五香粉",
+            "胭脂树籽油"
+          ],
+          "serving": [
+            "可直接食用，可挤上青柠或金桔汁",
+            "搭配：糯米饭、米饭、粥、越式拌米纸（bánh tráng trộn）、方便面"
+          ],
+          "storage": [
+            "冷藏（2–5°C）：2–3个月",
+            "冷冻（-18°C）：3–6个月"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_ruoc",
+      "category": "kho",
+      "image": "ruoc.jfif",
+      "names": {
+        "vi": "Ruốc",
+        "ko": "루옥 (Ruốc)",
+        "en": "Pork Floss (Ruốc)",
+        "zh": "猪肉松 (Ruốc)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Thịt nạc thăn heo 90%",
+            "Nước mắm, muối hoặc hạt nêm, đường",
+            "Tiêu, hành tím hoặc tỏi băm"
+          ],
+          "serving": [
+            "Chế biến: ăn trực tiếp, không cần nấu lại",
+            "Ăn kèm: cơm, cháo, xôi, bánh mì pate, bánh cuốn, bánh bông lan"
+          ],
+          "storage": [
+            "Ngăn mát (2–5°C): 2–3 tháng",
+            "Ngăn đông (-18°C): 4–6 tháng"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "돼지 안심살 90%",
+            "생선액젓, 소금 또는 조미료, 설탕",
+            "후추, 자색양파 또는 다진 마늘"
+          ],
+          "serving": [
+            "조리법: 그대로 먹기, 재조리 불필요",
+            "곁들임: 밥, 죽, 찹쌀밥, 파테 바게트빵, 반꾸온, 카스테라"
+          ],
+          "storage": [
+            "냉장(2–5°C): 2–3개월",
+            "냉동(-18°C): 4–6개월"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Pork tenderloin 90%",
+            "Fish sauce, salt or seasoning powder, sugar",
+            "Pepper, shallot or minced garlic"
+          ],
+          "serving": [
+            "Ready to eat, no need to cook again",
+            "Serve with: rice, congee, sticky rice, pâté baguette, steamed rice rolls, sponge cake"
+          ],
+          "storage": [
+            "Refrigerator (2–5°C): 2–3 months",
+            "Freezer (-18°C): 4–6 months"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "猪里脊肉90%",
+            "鱼露、盐或调味粉、糖",
+            "胡椒、红葱头或蒜末"
+          ],
+          "serving": [
+            "可直接食用，无需再次加热",
+            "搭配：米饭、粥、糯米饭、肝酱法棍、越式蒸卷、海绵蛋糕"
+          ],
+          "storage": [
+            "冷藏（2–5°C）：2–3个月",
+            "冷冻（-18°C）：4–6个月"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_banh_trung",
+      "category": "banhtrung",
+      "image": "ban_trung.jpg",
+      "names": {
+        "vi": "Bánh chưng",
+        "ko": "바인 쯩 (Bánh chưng)",
+        "en": "Sticky Rice Cake (Bánh chưng)",
+        "zh": "越式粽子 (Bánh chưng)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Thịt ba chỉ hoặc nạc vai 10%, gạo nếp 70%, đậu xanh 20%",
+            "Muối, tiêu, hành khô",
+            "Gói trong lá dong"
+          ],
+          "serving": [
+            "Chế biến: ăn nguội, hoặc rán vàng trên chảo ít dầu hay nồi chiên không dầu",
+            "Ăn kèm: dưa hành, giò lụa"
+          ],
+          "storage": [
+            "Ngăn mát (2–5°C): 15–20 ngày",
+            "Ngăn đông (-18°C): 1–2 tháng"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "삼겹살 또는 목살 10%, 찹쌀 70%, 녹두 20%",
+            "소금, 후추, 건조양파",
+            "쫑잎(동)으로 포장"
+          ],
+          "serving": [
+            "조리법: 차갑게 먹거나, 기름을 적게 두른 팬이나 에어프라이어에 노릇하게 구워서",
+            "곁들임: 피클 양파, 짜루어"
+          ],
+          "storage": [
+            "냉장(2–5°C): 15–20일",
+            "냉동(-18°C): 1–2개월"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Pork belly or shoulder 10%, glutinous rice 70%, mung beans 20%",
+            "Salt, pepper, dried onion",
+            "Wrapped in dong leaves"
+          ],
+          "serving": [
+            "Eat cold, or pan-fry golden with a little oil or air-fry",
+            "Serve with: pickled onions, Chả lụa"
+          ],
+          "storage": [
+            "Refrigerator (2–5°C): 15–20 days",
+            "Freezer (-18°C): 1–2 months"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "五花肉或肩肉10%，糯米70%，绿豆20%",
+            "盐、胡椒、干洋葱",
+            "以栋叶（lá dong）包裹"
+          ],
+          "serving": [
+            "可凉食，或用少量油煎至金黄，也可用空气炸锅",
+            "搭配：腌洋葱、越式猪肉卷"
+          ],
+          "storage": [
+            "冷藏（2–5°C）：15–20天",
+            "冷冻（-18°C）：1–2个月"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_pate",
+      "category": "khac",
+      "image": "pate.jfif",
+      "names": {
+        "vi": "Pate",
+        "ko": "파테 (Pate)",
+        "en": "Pâté (Pate)",
+        "zh": "肝酱 (Pate)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Gan heo 35%, thịt nạc và mỡ phần 65%",
+            "Ruột bánh mì, sữa tươi, bơ, hành tây, tỏi, nước mắm, tiêu, muối, đường"
+          ],
+          "serving": [
+            "Chế biến: ăn trực tiếp, phết lên bánh mì hoặc bánh quy",
+            "Ăn kèm: bánh mì chả lụa, dưa leo, đồ chua, xôi mặn"
+          ],
+          "storage": [
+            "Ngăn mát (2–5°C): 3–7 ngày (pate tự làm), 2–3 ngày (sau khi mở hộp)",
+            "Ngăn đông (-18°C): 1–2 tháng"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "돼지간 35%, 살코기와 비계 65%",
+            "바게트빵 속살, 우유, 버터, 양파, 마늘, 생선액젓, 후추, 소금, 설탕"
+          ],
+          "serving": [
+            "조리법: 그대로 먹기, 바게트빵이나 크래커에 발라서",
+            "곁들임: 짜루어 바게트빵, 오이, 피클, 짠찹쌀밥"
+          ],
+          "storage": [
+            "냉장(2–5°C): 3–7일(수제 파테), 2–3일(개봉 후)",
+            "냉동(-18°C): 1–2개월"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Pork liver 35%, lean meat and fat 65%",
+            "Bread crumb, fresh milk, butter, onion, garlic, fish sauce, pepper, salt, sugar"
+          ],
+          "serving": [
+            "Ready to eat; spread on bread or crackers",
+            "Serve with: Chả lụa baguette, cucumber, pickles, savory sticky rice"
+          ],
+          "storage": [
+            "Refrigerator (2–5°C): 3–7 days (homemade), 2–3 days after opening",
+            "Freezer (-18°C): 1–2 months"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "猪肝35%，瘦肉和肥肉65%",
+            "面包芯、鲜牛奶、黄油、洋葱、大蒜、鱼露、胡椒、盐、糖"
+          ],
+          "serving": [
+            "可直接食用，涂抹在面包或饼干上",
+            "搭配：越式猪肉卷法棍、黄瓜、腌菜、咸味糯米饭"
+          ],
+          "storage": [
+            "冷藏（2–5°C）：3–7天（自制），开封后2–3天",
+            "冷冻（-18°C）：1–2个月"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_vien_heo",
+      "category": "vien",
+      "image": "vien_heo.jfif",
+      "names": {
+        "vi": "Viên heo",
+        "ko": "돼지고기 완자 (Viên heo)",
+        "en": "Pork Balls (Viên heo)",
+        "zh": "猪肉丸 (Viên heo)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Thịt nạc heo xay: 700 g, mỡ heo băm nhỏ: 200 g",
+            "Nước mắm truyền thống: 5 g, đường cát: 4 g, hạt nêm: 1 muỗng canh, bột ngọt: 4 g, tiêu xay: 2 g, bột năng: 2 muỗng canh, hành tím băm: 2 củ, tỏi băm: 1 củ, trứng gà: 1 quả"
+          ],
+          "serving": [
+            "Cách 1: Luộc viên trong nước sôi khoảng 5–7 phút đến khi nổi lên và chín, ăn với các món lẩu",
+            "Cách 2: Chiên vàng đều bằng dầu ăn ở lửa vừa, dùng với canh rau, lẩu, bún hoặc mì"
+          ],
+          "storage": [
+            "Viên sống: bảo quản ngăn đá -18°C trở xuống, dùng trong khoảng 1–2 tháng"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "다진 돼지 살코기 700g, 잘게 다진 돼지 비계 200g",
+            "전통 생선액젓 5g, 설탕 4g, 조미료 1큰술, 맛소금 4g, 후추 2g, 타피오카 전분 2큰술, 다진 자색양파 2개, 다진 마늘 1통, 달걀 1개"
+          ],
+          "serving": [
+            "방법 1: 끓는 물에 5–7분간 삶아 떠오르면 익은 것, 전골 요리에 곁들여 드세요",
+            "방법 2: 중불에서 식용유로 노릇하게 튀겨 채소국, 전골, 쌀국수 또는 면과 함께 드세요"
+          ],
+          "storage": [
+            "생 완자: -18°C 이하 냉동 보관, 약 1–2개월 이내 섭취"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Ground lean pork: 700 g, minced pork fat: 200 g",
+            "Traditional fish sauce: 5 g, sugar: 4 g, seasoning powder: 1 tbsp, MSG: 4 g, ground pepper: 2 g, tapioca starch: 2 tbsp, minced shallots: 2 bulbs, minced garlic: 1 bulb, egg: 1"
+          ],
+          "serving": [
+            "Method 1: Boil in boiling water for about 5–7 minutes until they float and are cooked; enjoy with hotpot",
+            "Method 2: Fry evenly golden in oil over medium heat; serve with vegetable soup, hotpot, noodles or rice noodles"
+          ],
+          "storage": [
+            "Raw balls: store in the freezer at -18°C or below; consume within about 1–2 months"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "猪瘦肉糜：700克，猪肥肉碎：200克",
+            "传统鱼露5克、白砂糖4克、调味粉1汤匙、味精4克、胡椒粉2克、木薯淀粉2汤匙、红葱头末2颗、蒜末1头、鸡蛋1个"
+          ],
+          "serving": [
+            "方法一：放入沸水煮约5–7分钟，浮起即熟，可搭配火锅食用",
+            "方法二：中火用油煎至金黄，搭配蔬菜汤、火锅、米线或面条"
+          ],
+          "storage": [
+            "生丸子：置于-18°C以下冷冻保存，约1–2个月内食用完"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_vien_bo",
+      "category": "vien",
+      "image": "vien_bo.jfif",
+      "names": {
+        "vi": "Viên bò",
+        "ko": "소고기 완자 (Viên bò)",
+        "en": "Beef Balls (Viên bò)",
+        "zh": "牛肉丸 (Viên bò)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Thịt bò xay (bắp hoặc thăn): 800 g",
+            "Mỡ bò hoặc mỡ heo băm nhỏ: 50 g",
+            "Nước mắm truyền thống: 5 g, đường cát: 4 g, hạt nêm: 1 muỗng canh, bột ngọt: 4 g, tiêu xay: 2 g, bột năng: 2–3 muỗng canh, hành tím băm: 2 củ, nước đá lạnh: 100 g"
+          ],
+          "serving": [
+            "Cách 1: Luộc viên trong nước sôi khoảng 5–7 phút đến khi nổi lên và chín, ăn với các món lẩu",
+            "Cách 2: Chiên vàng đều bằng dầu ăn ở lửa vừa, dùng với canh rau, lẩu, bún hoặc mì"
+          ],
+          "storage": [
+            "Viên sống: bảo quản ngăn đá -18°C trở xuống, dùng trong khoảng 1–2 tháng"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "다진 소고기(사태 또는 안심) 800g",
+            "다진 소기름 또는 돼지 비계 50g",
+            "전통 생선액젓 5g, 설탕 4g, 조미료 1큰술, 맛소금 4g, 후추 2g, 타피오카 전분 2–3큰술, 다진 자색양파 2개, 차가운 얼음물 100g"
+          ],
+          "serving": [
+            "방법 1: 끓는 물에 5–7분간 삶아 떠오르면 익은 것, 전골 요리에 곁들여 드세요",
+            "방법 2: 중불에서 식용유로 노릇하게 튀겨 채소국, 전골, 쌀국수 또는 면과 함께 드세요"
+          ],
+          "storage": [
+            "생 완자: -18°C 이하 냉동 보관, 약 1–2개월 이내 섭취"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Ground beef (shank or tenderloin): 800 g",
+            "Beef fat or minced pork fat: 50 g",
+            "Traditional fish sauce: 5 g, sugar: 4 g, seasoning powder: 1 tbsp, MSG: 4 g, ground pepper: 2 g, tapioca starch: 2–3 tbsp, minced shallots: 2 bulbs, ice water: 100 g"
+          ],
+          "serving": [
+            "Method 1: Boil in boiling water for about 5–7 minutes until they float and are cooked; enjoy with hotpot",
+            "Method 2: Fry evenly golden in oil over medium heat; serve with vegetable soup, hotpot, noodles or rice noodles"
+          ],
+          "storage": [
+            "Raw balls: store in the freezer at -18°C or below; consume within about 1–2 months"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "牛肉糜（牛腱或里脊）：800克",
+            "牛油或猪肥肉碎：50克",
+            "传统鱼露5克、白砂糖4克、调味粉1汤匙、味精4克、胡椒粉2克、木薯淀粉2–3汤匙、红葱头末2颗、冰水100克"
+          ],
+          "serving": [
+            "方法一：放入沸水煮约5–7分钟，浮起即熟，可搭配火锅食用",
+            "方法二：中火用油煎至金黄，搭配蔬菜汤、火锅、米线或面条"
+          ],
+          "storage": [
+            "生丸子：置于-18°C以下冷冻保存，约1–2个月内食用完"
+          ]
+        }
+      }
+    },
+    {
+      "key": "product_cha_com",
+      "category": "gio",
+      "image": "cha_com.jfif",
+      "names": {
+        "vi": "Chả cốm",
+        "ko": "짜 꼼 (Chả cốm)",
+        "en": "Young Rice Pork Patty (Chả cốm)",
+        "zh": "青米肉饼 (Chả cốm)"
+      },
+      "details": {
+        "vi": {
+          "ingredients": [
+            "Thành phần (cho 1000 g): thịt nạc heo: 500 g, mỡ heo: 150 g, cốm non (cốm xanh): 200 g, trứng gà: 3–4 quả, nước mắm truyền thống: 5 g",
+            "Đường cát: 4 g, hạt nêm: 5 g, bột ngọt: 2 g, tiêu xay: 2 g",
+            "Lá chuối để gói, dây buộc"
+          ],
+          "serving": [
+            "Chiên vàng hai mặt hoặc nướng sơ trước khi ăn để giòn và thơm",
+            "Ăn kèm rau thơm, dưa chua hoặc chấm nước mắm"
+          ],
+          "storage": [
+            "Ngăn đá -18°C trở xuống: 1–2 tháng"
+          ]
+        },
+        "ko": {
+          "ingredients": [
+            "재료(1000g 기준): 돼지 살코기 500g, 돼지 비계 150g, 어린 쪽(푸른 꼼) 200g, 달걀 3–4개, 전통 생선액젓 5g",
+            "설탕 4g, 조미료 5g, 맛소금 2g, 후추 2g",
+            "포장용 바나나잎, 묶음용 끈"
+          ],
+          "serving": [
+            "먹기 전 앞뒤로 노릇하게 튀기거나 살짝 구워 바삭하고 향긋하게 드세요",
+            "향채, 절임 채소와 함께 드시거나 생선액젓에 찍어 드세요"
+          ],
+          "storage": [
+            "-18°C 이하 냉동: 1–2개월"
+          ]
+        },
+        "en": {
+          "ingredients": [
+            "Per 1000 g: lean pork 500 g, pork fat 150 g, young green rice flakes (cốm) 200 g, eggs 3–4, traditional fish sauce 5 g",
+            "Sugar 4 g, seasoning powder 5 g, MSG 2 g, ground pepper 2 g",
+            "Banana leaves for wrapping, string"
+          ],
+          "serving": [
+            "Pan-fry both sides until golden, or lightly grill before eating for a crisp, fragrant bite",
+            "Serve with fresh herbs, pickles, or dip in fish sauce"
+          ],
+          "storage": [
+            "Freezer at -18°C or below: 1–2 months"
+          ]
+        },
+        "zh": {
+          "ingredients": [
+            "每1000克：猪瘦肉500克，猪肥肉150克，青米（cốm）200克，鸡蛋3–4个，传统鱼露5克",
+            "白砂糖4克、调味粉5克、味精2克、胡椒粉2克",
+            "香蕉叶包裹，棉绳捆扎"
+          ],
+          "serving": [
+            "两面煎至金黄，或先略微烤一下再吃，酥脆香浓",
+            "搭配香草、腌菜，或蘸鱼露食用"
+          ],
+          "storage": [
+            "-18°C以下冷冻：1–2个月"
+          ]
+        }
+      }
+    }
+  ]
+}
