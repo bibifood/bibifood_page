@@ -8,15 +8,24 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Pretendard font (giống yatomode.com) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.css">
-
-    <!-- Mulish: font của phần chiến dịch "Ăn gì cứ gọi Bibi food" -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800;900&display=swap">
+        <!-- Phông chữ duy nhất của trang: Noto Sans (kèm Noto Sans KR / SC cho tiếng Hàn và tiếng Trung; trình duyệt chỉ tải phần ký tự cần dùng) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap">
 
     <style>
+        /* Một phông chữ cho toàn trang. Muốn đổi phông, chỉ cần sửa dòng --font bên dưới. */
+        :root {
+            --font: 'Noto Sans', 'Noto Sans KR', 'Noto Sans SC', system-ui, -apple-system, 'Segoe UI', Roboto, 'Malgun Gothic', 'Microsoft YaHei', sans-serif;
+        }
+        /* Tiếng Hàn / tiếng Trung: ưu tiên đúng bản chữ của từng ngôn ngữ (cùng một chữ Hán có hình dáng khác nhau giữa các nước) */
+        :root[lang="ko"] { --font: 'Noto Sans', 'Noto Sans KR', 'Noto Sans SC', system-ui, -apple-system, 'Segoe UI', Roboto, 'Malgun Gothic', sans-serif; }
+        :root[lang="zh"] { --font: 'Noto Sans', 'Noto Sans SC', 'Noto Sans KR', system-ui, -apple-system, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif; }
+        /* Nút, ô nhập, vùng chọn mặc định không kế thừa phông của trang: ép về cùng một phông */
+        button, input, select, textarea { font-family: inherit; }
+
         * {
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: var(--font);
             box-sizing: border-box;
         }
 
@@ -32,6 +41,7 @@
         }
 
         body {
+            font-family: var(--font);
             background-color: var(--primary-bg);
             color: var(--primary-dark);
             margin: 0;
@@ -1732,6 +1742,144 @@
             .ap-body .ws-addr-embed { height: min(480px, 58vh); }
         }
 
+
+        /* Cửa sổ thông tin: chính sách bảo mật / điều khoản sử dụng / liên hệ */
+        .lg-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(46, 27, 18, .6);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .3s ease;
+            z-index: 242;
+        }
+        .lg-backdrop.open { opacity: 1; pointer-events: auto; }
+        .lg-modal {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            width: min(640px, calc(100% - 28px));
+            max-height: 92vh;
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 24px 60px rgba(46, 27, 18, .4);
+            overflow: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transform: translate(-50%, -46%);
+            transition: opacity .3s ease, transform .4s cubic-bezier(.16, 1, .3, 1);
+            z-index: 243;
+        }
+        .lg-modal.open { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%); }
+        .lg-modal * { box-sizing: border-box; }
+        .lg-head {
+            position: relative;
+            flex-shrink: 0;
+            padding: 20px 60px 0 22px;
+            color: var(--white);
+            background: linear-gradient(135deg, var(--primary-brown), #4F1621);
+        }
+        .lg-title { margin: 0; font-size: 20px; font-weight: 700; }
+        .lg-updated { margin: 3px 0 0; font-size: 12.5px; opacity: .8; min-height: 1.2em; }
+        .lg-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 34px;
+            height: 34px;
+            border: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .16);
+            color: var(--white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lg-close:hover { background: rgba(255, 255, 255, .3); }
+        .lg-close .icon-svg { width: 18px; height: 18px; }
+        .lg-tabs { display: flex; gap: 2px; margin: 14px -6px 0 -8px; overflow-x: auto; scrollbar-width: none; }
+        .lg-tabs::-webkit-scrollbar { display: none; }
+        .lg-tab {
+            flex: 0 0 auto;
+            padding: 10px 14px;
+            border: 0;
+            border-bottom: 3px solid transparent;
+            background: none;
+            font-family: inherit;
+            font-size: 14.5px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, .75);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: color .2s ease, border-color .2s ease;
+        }
+        .lg-tab:hover { color: var(--white); }
+        .lg-tab[aria-selected="true"] { color: var(--white); border-bottom-color: var(--gold); font-weight: 800; }
+        .lg-tab:focus-visible { outline: 2px solid var(--white); outline-offset: -2px; border-radius: 6px; }
+
+        .lg-body { padding: 20px 24px 26px; overflow-y: auto; overscroll-behavior: contain; color: #3a2f2a; }
+        .lg-intro { margin: 0 0 18px; font-size: 15px; line-height: 1.65; color: #4a3d36; }
+        .lg-sec { margin: 0 0 18px; }
+        .lg-sec h4 { margin: 0 0 6px; font-size: 15.5px; font-weight: 800; color: var(--primary-brown); }
+        .lg-sec p { margin: 0 0 8px; font-size: 14.5px; line-height: 1.7; }
+        .lg-sec ul { margin: 0 0 8px; padding-left: 20px; font-size: 14.5px; line-height: 1.7; }
+        .lg-sec li { margin-bottom: 3px; }
+        .lg-sec li::marker { color: var(--primary-brown); }
+
+        .lg-contact { display: grid; gap: 10px; }
+        .lg-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 16px;
+            text-decoration: none;
+            color: var(--primary-dark);
+            background: #FDFAF4;
+            border: 1.5px solid var(--light-gray);
+            border-radius: 14px;
+            transition: border-color .2s ease, box-shadow .2s ease, transform .1s ease;
+        }
+        .lg-card:hover { border-color: var(--primary-brown); box-shadow: 0 6px 18px rgba(122, 35, 51, .12); }
+        .lg-card:active { transform: scale(.99); }
+        .lg-card:focus-visible { outline: 3px solid rgba(122, 35, 51, .3); outline-offset: 2px; }
+        .lg-card-icon {
+            flex-shrink: 0;
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            background: #F6E8EA;
+            color: var(--primary-brown);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color .2s ease, color .2s ease;
+        }
+        .lg-card:hover .lg-card-icon { background: var(--primary-brown); color: var(--white); }
+        .lg-card-icon .icon-svg { width: 24px; height: 24px; }
+        .lg-card-text { flex: 1; min-width: 0; }
+        .lg-card-label { display: block; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #8a7a70; }
+        .lg-card-value { display: block; margin-top: 2px; font-size: 16px; font-weight: 700; word-break: break-all; }
+        .lg-card-act { flex-shrink: 0; font-size: 13px; font-weight: 700; color: var(--primary-brown); }
+
+        @media (max-width: 420px) {
+            .lg-card-act { display: none; }
+            .lg-body { padding: 18px 18px 24px; }
+        }
+        @media (min-width: 1024px) {
+            .lg-modal { width: 720px; border-radius: 26px; }
+            .lg-head { padding: 26px 70px 0 30px; }
+            .lg-title { font-size: 24px; }
+            .lg-tab { font-size: 16px; padding: 12px 18px; }
+            .lg-body { padding: 26px 32px 32px; }
+            .lg-intro { font-size: 16.5px; }
+            .lg-sec h4 { font-size: 17px; }
+            .lg-sec p, .lg-sec ul { font-size: 16px; }
+            .lg-card-value { font-size: 18px; }
+        }
+
         .ws-center {
             text-align: center;
             padding: 12px 6px 4px;
@@ -1750,7 +1898,7 @@
         }
 
 
-        /* ===== Chiến dịch: Ăn gì cứ gọi Bibi food (phong cách cam, font Mulish) ===== */
+        /* ===== Chiến dịch: Ăn gì cứ gọi Bibi food (phong cách cam) ===== */
         .cmp, .cmp-modal, .cmp-m-backdrop {
             --o50: #fff7ed;
             --o100: #ffedd5;
@@ -1764,7 +1912,7 @@
             --amber: #fcbb00;
             --soft: #5b3a2a;
             --ease: cubic-bezier(.16, 1, .3, 1);
-            font-family: 'Mulish', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: var(--font);
         }
 
         .cmp {
@@ -3730,9 +3878,9 @@
         <!-- Footer -->
         <footer class="site-footer">
             <div class="footer-links">
-                <a href="javascript:void(0)" data-i18n="footer_privacy">Chính sách bảo mật</a>
-                <a href="javascript:void(0)" data-i18n="footer_terms">Điều khoản sử dụng</a>
-                <a href="#" data-scroll-to=".contact-section" data-i18n="footer_contact">Liên hệ</a>
+                <a href="#privacy" data-legal="privacy" data-i18n="footer_privacy">Chính sách bảo mật</a>
+                <a href="#terms" data-legal="terms" data-i18n="footer_terms">Điều khoản sử dụng</a>
+                <a href="#contact" data-legal="contact" data-i18n="footer_contact">Liên hệ</a>
             </div>
             <p class="footer-copyright" data-i18n="footer_text">&copy; 2026 Bibi food. All rights reserved.</p>
         </footer>
@@ -4080,6 +4228,22 @@
             </div>
         </div>
 
+
+        <!-- Cửa sổ thông tin: chính sách bảo mật / điều khoản / liên hệ -->
+        <div class="lg-backdrop" id="lgBackdrop"></div>
+        <div class="lg-modal" id="lgModal" role="dialog" aria-modal="true" aria-labelledby="lgTitle">
+            <div class="lg-head">
+                <button class="lg-close" id="lgClose" type="button" aria-label="Đóng"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+                <h2 class="lg-title" id="lgTitle"></h2>
+                <p class="lg-updated" id="lgUpdated"></p>
+                <div class="lg-tabs" role="tablist">
+                    <button class="lg-tab" type="button" role="tab" id="lgTab-privacy" data-doc="privacy" data-i18n="footer_privacy">Chính sách bảo mật</button>
+                    <button class="lg-tab" type="button" role="tab" id="lgTab-terms" data-doc="terms" data-i18n="footer_terms">Điều khoản sử dụng</button>
+                    <button class="lg-tab" type="button" role="tab" id="lgTab-contact" data-doc="contact" data-i18n="footer_contact">Liên hệ</button>
+                </div>
+            </div>
+            <div class="lg-body" id="lgBody" role="tabpanel" tabindex="0"></div>
+        </div>
 
         <!-- Cửa sổ tìm địa chỉ Hàn Quốc dùng chung -->
         <div class="ap-backdrop" id="apBackdrop"></div>
@@ -5218,6 +5382,9 @@
                 })();
                 if (window.refreshProductSearch) {
                     window.refreshProductSearch.forEach(function (fn) { fn(); });
+                }
+                if (typeof window.renderLegal === 'function') {
+                    window.renderLegal();
                 }
                 if (typeof window.renderAddressPicker === 'function') {
                     window.renderAddressPicker();
@@ -6358,6 +6525,143 @@
             window.openOrderWorkflow = openOrderWorkflow;
         })();
 
+
+
+        (function () {
+            var DOCS = {"vi": {"privacy": {"title": "Chính sách bảo mật", "updated": "Cập nhật lần cuối: 03/11/2026", "intro": "Bibi food coi trọng sự riêng tư của bạn. Chính sách này cho bạn biết chúng tôi thu thập thông tin nào, dùng vào việc gì và bảo vệ ra sao khi bạn sử dụng website và đặt hàng.", "sections": [{"h": "1. Thông tin chúng tôi thu thập", "b": [{"p": "Khi bạn đặt hàng hoặc đăng ký tài khoản mua sỉ, chúng tôi chỉ thu thập những thông tin do chính bạn cung cấp:"}, {"ul": ["Đặt hàng: họ tên, số điện thoại, địa chỉ nhận hàng và Facebook (nếu bạn muốn).", "Tài khoản mua sỉ: họ tên, số điện thoại, email, địa chỉ, tên cửa hàng và mã số giấy phép kinh doanh."]}]}, {"h": "2. Mục đích sử dụng thông tin", "b": [{"p": "Thông tin của bạn chỉ được dùng cho các mục đích sau:"}, {"ul": ["Giao hàng và liên hệ xác nhận đơn hàng khi bạn đặt mua.", "Gửi cho bạn thông tin về sản phẩm mới và các chương trình khuyến mãi của Bibi food (khi bạn đồng ý nhận).", "Xét duyệt và cấp tài khoản cho khách mua sỉ."]}, {"p": "Chúng tôi không sử dụng thông tin của bạn cho bất kỳ mục đích nào khác."}]}, {"h": "3. Cam kết không chia sẻ cho bên thứ ba", "b": [{"p": "Chúng tôi cam kết bảo mật thông tin mà bạn cung cấp. Bibi food không bán, trao đổi hay chia sẻ thông tin cá nhân của bạn cho bất kỳ bên thứ ba nào."}, {"p": "Chỉ khi cần thiết để giao đơn hàng của bạn, hoặc khi cơ quan nhà nước có thẩm quyền yêu cầu theo quy định của pháp luật, chúng tôi mới cung cấp phần thông tin tối thiểu cần thiết."}]}, {"h": "4. Lưu trữ và bảo vệ thông tin", "b": [{"p": "Thông tin của bạn được lưu trữ an toàn và chỉ nhân viên có trách nhiệm của Bibi food mới được truy cập. Mật khẩu tài khoản mua sỉ được mã hóa, chúng tôi không lưu mật khẩu dưới dạng văn bản thường."}]}, {"h": "5. Quyền của bạn", "b": [{"p": "Bạn có thể liên hệ với chúng tôi bất cứ lúc nào để:"}, {"ul": ["Xem, chỉnh sửa hoặc yêu cầu xóa thông tin cá nhân của bạn.", "Ngừng nhận thông tin về sản phẩm mới và khuyến mãi."]}, {"p": "Chúng tôi sẽ xử lý yêu cầu của bạn trong thời gian sớm nhất."}]}, {"h": "6. Dữ liệu lưu trên trình duyệt", "b": [{"p": "Website lưu giỏ hàng và phiên đăng nhập trên trình duyệt của bạn để phục vụ việc mua sắm. Bạn có thể xóa dữ liệu này bất cứ lúc nào trong phần cài đặt của trình duyệt."}]}, {"h": "7. Thay đổi chính sách", "b": [{"p": "Chúng tôi có thể cập nhật chính sách này khi cần. Phiên bản mới nhất luôn được đăng tại đây kèm ngày cập nhật."}]}, {"h": "8. Liên hệ", "b": [{"p": "Nếu có thắc mắc về chính sách bảo mật, vui lòng liên hệ Bibi food qua số điện thoại 010-2616-2689 hoặc email bibifood2026@gmail.com."}]}]}, "terms": {"title": "Điều khoản sử dụng", "updated": "Cập nhật lần cuối: 03/11/2026", "intro": "Cảm ơn bạn đã truy cập website của Bibi food. Khi sử dụng website và đặt hàng, bạn đồng ý với các điều khoản dưới đây.", "sections": [{"h": "1. Sản phẩm và giá", "b": [{"p": "Giá hiển thị trên website tính bằng won (₩) và có thể thay đổi theo từng thời điểm. Hình ảnh chỉ mang tính minh họa; thành phần, cách dùng và cách bảo quản được ghi trong phần chi tiết của từng sản phẩm."}]}, {"h": "2. Đặt hàng", "b": [{"p": "Đơn hàng được xem là xác nhận sau khi Bibi food liên hệ với bạn. Chúng tôi có quyền từ chối hoặc hủy đơn khi sản phẩm hết hàng hoặc thông tin giao hàng chưa chính xác, và sẽ thông báo cho bạn."}]}, {"h": "3. Giao hàng", "b": [{"p": "Bibi food giao hàng trên toàn Hàn Quốc. Thời gian giao có thể khác nhau tùy khu vực. Bạn vui lòng cung cấp đúng địa chỉ và số điện thoại để việc giao hàng diễn ra thuận lợi."}]}, {"h": "4. Đổi trả", "b": [{"p": "Nếu sản phẩm gặp vấn đề khi nhận hàng, vui lòng liên hệ ngay với chúng tôi. Bibi food sẽ hỗ trợ đổi trả theo từng trường hợp cụ thể."}]}, {"h": "5. Tài khoản mua sỉ", "b": [{"p": "Tài khoản mua sỉ dành cho cửa hàng và được cấp sau khi Bibi food xét duyệt. Bạn có trách nhiệm giữ bí mật tên đăng nhập và mật khẩu. Bibi food có quyền tạm khóa tài khoản khi phát hiện sử dụng sai mục đích."}]}, {"h": "6. Trách nhiệm của người dùng", "b": [{"p": "Khi sử dụng website, bạn đồng ý:"}, {"ul": ["Cung cấp thông tin chính xác và đầy đủ.", "Không sử dụng website vào mục đích gian lận, gây hại hoặc can thiệp vào hoạt động của hệ thống.", "Không sao chép hoặc sử dụng nội dung của website khi chưa được Bibi food đồng ý."]}]}, {"h": "7. Sở hữu trí tuệ", "b": [{"p": "Logo, hình ảnh, video và nội dung trên website thuộc quyền sở hữu của Bibi food."}]}, {"h": "8. Bảo mật thông tin", "b": [{"p": "Việc thu thập và sử dụng thông tin cá nhân của bạn được thực hiện theo Chính sách bảo mật của chúng tôi."}]}, {"h": "9. Thay đổi điều khoản", "b": [{"p": "Bibi food có thể cập nhật các điều khoản này khi cần. Việc bạn tiếp tục sử dụng website sau khi điều khoản được cập nhật nghĩa là bạn đồng ý với nội dung mới."}]}]}, "contact": {"title": "Liên hệ", "intro": "Bibi food luôn sẵn sàng hỗ trợ bạn về sản phẩm, đơn hàng và tài khoản mua sỉ. Hãy liên hệ với chúng tôi qua các kênh dưới đây.", "rows": [["phone", "Điện thoại", "010-2616-2689", "Gọi ngay"], ["mail", "Email", "bibifood2026@gmail.com", "Gửi email"], ["fb", "Facebook", "Nhắn tin qua Messenger", "Mở Messenger"], ["web", "Website", "bibifood.com", "Truy cập"]]}}, "ko": {"privacy": {"title": "개인정보처리방침", "updated": "최종 업데이트: 2026년 11월 3일", "intro": "Bibi food는 고객님의 개인정보를 소중히 생각합니다. 본 방침은 웹사이트 이용 및 주문 시 어떤 정보를 수집하고, 어디에 사용하며, 어떻게 보호하는지 안내합니다.", "sections": [{"h": "1. 수집하는 정보", "b": [{"p": "주문하시거나 도매 계정을 신청하실 때, 고객님이 직접 입력하신 정보만 수집합니다."}, {"ul": ["주문: 이름, 전화번호, 배송 주소, 페이스북(선택).", "도매 계정: 이름, 전화번호, 이메일, 주소, 매장 이름, 사업자등록번호."]}]}, {"h": "2. 정보의 이용 목적", "b": [{"p": "고객님의 정보는 다음 목적으로만 사용됩니다."}, {"ul": ["주문하신 상품의 배송 및 주문 확인 연락.", "동의하신 경우에 한해 Bibi food의 신제품 및 할인 행사 안내.", "도매 고객 계정의 심사 및 발급."]}, {"p": "그 외의 어떠한 목적으로도 고객님의 정보를 사용하지 않습니다."}]}, {"h": "3. 제3자 제공 금지", "b": [{"p": "고객님이 제공하신 정보는 안전하게 보호됩니다. Bibi food는 개인정보를 어떠한 제3자에게도 판매, 교환 또는 제공하지 않습니다."}, {"p": "다만 주문하신 상품을 배송하는 데 필요한 경우, 또는 법령에 따라 관계 기관이 요청하는 경우에 한하여 필요한 최소한의 정보만 제공합니다."}]}, {"h": "4. 정보의 보관 및 보호", "b": [{"p": "고객님의 정보는 안전하게 보관되며, Bibi food의 담당자만 접근할 수 있습니다. 도매 계정 비밀번호는 암호화되어 저장되며 평문으로 보관하지 않습니다."}]}, {"h": "5. 고객님의 권리", "b": [{"p": "언제든지 저희에게 연락하여 다음을 요청하실 수 있습니다."}, {"ul": ["개인정보의 열람, 수정 또는 삭제.", "신제품 및 할인 행사 안내 수신 중단."]}, {"p": "요청하신 내용은 최대한 빠르게 처리해 드립니다."}]}, {"h": "6. 브라우저에 저장되는 데이터", "b": [{"p": "웹사이트는 쇼핑을 위해 장바구니와 로그인 상태를 고객님의 브라우저에 저장합니다. 이 데이터는 브라우저 설정에서 언제든지 삭제하실 수 있습니다."}]}, {"h": "7. 방침의 변경", "b": [{"p": "필요한 경우 본 방침을 개정할 수 있으며, 최신 버전은 개정일과 함께 이곳에 게시됩니다."}]}, {"h": "8. 문의", "b": [{"p": "개인정보처리방침에 대한 문의는 전화 010-2616-2689 또는 이메일 bibifood2026@gmail.com 로 연락해 주세요."}]}]}, "terms": {"title": "이용약관", "updated": "최종 업데이트: 2026년 11월 3일", "intro": "Bibi food 웹사이트를 방문해 주셔서 감사합니다. 웹사이트를 이용하고 주문하시면 아래 약관에 동의하신 것으로 봅니다.", "sections": [{"h": "1. 상품 및 가격", "b": [{"p": "웹사이트에 표시된 가격은 원(₩) 기준이며 수시로 변경될 수 있습니다. 이미지는 참고용이며, 성분·사용법·보관 방법은 각 상품의 상세 정보에 안내되어 있습니다."}]}, {"h": "2. 주문", "b": [{"p": "주문은 Bibi food가 고객님께 연락하여 확인한 후 확정됩니다. 품절이거나 배송 정보가 정확하지 않은 경우 주문을 거절하거나 취소할 수 있으며, 이 경우 안내해 드립니다."}]}, {"h": "3. 배송", "b": [{"p": "Bibi food는 한국 전역으로 배송합니다. 배송 기간은 지역에 따라 다를 수 있습니다. 원활한 배송을 위해 정확한 주소와 전화번호를 입력해 주세요."}]}, {"h": "4. 교환 및 환불", "b": [{"p": "상품 수령 시 문제가 있다면 즉시 연락해 주세요. Bibi food가 상황에 맞게 교환 또는 환불을 도와드립니다."}]}, {"h": "5. 도매 계정", "b": [{"p": "도매 계정은 매장을 위한 것으로, Bibi food의 심사 후 발급됩니다. 아이디와 비밀번호를 안전하게 관리할 책임은 고객님께 있습니다. 목적에 맞지 않게 사용된 것이 확인되면 Bibi food는 계정을 일시 정지할 수 있습니다."}]}, {"h": "6. 이용자의 책임", "b": [{"p": "웹사이트를 이용하실 때 다음 사항에 동의하신 것으로 봅니다."}, {"ul": ["정확하고 완전한 정보를 제공합니다.", "부정한 목적, 타인에게 해가 되는 목적 또는 시스템 운영을 방해하는 목적으로 이용하지 않습니다.", "Bibi food의 동의 없이 웹사이트의 내용을 복제하거나 사용하지 않습니다."]}]}, {"h": "7. 지식재산권", "b": [{"p": "웹사이트의 로고, 이미지, 영상 및 콘텐츠에 대한 권리는 Bibi food에 있습니다."}]}, {"h": "8. 개인정보 보호", "b": [{"p": "고객님의 개인정보 수집 및 이용은 개인정보처리방침에 따라 이루어집니다."}]}, {"h": "9. 약관의 변경", "b": [{"p": "Bibi food는 필요한 경우 본 약관을 개정할 수 있습니다. 개정 후에도 웹사이트를 계속 이용하시면 변경된 내용에 동의하신 것으로 봅니다."}]}]}, "contact": {"title": "연락처", "intro": "Bibi food는 상품, 주문, 도매 계정에 관한 문의를 언제든지 환영합니다. 아래 채널로 연락해 주세요.", "rows": [["phone", "전화", "010-2616-2689", "전화하기"], ["mail", "이메일", "bibifood2026@gmail.com", "이메일 보내기"], ["fb", "페이스북", "Messenger로 문의", "Messenger 열기"], ["web", "웹사이트", "bibifood.com", "방문하기"]]}}, "en": {"privacy": {"title": "Privacy policy", "updated": "Last updated: November 3, 2026", "intro": "Bibi food respects your privacy. This policy explains what information we collect, what we use it for and how we protect it when you use our website and place an order.", "sections": [{"h": "1. Information we collect", "b": [{"p": "When you place an order or apply for a wholesale account, we only collect the information you provide yourself:"}, {"ul": ["Orders: your name, phone number, delivery address and Facebook (optional).", "Wholesale accounts: your name, phone number, email, address, store name and business license number."]}]}, {"h": "2. How we use your information", "b": [{"p": "Your information is used only for the following purposes:"}, {"ul": ["Delivering your order and contacting you to confirm it.", "Letting you know about new products and promotions from Bibi food (only if you agreed to receive them).", "Reviewing and issuing accounts for wholesale customers."]}, {"p": "We do not use your information for any other purpose."}]}, {"h": "3. No sharing with third parties", "b": [{"p": "We keep the information you provide confidential. Bibi food does not sell, trade or share your personal information with any third party."}, {"p": "We only provide the minimum information necessary when it is needed to deliver your order, or when a competent authority requires it by law."}]}, {"h": "4. Storage and protection", "b": [{"p": "Your information is stored securely and can only be accessed by authorized Bibi food staff. Wholesale account passwords are encrypted; we never store them as plain text."}]}, {"h": "5. Your rights", "b": [{"p": "You can contact us at any time to:"}, {"ul": ["View, correct or ask us to delete your personal information.", "Stop receiving news about new products and promotions."]}, {"p": "We will handle your request as soon as possible."}]}, {"h": "6. Data stored in your browser", "b": [{"p": "The website keeps your cart and login session in your browser so you can shop. You can delete this data at any time in your browser settings."}]}, {"h": "7. Changes to this policy", "b": [{"p": "We may update this policy when needed. The latest version is always posted here with its update date."}]}, {"h": "8. Contact", "b": [{"p": "If you have any questions about this policy, please contact Bibi food at 010-2616-2689 or bibifood2026@gmail.com."}]}]}, "terms": {"title": "Terms of use", "updated": "Last updated: November 3, 2026", "intro": "Thank you for visiting the Bibi food website. By using the website and placing an order, you agree to the terms below.", "sections": [{"h": "1. Products and prices", "b": [{"p": "Prices shown on the website are in Korean won (₩) and may change from time to time. Images are for illustration only; ingredients, usage and storage are listed in each product's details."}]}, {"h": "2. Orders", "b": [{"p": "An order is confirmed once Bibi food contacts you. We may decline or cancel an order if an item is out of stock or the delivery details are incorrect, and we will let you know."}]}, {"h": "3. Delivery", "b": [{"p": "Bibi food delivers across Korea. Delivery time may vary by area. Please provide a correct address and phone number so your delivery goes smoothly."}]}, {"h": "4. Returns and exchanges", "b": [{"p": "If there is a problem with a product when you receive it, please contact us right away. Bibi food will arrange an exchange or refund case by case."}]}, {"h": "5. Wholesale accounts", "b": [{"p": "Wholesale accounts are for stores and are issued after review by Bibi food. You are responsible for keeping your username and password confidential. Bibi food may suspend an account found to be misused."}]}, {"h": "6. User responsibilities", "b": [{"p": "When using the website, you agree to:"}, {"ul": ["Provide accurate and complete information.", "Not use the website for fraud, to cause harm or to interfere with how the system works.", "Not copy or use website content without Bibi food's permission."]}]}, {"h": "7. Intellectual property", "b": [{"p": "The logo, images, videos and content on this website belong to Bibi food."}]}, {"h": "8. Privacy", "b": [{"p": "We collect and use your personal information in accordance with our Privacy policy."}]}, {"h": "9. Changes to these terms", "b": [{"p": "Bibi food may update these terms when needed. If you keep using the website after an update, you agree to the new terms."}]}]}, "contact": {"title": "Contact", "intro": "Bibi food is happy to help with products, orders and wholesale accounts. Reach us through any of the channels below.", "rows": [["phone", "Phone", "010-2616-2689", "Call now"], ["mail", "Email", "bibifood2026@gmail.com", "Send email"], ["fb", "Facebook", "Message us on Messenger", "Open Messenger"], ["web", "Website", "bibifood.com", "Visit"]]}}, "zh": {"privacy": {"title": "隐私政策", "updated": "最后更新：2026年11月3日", "intro": "Bibi food 重视您的隐私。本政策说明您在使用网站和下单时，我们会收集哪些信息、用于什么目的，以及如何保护这些信息。", "sections": [{"h": "1. 我们收集的信息", "b": [{"p": "当您下单或申请批发账号时，我们只收集您自己提供的信息："}, {"ul": ["下单：姓名、电话号码、收货地址和 Facebook（选填）。", "批发账号：姓名、电话号码、邮箱、地址、店铺名称和营业执照号码。"]}]}, {"h": "2. 信息的使用目的", "b": [{"p": "您的信息仅用于以下目的："}, {"ul": ["配送您订购的商品，并联系您确认订单。", "在您同意接收的前提下，向您推送 Bibi food 的新品和促销活动信息。", "审核并开通批发客户账号。"]}, {"p": "我们不会将您的信息用于任何其他目的。"}]}, {"h": "3. 不向第三方共享", "b": [{"p": "我们承诺对您提供的信息严格保密。Bibi food 不会出售、交换或向任何第三方共享您的个人信息。"}, {"p": "仅在为配送您的订单所必需，或有权机关依法要求时，我们才会提供所需的最少信息。"}]}, {"h": "4. 信息的存储与保护", "b": [{"p": "您的信息被安全存储，仅限 Bibi food 的相关工作人员访问。批发账号密码经过加密，我们不会以明文形式保存密码。"}]}, {"h": "5. 您的权利", "b": [{"p": "您可以随时联系我们，以便："}, {"ul": ["查看、更正或要求删除您的个人信息。", "停止接收新品和促销信息。"]}, {"p": "我们会尽快处理您的请求。"}]}, {"h": "6. 保存在浏览器中的数据", "b": [{"p": "网站会在您的浏览器中保存购物车和登录状态，以便您购物。您可以随时在浏览器设置中删除这些数据。"}]}, {"h": "7. 政策的变更", "b": [{"p": "我们可能会在需要时更新本政策，最新版本将连同更新日期发布在此处。"}]}, {"h": "8. 联系我们", "b": [{"p": "如对本隐私政策有任何疑问，请通过电话 010-2616-2689 或邮箱 bibifood2026@gmail.com 联系 Bibi food。"}]}]}, "terms": {"title": "使用条款", "updated": "最后更新：2026年11月3日", "intro": "感谢您访问 Bibi food 网站。使用本网站并下单，即表示您同意以下条款。", "sections": [{"h": "1. 商品与价格", "b": [{"p": "网站上显示的价格以韩元（₩）计价，可能不时调整。图片仅供参考；成分、用法和保存方法见各商品的详情。"}]}, {"h": "2. 订单", "b": [{"p": "Bibi food 联系您确认后，订单才算生效。如遇商品缺货或配送信息有误，我们有权拒绝或取消订单，并会通知您。"}]}, {"h": "3. 配送", "b": [{"p": "Bibi food 配送至韩国全境，各地区配送时间可能不同。请提供准确的地址和电话号码，以便顺利送达。"}]}, {"h": "4. 退换货", "b": [{"p": "如收货时商品有问题，请立即联系我们。Bibi food 将根据具体情况协助您换货或退款。"}]}, {"h": "5. 批发账号", "b": [{"p": "批发账号面向店铺，经 Bibi food 审核后开通。您有责任妥善保管用户名和密码。如发现账号被不当使用，Bibi food 有权暂时停用。"}]}, {"h": "6. 用户责任", "b": [{"p": "使用本网站时，您同意："}, {"ul": ["提供准确、完整的信息。", "不将网站用于欺诈、危害他人或干扰系统运行。", "未经 Bibi food 同意，不复制或使用网站内容。"]}]}, {"h": "7. 知识产权", "b": [{"p": "本网站上的标志、图片、视频和内容均归 Bibi food 所有。"}]}, {"h": "8. 隐私保护", "b": [{"p": "我们按照《隐私政策》收集和使用您的个人信息。"}]}, {"h": "9. 条款的变更", "b": [{"p": "Bibi food 可能会在需要时更新本条款。更新后您继续使用本网站，即表示同意新的条款。"}]}]}, "contact": {"title": "联系我们", "intro": "Bibi food 乐意为您解答商品、订单和批发账号方面的问题。请通过以下方式联系我们。", "rows": [["phone", "电话", "010-2616-2689", "立即致电"], ["mail", "邮箱", "bibifood2026@gmail.com", "发送邮件"], ["fb", "Facebook", "通过 Messenger 留言", "打开 Messenger"], ["web", "网站", "bibifood.com", "访问"]]}}};
+            var ICONS = {"phone": "<path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z\"/>", "mail": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><polyline points=\"3 7 12 13 21 7\"/>", "fb": "<path d=\"M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.6-.8L3 21l1.9-5.2A8.4 8.4 0 1 1 21 11.5z\"/>", "web": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><line x1=\"3\" y1=\"12\" x2=\"21\" y2=\"12\"/><path d=\"M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z\"/>"};
+            var HREFS = {"phone": "tel:01026162689", "mail": "mailto:bibifood2026@gmail.com", "fb": "https://m.me/bibifood", "web": "https://bibifood.com"};
+            var ORDER = ['privacy', 'terms', 'contact'];
+
+            var backdrop = document.getElementById('lgBackdrop');
+            var modal = document.getElementById('lgModal');
+            var body = document.getElementById('lgBody');
+            var titleEl = document.getElementById('lgTitle');
+            var updatedEl = document.getElementById('lgUpdated');
+            var tabs = ORDER.map(function (k) { return document.getElementById('lgTab-' + k); });
+            var current = 'privacy';
+            var opener = null;
+
+            function lang() {
+                var l = window.currentLang || 'vi';
+                return DOCS[l] ? l : 'vi';
+            }
+
+            function make(tag, cls, text) {
+                var e = document.createElement(tag);
+                if (cls) e.className = cls;
+                if (text != null) e.textContent = text;
+                return e;
+            }
+
+            function svg(inner) {
+                var s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                s.setAttribute('class', 'icon-svg');
+                s.setAttribute('viewBox', '0 0 24 24');
+                s.setAttribute('fill', 'none');
+                s.setAttribute('stroke', 'currentColor');
+                s.setAttribute('stroke-width', '2');
+                s.setAttribute('stroke-linecap', 'round');
+                s.setAttribute('stroke-linejoin', 'round');
+                s.setAttribute('aria-hidden', 'true');
+                s.innerHTML = inner; // nội dung là hằng số của trang, không lấy từ người dùng
+                return s;
+            }
+
+            function render() {
+                var d = DOCS[lang()][current];
+                titleEl.textContent = d.title;
+                updatedEl.textContent = d.updated || '';
+                tabs.forEach(function (t, i) {
+                    var on = ORDER[i] === current;
+                    t.setAttribute('aria-selected', on ? 'true' : 'false');
+                    t.tabIndex = on ? 0 : -1;
+                });
+                body.setAttribute('aria-labelledby', 'lgTab-' + current);
+                body.innerHTML = '';
+
+                if (d.intro) body.appendChild(make('p', 'lg-intro', d.intro));
+
+                if (current === 'contact') {
+                    var list = make('div', 'lg-contact');
+                    d.rows.forEach(function (r) {
+                        var a = make('a', 'lg-card');
+                        a.href = HREFS[r[0]];
+                        if (r[0] === 'fb' || r[0] === 'web') { a.target = '_blank'; a.rel = 'noopener'; }
+                        var ic = make('span', 'lg-card-icon');
+                        ic.appendChild(svg(ICONS[r[0]]));
+                        var tx = make('span', 'lg-card-text');
+                        tx.appendChild(make('span', 'lg-card-label', r[1]));
+                        tx.appendChild(make('span', 'lg-card-value', r[2]));
+                        a.appendChild(ic);
+                        a.appendChild(tx);
+                        a.appendChild(make('span', 'lg-card-act', r[3]));
+                        list.appendChild(a);
+                    });
+                    body.appendChild(list);
+                } else {
+                    d.sections.forEach(function (sec) {
+                        var box = make('section', 'lg-sec');
+                        box.appendChild(make('h4', null, sec.h));
+                        sec.b.forEach(function (blk) {
+                            if (blk.p) box.appendChild(make('p', null, blk.p));
+                            else if (blk.ul) {
+                                var ul = make('ul');
+                                blk.ul.forEach(function (li) { ul.appendChild(make('li', null, li)); });
+                                box.appendChild(ul);
+                            }
+                        });
+                        body.appendChild(box);
+                    });
+                }
+                body.scrollTop = 0;
+            }
+
+            function open(key, from) {
+                current = DOCS.vi[key] ? key : 'privacy';
+                opener = from || document.activeElement;
+                render();
+                backdrop.classList.add('open');
+                modal.classList.add('open');
+                setTimeout(function () { document.getElementById('lgClose').focus(); }, 60);
+            }
+
+            function close() {
+                if (!modal.classList.contains('open')) return;
+                backdrop.classList.remove('open');
+                modal.classList.remove('open');
+                if (opener && opener.focus) opener.focus();
+            }
+
+            tabs.forEach(function (t, i) {
+                t.addEventListener('click', function () { current = ORDER[i]; render(); });
+                t.addEventListener('keydown', function (e) {
+                    var n = null;
+                    if (e.key === 'ArrowRight') n = (i + 1) % ORDER.length;
+                    else if (e.key === 'ArrowLeft') n = (i + ORDER.length - 1) % ORDER.length;
+                    if (n !== null) { e.preventDefault(); current = ORDER[n]; render(); tabs[n].focus(); }
+                });
+            });
+
+            document.querySelectorAll('[data-legal]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    open(a.getAttribute('data-legal'), a);
+                });
+            });
+            document.getElementById('lgClose').addEventListener('click', close);
+            backdrop.addEventListener('click', close);
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') close();
+            });
+
+            // Đổi ngôn ngữ: vẽ lại nội dung đang mở
+            window.renderLegal = function () {
+                document.getElementById('lgClose').setAttribute('aria-label', (window.translations && window.translations[lang()] && window.translations[lang()].cmp_close) || 'Đóng');
+                if (modal.classList.contains('open')) render();
+            };
+            window.openLegal = open;
+        })();
 
         (function () {
             // Công cụ tìm địa chỉ Hàn Quốc dùng chung: Kakao/Daum Postcode (dữ liệu địa chỉ chính thức, như các app bán hàng Hàn Quốc)
